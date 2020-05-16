@@ -1,7 +1,7 @@
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 
-var db = require("../models");
+var db = require("../models/User");
 
 passport.use(new LocalStrategy(
     // Our user will sign in using an email, rather than a "username"
