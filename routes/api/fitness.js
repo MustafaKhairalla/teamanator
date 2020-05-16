@@ -24,11 +24,11 @@ router.post("/", (req, res) => {
         weight: req.body.weight, // check for array
         goal: req.body.goal,
         phoneNumber: req.body.phoneNumber,
-        notes: req.req.notes
+        notes: req.body.notes
     });
 
-    newEducation.save()
-        .then(fitness => res.json(fitness));
+    newFitness.save()
+        .then(fitness => res.json(fitness)).catch(err => res.status(404).json({err}));
 });
 
 
