@@ -4,7 +4,7 @@ const router = express.Router();
 //User model
 const Business = require("../../models/Business");
 
-// @route GET api/business
+// @route GET api/business inside AXIOS
 // @desc Get ALL business cards
 
 router.get("/", (req, res) => {
@@ -26,10 +26,10 @@ router.post("/", (req, res) => {
         department: req.body.department,
         phoneNumber: req.body.phoneNumber,
         address: {
-            street: req.body.street,
-            city: req.body.city,
-            state: req.body.state,
-            zipCode: req.body.zipCode
+            street: req.body.address.street,
+            city: req.body.address.city,
+            state: req.body.address.state,
+            zipCode: req.body.address.zipCode
         }
     });
 

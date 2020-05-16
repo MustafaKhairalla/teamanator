@@ -49,7 +49,7 @@ const BusinessSchema = new Schema({
         unique: true
     },
 
-    address: [{
+    address: {
         street: {
             type: String,
             required: true
@@ -70,8 +70,7 @@ const BusinessSchema = new Schema({
             required: true
         }
 
-
-    }]
+    }
 });
 
 BusinessSchema.plugin(mongooseUniqueValidator);
