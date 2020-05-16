@@ -4,6 +4,9 @@ const mongooseUniqueValidator = require("mongoose-unique-validator");
 
 //Create Schema
 const SportSchema = new Schema({
+    owner: {
+        type: String
+    },
     img: {
         data: Buffer,
         contentType: String
@@ -30,11 +33,6 @@ const SportSchema = new Schema({
     },
 
     position: {
-        type: String,
-        required: true
-    },
-
-    lastName: {
         type: String,
         required: true
     },

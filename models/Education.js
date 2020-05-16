@@ -4,6 +4,9 @@ const mongooseUniqueValidator = require("mongoose-unique-validator");
 
 //create Schema
 const EducationSchema = new Schema({
+    owner: {
+        type: String
+    },
     img: {
         data: Buffer,
         contentType: String

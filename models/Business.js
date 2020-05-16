@@ -4,6 +4,10 @@ const mongooseUniqueValidator = require("mongoose-unique-validator");
 
 //Create Schema
 const BusinessSchema = new Schema({
+    owner: {
+        type: String
+    },
+
     img: {
         data: Buffer,
         contentType: String
