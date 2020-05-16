@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
-
+const passport = require("../../config/passport"); 
 //User model
 const User = require("../../models/User");
+const db = require("../../models");
 
 // @route GET api/user
 // @desc Get ALL Users
@@ -30,7 +31,23 @@ router.post("/", (req, res) => {
 
 // @route DELETE api/users/:id
 // @desc  delete Users
+router.post("/api/login", passport.authenticate("local"), function(req,res){
+    console.log("Logging in...")
+    console.log(req.user);
+    res.json(req.user);
+});
 
+router.post("/api/signup", function (req, res){
+    db.User.create({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: req.body.passport
+    })
+        .then(function(x){
+            
+        })
+})
 router.delete("/:id", (req, res) => {
     User.findById(req.params.id)
         .then(user => user.remove().then(() => res.json({ success: true })))
