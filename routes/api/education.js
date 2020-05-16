@@ -44,7 +44,9 @@ router.delete("/:id", (req, res) => {
 // @route GET api/education/:id
 // @ desc findbyID education cards
 
-outer.get("/:id", (req, res) => {
+router.get("/:id", (req, res) => {
     Education.findById(req.params.id)
         .then(education => res.json(education))
 });
+
+module.exports = router;
