@@ -37,7 +37,7 @@ app.use("/api/sport", sport);
 
 
 // setup server port
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 //setup server litener
 app.listen(port, () => console.log(`server is started on port ${port}`));

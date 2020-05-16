@@ -34,7 +34,8 @@ router.post("/", (req, res) => {
     });
 
     newBusiness.save()
-        .then(business => res.json(business));
+        .then(business => res.json(business))
+        .catch(err => res.status(404).json({ err }));
 });
 
 // @route DELETE api/business/:id
