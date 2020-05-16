@@ -3,7 +3,11 @@ const mongoose = require("mongoose");
 //const bodyParser = require("body-parser");
 
 //setup rquire API routes
-const users = require(".//routes/api/users");
+const users = require("./routes/api/users");
+const business = require("./routes/api/business");
+const education = require("./routes/api/education");
+const fitness = require("./routes/api/fitness");
+const sport = require("./routes/api/sport");
 
 //initilize app
 const app = express();
@@ -22,6 +26,10 @@ mongoose
 
 // Use routes
 app.use("/api/users", users);
+app.use("/api/business", business);
+app.use("/api/education", education);
+app.use("/api/fitness", fitness);
+app.use("/api/sport", sport);
 
 
 // setup server port
