@@ -54,6 +54,7 @@ router.get("/:id", (req, res) => {
         .then(business => res.json(business))
 });
 
+module.exports = router;
 
 // Notes
 // find about images
