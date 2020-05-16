@@ -26,9 +26,13 @@
     "express": "^4.17.1",
     "mongoose": "^5.9.12",
     "mongoose-unique-validator": "^2.0.3",
-    "react-card-flip": "^1.0.10",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "react-bootstrap": "^1.0.1",
+    "react-card-flip": "^1.0.10",
+    "react-router-dom": "^5.2.0",
+    "react-strap": "0.0.1",
+    "reactstrap": "^8.4.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
