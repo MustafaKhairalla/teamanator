@@ -18,6 +18,10 @@ const db = require("./config/keys").mongoURI;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+};
+
 // connect to mongoDB
 mongoose
     .connect(db, { useNewUrlParser: true, useFindAndModify: false })
