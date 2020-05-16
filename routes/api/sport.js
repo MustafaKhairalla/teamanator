@@ -43,7 +43,9 @@ router.delete("/:id", (req, res) => {
 // @route GET api/sport/:id
 // @ desc findbyID sport cards
 
-outer.get("/:id", (req, res) => {
+router.get("/:id", (req, res) => {
     Sport.findById(req.params.id)
         .then(sport => res.json(sport))
 });
+
+module.exports = router;
