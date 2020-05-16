@@ -49,7 +49,7 @@ router.delete("/:id", (req, res) => {
 // @route GET api/business/:id
 // @ desc findbyID business cards
 
-outer.get("/:id", (req, res) => {
+router.get("/:id", (req, res) => {
     Business.findById(req.params.id)
         .then(business => res.json(business))
 });
