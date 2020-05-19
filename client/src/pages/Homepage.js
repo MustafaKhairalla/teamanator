@@ -189,11 +189,11 @@ function Homepage () {
                             </Row>
                             <Row><Button color="secondary" size="lg" block>Create an Account </Button></Row>
                             <Row>
-                            <video style={{ margin:15 }} id="background-video" loop autoPlay>
+                            {/* <video style={{ margin:15 }} id="background-video" loop autoPlay>
                                 <source src={`${process.env.PUBLIC_URL}BackgroundVideo.mp4`} type="video/mp4" width = "100%"/>
                                 
                                 Your browser does not support the video tag.
-                            </video>
+                            </video> */}
                             </Row>
                         </Col>
                     </Row>
