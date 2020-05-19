@@ -8,6 +8,7 @@ import ExampleCard from "../components/ExampleCard";
 import EducationCard from "../components/EducationCard";
 import BusinessCard from "../components/BusinessCard";
 import SportCard from "../components/SportCard";
+import { Link, useLocation } from "react-router-dom";
 
 
 
@@ -64,7 +65,8 @@ function Homepage () {
                                                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                                                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
                                                     nisi ut aliquip ex ea commodo consequat.</p>
-                                <Button>Create an Account</Button>
+                                <Button>
+                                <Link to="/template">Create an Account</Link></Button>
                                 </Container>
                             </Jumbotron>
                         </Col>
