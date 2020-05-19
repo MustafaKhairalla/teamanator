@@ -9,7 +9,7 @@ const BusinessCard = (props) => {
 
     return (
         <>
-            <Card className="bg-dark text-white" style={{ width: '18rem' }}>
+            <Card onClick={props.handleClick} className="bg-dark text-white" style={{ width: '18rem' }}>
                 <Card.Img variant="top" src="https://res.cloudinary.com/dddtjci2s/image/upload/v1589488079/three-white-ceramic-pots-with-green-leaf-plants-near-open-796602_u470d7.jpg" />
                 <Card.Body>
                     <Card.Title>

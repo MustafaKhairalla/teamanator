@@ -1,10 +1,57 @@
-import React from "react";
+import React, {useState} from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
-import {Container,Row, Col, Jumbotron, Button, Card, CardTitle, CardText} from "reactstrap";
-import { Link } from "react-router-dom";
+import {Container,Row, Col, Jumbotron, Button, Card} from "reactstrap";
+import ReactCardFlip from 'react-card-flip';
+
+import ExampleCard from "../components/ExampleCard";
+import EducationCard from "../components/EducationCard";
+import BusinessCard from "../components/BusinessCard";
+import SportCard from "../components/SportCard";
+
+
 
 function Homepage () {
+    //HANDLE FLIPPING
+    const [flipping, setFlipping] = useState({
+        isFlipped: false
+    });
+    const [flipping2, setFlipping2] = useState({
+        isFlipped: false
+    });
+    const [flipping3, setFlipping3] = useState({
+        isFlipped: false
+    });
+    const [flipping4, setFlipping4] = useState({
+        isFlipped: false
+    });
+    // const [handleClicks, setHandleClicks] = useState({
+    //     one: false, two: false, three: false, four: false
+    // })
+
+    //HANDLE SHOW MODEL
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        setFlipping(prevState => ({ isFlipped: !prevState.isFlipped }));
+    }
+    const handleClick2 = (e) => {
+        e.preventDefault();
+        setFlipping2(prevState => ({ isFlipped: !prevState.isFlipped }));
+    }
+    const handleClick3 = (e) => {
+        e.preventDefault();
+        setFlipping3(prevState => ({ isFlipped: !prevState.isFlipped }));
+    }
+    const handleClick4 = (e) => {
+        e.preventDefault();
+        setFlipping4(prevState => ({ isFlipped: !prevState.isFlipped }));
+    }
+
     return(
         <div className= "App">
              <Navbar></Navbar>
@@ -17,44 +64,58 @@ function Homepage () {
                                                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                                                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
                                                     nisi ut aliquip ex ea commodo consequat.</p>
-                                <Button>
-                                <Link to="/template">
-                                    Create an Account
-                                    </Link></Button>
+                                <Button>Create an Account</Button>
                                 </Container>
                             </Jumbotron>
                         </Col>
                         <Col md={3}>
-                                 <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
-                                    <CardTitle><h3>Features</h3> </CardTitle>
-                                    <CardText>
-                                        <ul>
-                                            <li>Customize the data for your team </li>
-                                            <li>Track important events </li>
-                                            <li>Add or subtract team members </li>
-                                            <li>And so much more…</li>
-                                        </ul>
-                                    </CardText>                                  
-                            </Card>
+                                <ReactCardFlip isFlipped={flipping.isFlipped} flipDirection="horizontal">
+                                    <ExampleCard
+                                        title="Example"
+                                        handleShow={handleShow}
+                                        handleClick={handleClick}
+                                    />
+                                    <ExampleCard
+                                        handleClick={handleClick} />
+                                </ReactCardFlip>
                         </Col>
                     </Row>
                     <Row>
                         <Col md={3}>
-                        <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
-                        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-                        deserunt mollit anim id est laborum.  
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                        reprehenderit.
-                      
-                         </h1>
+                        <Card body inverse style={{ backgroundColor: '#3d40da', borderColor: '#333' }}>
+                                <div style={{ margin: '1em'}}>
+                                <ReactCardFlip isFlipped={flipping2.isFlipped} flipDirection="horizontal">
+                                        <BusinessCard
+                                            title="Example"
+                                            handleShow={handleShow}
+                                            handleClick={handleClick2}
+                                        />
+                                        <BusinessCard
+                                            handleClick={handleClick2} />
+                                    </ReactCardFlip>
+                                </div>
+                                <div style={{ margin: '1em'}}>
+                                <ReactCardFlip isFlipped={flipping3.isFlipped} flipDirection="horizontal">
+                                        <SportCard
+                                            title="Example"
+                                            handleShow={handleShow}
+                                            handleClick={handleClick3}
+                                        />
+                                        <SportCard
+                                            handleClick={handleClick3} />
+                                    </ReactCardFlip>
+                                </div>
+                                <div style={{ margin: '1em'}}>
+                                <ReactCardFlip isFlipped={flipping4.isFlipped} flipDirection="horizontal">
+                                        <EducationCard
+                                            title="Example"
+                                            handleShow={handleShow}
+                                            handleClick={handleClick4}
+                                        />
+                                        <EducationCard
+                                            handleClick={handleClick4} />
+                                    </ReactCardFlip>
+                                </div>
                             </Card>
                         </Col>
                         <Col md={9}>
