@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+var passportLocalMongoose = require("passport-local-mongoose");
 const Schema = mongoose.Schema;
 const mongooseUniqueValidator = require("mongoose-unique-validator");
 
@@ -43,7 +44,17 @@ const UserSchema = new Schema({
     team: [TeamSchema]
 });
 
+// UserSchema.methods.validPassword = function (password) {
+//     return bcrypt.compareSync(password, this.password)
+// };
+
+// UserSchema.pre("save", function (user){
+//     user.password = bcrypt.hashSync(user.password, bcrypt.genSalt(10), null);
+// }); 
+UserSchema.plugin(passportLocalMongoose, {userNameField: 'email'})
 UserSchema.plugin(mongooseUniqueValidator);
 
 module.exports = User = mongoose.model("user", UserSchema);
+
+
 

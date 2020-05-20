@@ -48,10 +48,10 @@ const FitnessSchema = new Schema({
         unique: true
     },
 
-    notes: [{
+    notes: {
         type: String,
         required: true
-    }],
+    },
 });
 
 FitnessSchema.plugin(mongooseUniqueValidator);

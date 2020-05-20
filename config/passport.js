@@ -3,6 +3,7 @@ var LocalStrategy = require("passport-local").Strategy;
 
 var db = require("../models/User");
 
+// OLD: DEFAULT CODE
 passport.use(new LocalStrategy(
     // Our user will sign in using an email, rather than a "username"
     {
@@ -10,7 +11,7 @@ passport.use(new LocalStrategy(
     },
     function (email, password, done) {
         // When a user tries to sign in this code runs
-        db.User.findOne({
+        db.findOne({
             where: {
                 email: email
             }
@@ -31,7 +32,6 @@ passport.use(new LocalStrategy(
         });
     }
 ));
-
 passport.serializeUser(function (user, cb) {
     cb(null, user);
 });
@@ -40,5 +40,11 @@ passport.deserializeUser(function (obj, cb) {
     cb(null, obj);
 });
 
+// NEW CODE FOR MONGOOSE
+// passport.use(new LocalStrategy(User.authenticate()));
 
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
+
+//EXPORT 
 module.exports = passport;
