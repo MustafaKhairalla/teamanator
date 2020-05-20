@@ -30,10 +30,13 @@ const UserSchema = new Schema({
         required: true,
         unique: true
     },
+    username:{
+        type: String,
+    },
 
     password: {
         type: String,
-        required: true
+       
     },
 
     date: {
@@ -51,8 +54,8 @@ const UserSchema = new Schema({
 // UserSchema.pre("save", function (user){
 //     user.password = bcrypt.hashSync(user.password, bcrypt.genSalt(10), null);
 // }); 
-UserSchema.plugin(passportLocalMongoose, {userNameField: 'email'})
-UserSchema.plugin(mongooseUniqueValidator);
+UserSchema.plugin(passportLocalMongoose )
+//  UserSchema.plugin(mongooseUniqueValidator);
 
 module.exports = User = mongoose.model("user", UserSchema);
 
