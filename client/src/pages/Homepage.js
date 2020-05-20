@@ -66,7 +66,7 @@ function Homepage () {
                                                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
                                                     nisi ut aliquip ex ea commodo consequat.</p>
                                 <Button>
-                                <Link to="/template">Create an Account</Link></Button>
+                                <Link to="/login">Create an Account</Link></Button>
                                 </Container>
                             </Jumbotron>
                         </Col>
