@@ -10,6 +10,7 @@ const User = require("../../models/User");
 
 //LOGIN 
 router.post("/login", passport.authenticate("local"), (req, res) => {
+    console.log(req)
     // User.find()
     //     .sort({ date: -1 })
     //     .then(users => res.json(users)).catch(err => res.status(404).json({err}));
