@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 
 import Button from "react-bootstrap/Button";
@@ -110,7 +111,7 @@ const MemberBuild = () => {
             <br></br>
             <row>
                 <button className="ui right floated green button">
-                    Finish
+                <Link to="/mydashboard">Finish</Link>
                  </button>
             </row>
         </Container>
