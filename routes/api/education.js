@@ -24,11 +24,12 @@ router.post("/", (req, res) => {
         languages: req.body.languages, // check for array
         educationLevel: req.body.educationLevel,
         phoneNumber: req.body.phoneNumber,
-        GPA: req.req.gpa
+        GPA: req.body.gpa
     });
 
     newEducation.save()
-        .then(education => res.json(education));
+        .then(education => res.json(education))
+        .catch(err => res.status(404).json({ err }));
 });
 
 
