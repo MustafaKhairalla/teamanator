@@ -17,7 +17,9 @@ router.get("/", (req, res) => {
 // @desc  Create business card
 
 router.post("/", (req, res) => {
+    // here is the consol.log()
     const newBusiness = new Business({
+        owner: req.user.id, // check check
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
@@ -56,6 +58,8 @@ router.get("/:id", (req, res) => {
 });
 
 module.exports = router;
+
+//req.user
 
 // Notes
 // find about images
