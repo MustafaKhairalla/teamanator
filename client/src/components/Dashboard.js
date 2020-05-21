@@ -3,21 +3,38 @@ import '../style/dashboard.css';
 import Employeecard from './Employeecard';
 import Todo from './Todo';
 import DashCalendar from './DashCalendar';
-import { CardColumns } from 'reactstrap';
 import Headerside from './Headerside';
+import Events from './Events';
+import { Container, Row, Col } from 'reactstrap';
 
 function Dashboard() {
     return (
         <div>
             <Headerside />
-        <div className="container-main">
-            <CardColumns>
-                <Todo />
-                <DashCalendar />
-                <Employeecard />
-            </CardColumns>
-
-        </div>
+            <div className="container-main">
+                <Row>
+                    <Col>
+                        <Events />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Todo />
+                    </Col>
+                    <Col>
+                    <DashCalendar />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Employeecard />
+                    </Col>
+                </Row>
+                
+                
+                
+                
+            </div>
         </div>
 
     )
