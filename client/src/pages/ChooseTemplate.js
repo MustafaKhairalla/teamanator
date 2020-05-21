@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./page.css";
 
 import BusinessCard from "../components/BusinessCard";
 import SportCard from "../components/SportCard";
@@ -11,9 +12,8 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import { Card, CardDeck } from "react-bootstrap";
+import { CardDeck } from "react-bootstrap";
 import ReactCardFlip from 'react-card-flip';
-import TemplateCard from '../components/TemplateCard';
 
 
 
@@ -32,15 +32,33 @@ const ChooseTemplate = () => {
     const [flipping4, setFlipping4] = useState({
         isFlipped: false
     });
-    // const [handleClicks, setHandleClicks] = useState({
-    //     one: false, two: false, three: false, four: false
-    // })
 
+    const [template, setTemplate] = useState({
+        isSelected: false,
+        title: "",
+        image: "",
+        config: {},
+        fields: [],
+        users: []
+    })
     //HANDLE SHOW MODEL
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleShow = (e) => {
+        console.log("target show: ")
+        console.log(e)
+
+        setTemplate({
+            isSelected: true,
+            title: e.title,
+            image: e.image,
+            config: e,//all the fields 
+            users: []
+
+        })
+        setShow(true);
+    }
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -61,7 +79,7 @@ const ChooseTemplate = () => {
 
 
     return (
-        <Container >
+        <Container>
             <br></br>
             <Row>
                 <Col md={3}>
@@ -80,78 +98,171 @@ const ChooseTemplate = () => {
                         <CardDeck>
                             <ReactCardFlip isFlipped={flipping.isFlipped} flipDirection="horizontal">
                                 <BusinessCard
-                                    title="Business"
+                                    flipping={flipping.isFlipped}
+                                    config={
+                                        {
+                                            title: "Business",
+                                            image: "../images/EmployeeCardImage.jpg",
+                                            field: ["Name",
+                                                "Title",
+                                                "Salary",
+                                                "Department",
+                                                "Phone Number",
+                                                "Email",
+                                                "Address/Location"
+                                            ]
+                                        }}
+
+
                                     handleShow={handleShow}
                                     handleClick={handleClick}
                                 />
 
                                 <BusinessCard
-                                    handleClick={handleClick} />
+                                    flipping={flipping.isFlipped}
+                                    title="Business"
+                                    handleShow={handleShow}
+                                    handleClick={handleClick}
+                                />
 
                             </ReactCardFlip>
 
                             <ReactCardFlip isFlipped={flipping2.isFlipped} flipDirection="horizontal">
                                 <SportCard
-                                    title
-                                    handleClick={handleClick2} handleShow={handleShow} />
-                                <SportCard handleClick={handleClick2} />
+
+                                    flipping={flipping2.isFlipped}
+                                    config={
+                                        {
+                                            title: "Sport",
+                                            image: "../images/SportsCardImage.jpg",
+                                            field: [
+                                                "Name",
+                                                "Age",
+                                                "Division",
+                                                "Position",
+                                                "Phone Number",
+                                                "Email",
+                                                "Address"
+                                            ]
+                                        }
+                                    }
+                                    handleClick={handleClick2}
+                                    handleShow={handleShow}
+                                />
+                                <SportCard
+                                    title="Sport"
+                                    flipping={flipping2.isFlipped}
+                                    handleClick={handleClick2}
+                                    handleShow={handleShow}
+                                />
                             </ReactCardFlip>
 
                             <ReactCardFlip isFlipped={flipping3.isFlipped} flipDirection="horizontal">
-                                <EducationCard handleClick={handleClick3} />
-                                <EducationCard handleClick={handleClick3} />
+                                <EducationCard
+
+                                    flipping={flipping3.isFlipped}
+                                    config={
+                                        {
+                                            title: "Education",
+                                            image: "../images/SchoolCardImage_.jpg",
+                                            field: [
+                                                "Name",
+                                                "Program",
+                                                "Tools/ Languages",
+                                                "Education Level",
+                                                "GPA",
+                                                "Phone Number",
+                                                "Email"
+                                            ]
+                                        }}
+                                    handleClick={handleClick3}
+                                    handleShow={handleShow}
+                                />
+                                <EducationCard
+                                    title="Education"
+                                    flipping={flipping3.isFlipped}
+                                    handleClick={handleClick3}
+                                    handleShow={handleShow}
+                                />
                             </ReactCardFlip>
 
                             <ReactCardFlip isFlipped={flipping4.isFlipped} flipDirection="horizontal">
-                                <FitnessCard handleClick={handleClick4} />
-                                <FitnessCard handleClick={handleClick4} />
+                                <FitnessCard
+
+                                    flipping={flipping4.isFlipped}
+                                    config={
+                                        {
+                                            title: "Fitness",
+                                            image: "../images/FitnessCardImage_.jpg",
+                                            field: [
+                                                "Name",
+                                                "Age",
+                                                "Weight",
+                                                "Goal",
+                                                "Notes",
+                                                "Phone Number",
+                                                "Email"
+                                            ]
+                                        }
+                                    }
+                                    handleClick={handleClick4}
+                                    handleShow={handleShow}
+                                />
+                                <FitnessCard
+                                    title="Fitness"
+                                    flipping={flipping4.isFlipped}
+                                    handleClick={handleClick4}
+                                    handleShow={handleShow}
+                                />
                             </ReactCardFlip>
 
-                            <Modal aria-labelledby="contained-modal-title-vcenter"
-                                centered show={show} onHide={handleClose}>
-                                <Modal.Header closeButton>
-                                    <Modal.Title className="ui yellow">You chosse a Business Team template!</Modal.Title>
-                                </Modal.Header>
-                                <Modal.Body>
-                                    <Container>
-                                        <Row >
-                                            <Col md={4}>
-                                                <span >
-                                                    <img style={{ width: '18rem' }} src="https://res.cloudinary.com/dddtjci2s/image/upload/v1589488079/three-white-ceramic-pots-with-green-leaf-plants-near-open-796602_u470d7.jpg" alt="business" />
+                            {template.isSelected ?
+                                <Modal aria-labelledby="contained-modal-title-vcenter"
+                                    centered show={show} onHide={handleClose}>
+                                    <Modal.Header closeButton>
+                                        <Modal.Title className="ui yellow">You chosse a {template.title} Team template!</Modal.Title>
+                                    </Modal.Header>
+                                    <Modal.Body>
+                                        <Container>
+                                            <Row >
+                                                <Col md={7}>
+                                                    <span >
+                                                        <img style={{ width: '18rem' }} src={template.config.image} alt="business" />
 
-                                                </span>
-                                            </Col>
-                                            <Col md={8}>
-                                                <h6 > Location: </h6>
-                                                {/* <h6 > Email: {employee.email}</h6> */}
-                                                <h6 > Mobile: </h6>
-                                                <h6 > Department:</h6>
-                                                <h6 > Salary:  $</h6>
-                                                <h6 > Title: </h6>
-                                            </Col>
-                                        </Row>
-                                    </Container>
-                                </Modal.Body>
-                                <Modal.Footer>
-                                    <Container>
-                                        {/* <div className="alert alert-danger mr-2 ml-2" role="alert"
+                                                    </span>
+                                                </Col>
+                                                <Col md={5}>
+                                                    {template.config.field.map(x => (
+                                                        <h6 >{x}</h6>
+                                                    )
+                                                    )}
+                                                </Col>
+                                            </Row>
+                                        </Container>
+                                    </Modal.Body>
+                                    <Modal.Footer>
+                                        <Container>
+                                            {/* <div className="alert alert-danger mr-2 ml-2" role="alert"
                                         // style={{ opacity: firedMatch ? 1 : 0 }}
                                         >
                                             This employee has been fired
                         </div> */}
-                                    </Container>
-                                    <Button className="ui inverted red button" onClick={handleClose}>
-                                        Cancel
+                                        </Container>
+                                        <Button className="ui inverted red button" onClick={handleClose}>
+                                            Cancel
                                     </Button>
-                                    <Button className="ui inverted green button" variant="danger">
-                                        <Link to="/member">
-                                            Continue to Step 2
+                                        <Button className="ui inverted green button" variant="danger">
+                                            <Link to={{ pathname: "/member", template: template, setTemplate: setTemplate }}
+
+                                            >
+                                                Continue to Step 2
                                         </Link>
-                                    </Button>
+                                        </Button>
 
-                                </Modal.Footer>
-                            </Modal>
-
+                                    </Modal.Footer>
+                                </Modal>
+                                : null
+                            }
                         </CardDeck>
                     </div>
 

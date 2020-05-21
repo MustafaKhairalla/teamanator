@@ -17,7 +17,9 @@ router.get("/", (req, res) => {
 // @desc  Create business card
 
 router.post("/", (req, res) => {
-    // here is the consol.log()
+    //req.body.users.forEach(user=> {
+    //
+    //})
     const newBusiness = new Business({
         owner: req.user.id, // check check
         firstName: req.body.firstName,

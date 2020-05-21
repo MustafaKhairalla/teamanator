@@ -9,6 +9,7 @@ const business = require("./routes/api/business");
 const education = require("./routes/api/education");
 const fitness = require("./routes/api/fitness");
 const sport = require("./routes/api/sport");
+// const passport = require("./config/passport");
 
 //initilize app
 const app = express();
