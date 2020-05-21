@@ -1,37 +1,86 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
 
 
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import { Redirect } from "react-router-dom";
 
 
-const MemberBuild = () => {
+const MemberBuild = (props) => {
 
-    const [user, setUser] = useState([{}]); // going to database 
+    const { location = {} } = props; // ask Pablo !!!
+    const { template, setTemplate } = location // ask
+    const [saving, setSaving] = useState(false);
+    const [user, setUser] = useState({
+        // template: "",
+        user_id: "",
+        field1: "",
+        field2: "",
+        field3: "",
+        field4: "",
+        field5: "",
+        field6: "",
+        field7: ""
+
+
+    }); // going to database 
+
+    console.log({ user, template })
     const [userCount, setUserCount] = useState([{
         title: "",
         count: 0,
         isVisible: false
     }]);
 
+    async function saveToDatabase(data) {
+        setSaving(true)
+        // const res = await axio.post ("api/save", data)
+        // if ( res.data.sucess === true) history.psush
+        // else show a message with an error
+
+
+    }
+    function handleInputChange(event) {
+        const { name, value } = event.target;
+
+        setUser({ ...user, [name]: value })
+    };
+
     const handleFormSubmit = (e) => {
         e.preventDefault();
         setUserCount([...userCount, {
-            title: "User",
-            count: userCount.length,
+            title: user.field1,
+            // count: userCount.length,
             isVisible: true
 
         }])
         console.log("button works")
+        user.user_id = template.users.length;
+        // setUser({ ...user, user_id: template.users.length })
+        // setTemplate({ ...template, users: [...template.users, user] })
+        console.log('Template: ', template)
+        template.users.push(user)
+        setUser({
+
+            field1: "",
+            field2: "",
+            field3: "",
+            field4: "",
+            field5: "",
+            field6: "",
+            field7: ""
+
+        }
+        )
+        console.log({ e })
+
 
     }
 
     return (
         <Container>
-
+            <br></br>
             <Row>
                 <Col md={3}>
                     <h1>Step 2</h1>
@@ -41,77 +90,134 @@ const MemberBuild = () => {
                 </Col>
 
                 <Col md={7}>
-                    <h2>Build your team</h2>
+                    <h2>Build your {template.config.title} team</h2>
                 </Col>
             </Row>
             <br></br>
             <Row>
                 <Col md={3}>
-                    <ul>
+                    <div class="ui  inverted segment">
+                        <h2 class="ui header">Your Team</h2>
+                        <div class="ui clearing divider"></div>
+                        <div>
+                            <img style={{ width: '15rem' }} src={`${template.config.image}`} alt="newimg" />
 
-                        {userCount.map(u => (
+                        </div>
+                        <div>
+                            <ul>
 
-                            <li>
-                                {u.isVisible ? (
-                                    <span>
-                                        <strong>{u.title} {u.count}</strong>
+                                {userCount.map(u => (
 
-
-                                        <img src="https://res.cloudinary.com/dddtjci2s/image/upload/v1589579232/check_mark_cze4om.png" style={{ width: "1.5rem", visibility: "visible", marginLeft: "0.5rem" }} alt="" />
-
-                                    </span>
-                                ) : (<h9></h9>)}
-
-                            </li>
-                        ))}
+                                    <li>
+                                        {u.isVisible ? (
+                                            <span>
+                                                <strong>{u.title} </strong>
 
 
-                    </ul>
+                                                <img src="https://res.cloudinary.com/dddtjci2s/image/upload/v1589579232/check_mark_cze4om.png" style={{ width: "1.5rem", visibility: "visible", marginLeft: "0.5rem" }} alt="" />
+
+                                            </span>
+                                        ) : (<h9></h9>)}
+
+                                    </li>
+                                ))}
+
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+
                 </Col>
                 <Col md={7}>
-                    <form class="ui form">
-                        <div className="ui inverted segment">
-                            <div className="ui inverted form">
-                                <div className="inline field">
-                                    <label >First Name</label>
-                                    <input placeholder="First Name" type="text" />
-                                </div>
-                                <div className="inline field">
-                                    <label>Last Name</label>
-                                    <input placeholder="Last Name" type="text" />
-                                </div>
-                                <div className="inline field">
-                                    <label>Department</label>
-                                    <input placeholder="Department" type="text" />
-                                </div>
-                                <div className="inline field">
-                                    <label>Location</label>
-                                    <input placeholder="Location" type="text" />
-                                </div>
-                                <div className="inline field">
-                                    <label>Salary</label>
-                                    <input placeholder="Salary" type="text" />
-                                </div>
+                    <div className="ui inverted segment">
+                        <form className="ui  form " style={{ marginLeft: "100px" }}>
+                            <div className="ui  inverted segment">
+                                <div className="ui inverted form">
+
+                                    <div className="twelve wide field">
+                                        <label >{template.config.field[0]}</label>
+                                        <input
+                                            name="field1"
+                                            value={user.field1}
+                                            onChange={handleInputChange}
+                                            placeholder={template.config.field[0]} type="text" />
+                                    </div>
+                                    <div className="twelve wide field">
+                                        <label className="mr-2 ml-2">{template.config.field[1]}</label>
+                                        <input
+                                            name="field2"
+                                            value={user.field2}
+                                            onChange={handleInputChange}
+                                            placeholder={template.config.field[1]} type="text" />
+                                    </div>
+                                    <div className="twelve wide field">
+                                        <label>{template.config.field[2]}</label>
+                                        <input
+                                            name="field3"
+                                            value={user.field3}
+                                            onChange={handleInputChange}
+                                            placeholder={template.config.field[2]} type="text" />
+                                    </div>
+                                    <div className="twelve wide field">
+                                        <label>{template.config.field[3]}</label>
+                                        <input
+                                            name="field4"
+                                            value={user.field5}
+                                            onChange={handleInputChange}
+                                            placeholder={template.config.field[3]} type="text" />
+                                    </div>
+                                    <div className="twelve wide field">
+                                        <label>{template.config.field[4]}</label>
+                                        <input
+                                            name="field5"
+                                            value={user.field5}
+                                            onChange={handleInputChange}
+                                            placeholder={template.config.field[4]} type="text" />
+                                    </div>
+                                    <div className="twelve wide field">
+                                        <label>{template.config.field[5]}</label>
+                                        <input
+                                            name="field6"
+                                            value={user.field6}
+                                            onChange={handleInputChange}
+                                            placeholder={template.config.field[5]} type="text" />
+                                    </div>
+                                    <div className="twelve wide field">
+                                        <label>{template.config.field[6]}</label>
+                                        <input
+                                            name="field7"
+                                            value={user.field7}
+                                            onChange={handleInputChange}
+                                            placeholder={template.config.field[6]} type="text" />
+                                    </div>
 
 
-                                <button className="ui inverted red button">
-                                    Clear
+
+                                    <button className="ui inverted red button">
+                                        Clear
                              </button>
-                                <button className="ui submit inverted green button" type="submit"
-                                    onClick={handleFormSubmit}
-                                >
-                                    Add
+                                    <button className="ui submit inverted green button" type="submit"
+                                        onClick={handleFormSubmit}
+                                    >
+                                        Add
                              </button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+
+                        </form>
+                    </div>
+
 
                 </Col>
             </Row>
             <br></br>
             <row>
-                <button className="ui right floated green button">
-                <Link to="/mydashboard">Finish</Link>
+                <button
+                    onClick={() => saveToDatabase(template)}
+                    className="ui right floated green button">
+                    Finish
                  </button>
             </row>
         </Container>
