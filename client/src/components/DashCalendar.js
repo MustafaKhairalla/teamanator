@@ -1,14 +1,24 @@
-import React from 'react';
-import { Card } from 'reactstrap';
-import '../style/dashboard.css';
-import SimpleReactCalendar from 'simple-react-calendar'
-
-function DashCalendar() {
-  return (
-    <Card>
-      <SimpleReactCalendar/>
-    </Card>
-  )
+import React, { Component } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+ 
+class DashCalendar extends Component {
+  state = {
+    date: new Date(),
+  }
+ 
+  onChange = date => this.setState({ date })
+ 
+  render() {
+    return (
+      <div>
+        <Calendar
+          onChange={this.onChange}
+          value={this.state.date}
+        />
+      </div>
+    );
+  }
 };
 
 export default DashCalendar;
