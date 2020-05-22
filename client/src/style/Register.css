@@ -3,7 +3,7 @@ body{
     background: -webkit-linear-gradient(to right, #E5E5BE, #003973);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #E5E5BE, #003973); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-#card {
+#card-register {
     margin-top: 80px;
 }
 .contact{
@@ -15,6 +15,7 @@ body{
     padding: 4%;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
+    color: white;
 }
 .contact-info{
     margin-top:10%;
@@ -32,7 +33,7 @@ body{
     border-bottom-right-radius: 0.5rem;
 }
 .contact-form label{
-    font-weight:600;
+    font-weight:500;
 }
 .contact-form button{
     background: #222629;
@@ -42,7 +43,4 @@ body{
 }
 .contact-form button:focus{
     box-shadow:none;
-}
-h2,h4 {
-    color: #F58F7C; 
 }

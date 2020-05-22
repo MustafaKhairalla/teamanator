@@ -30,7 +30,6 @@ render() {
         <Route exact path="/mydashboard" render={ Dashboard } />
       </div>
     </Router>
-    <Footer />
     </div>
 
   );

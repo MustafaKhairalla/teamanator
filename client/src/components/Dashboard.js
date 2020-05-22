@@ -6,6 +6,7 @@ import DashCalendar from './DashCalendar';
 import Headerside from './Headerside';
 import Events from './Events';
 import { Container, Row, Col } from 'reactstrap';
+import Footer from './Footer';
 
 function Dashboard() {
     return (
@@ -35,6 +36,7 @@ function Dashboard() {
                 
                 
             </div>
+            <Footer />
         </div>
 
     )
