@@ -17,6 +17,8 @@ body{
     border-bottom-left-radius: 0.5rem;
     color: white;
 }
+.contact-info {
+}
 .contact-info{
     margin-top:10%;
 }
@@ -32,15 +34,14 @@ body{
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
 }
-.contact-form label{
+.contact-form label {
     font-weight:500;
 }
+
 .contact-form button{
     background: #222629;
     color: #fff;
     font-weight: 600;
     width: 25%;
 }
-.contact-form button:focus{
-    box-shadow:none;
-}
+

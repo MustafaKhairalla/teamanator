@@ -3,12 +3,13 @@
     padding-top: 0.5px;
     position: fixed;
 }
-#profile-img {
+img-profile {
     height: 50%;
     width: 80%;
     margin: 20px;
     border-radius: 50%;
 }
+
 #slide-out {
   background-color:#3f3f3f;
   font-family: 'Didact Gothic', sans-serif;

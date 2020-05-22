@@ -1,0 +1,15 @@
+.bg-dark{
+    background-color: #1a1c1d!important;
+  }
+  .dark{
+    background-color: #303131!important;
+  
+  }
+  body {
+    height: 100vh;
+    background-image: url(/images/ori_3440622_422a7b80eb7eda55d14a66b9708a7d130d5b37ad_20-soft-gradient-background-textures.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
+  
+    }
