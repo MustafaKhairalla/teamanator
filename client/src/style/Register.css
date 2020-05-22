@@ -6,18 +6,16 @@ body{
 #card-register {
     margin-top: 80px;
 }
-.contact{
+.contact-register{
     padding: 4%;
     height: 400px;
 }
-.col-md-3{
+.col3 {
     background: #2C2B30;
     padding: 4%;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
     color: white;
-}
-.contact-info {
 }
 .contact-info{
     margin-top:10%;
@@ -25,10 +23,10 @@ body{
 .contact-info img{
     margin-bottom: 15%;
 }
-.contact-info h2{
+.contact-info .h2-register{
     margin-bottom: 10%;
 }
-.col-md-9{
+.col9{
     background: #fff;
     padding: 3%;
     border-top-right-radius: 0.5rem;
@@ -43,5 +41,8 @@ body{
     color: #fff;
     font-weight: 600;
     width: 25%;
+}
+#welcome-text {
+    padding: 5px;
 }
 
