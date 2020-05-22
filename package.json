@@ -29,9 +29,14 @@
     "mongoose-unique-validator": "^2.0.3",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+<<<<<<< HEAD
     "process": "^0.11.10",
     "react-bootstrap": "^1.0.1",
+=======
+    "passport-local-mongoose": "^6.0.1",
+>>>>>>> 5de0adf5b63413558cbd6031cdae84f6e907821f
     "react-card-flip": "^1.0.10",
+    "react-bootstrap": "^1.0.1",
     "react-flip-move": "^3.0.4",
     "react-materialize": "^3.9.1",
     "react-router-dom": "^5.2.0",
