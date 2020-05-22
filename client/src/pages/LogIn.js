@@ -3,11 +3,12 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 import {Container,Row, Jumbotron, Button, Form, Input, FormGroup, Label} from "reactstrap";
 import { Link } from "react-router-dom";
+import Header from "../components/Header";
 
 function LogIn () { 
     return (
             <div className = "app">
-                <Navbar></Navbar>
+                <Header></Header>
                     <Container>
                         <Jumbotron fluid>
                             <Row>
