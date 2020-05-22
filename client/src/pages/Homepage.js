@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import Navbar from "../components/Navbar";
-import Footer from "../components/footer";
 import {Container,Row, Col, Jumbotron, Button, Card} from "reactstrap";
 import ReactCardFlip from 'react-card-flip';
 
@@ -196,8 +195,7 @@ function Homepage () {
                             </video> */}
                             </Row>
                         </Col>
-                    </Row>
-                <Footer></Footer>    
+                    </Row>  
         </div>   
     )
 

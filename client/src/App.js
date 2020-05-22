@@ -9,6 +9,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import M from  'materialize-css/dist/js/materialize.min.js';
 import Header from './components/Header';
 import Register from './components/Register';
+import Footer from './components/Footer';
 
 class App extends Component {
 
@@ -29,6 +30,7 @@ render() {
         <Route exact path="/mydashboard" render={ Dashboard } />
       </div>
     </Router>
+    <Footer />
     </div>
 
   );

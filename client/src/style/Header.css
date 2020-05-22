@@ -1,6 +1,7 @@
 .header {
     background-color: #3f3f3f;
     padding-top: 0.5px;
+    position: fixed;
 }
 #profile-img {
     height: 50%;
@@ -10,11 +11,14 @@
 }
 #slide-out {
   background-color:#3f3f3f;
+  font-family: 'Didact Gothic', sans-serif;
+  color: white;
 }
 #dashboardTitle {
   padding-top: 30px;
   color: white;
 }
+
 
 /*Media Queries for Medium and Lower*/
   @media only screen and (min-width : 992px) {
