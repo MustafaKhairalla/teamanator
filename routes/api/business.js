@@ -20,6 +20,9 @@ router.post("/", (req, res) => {
     //req.body.users.forEach(user=> {
     //
     //})
+
+    newCards = []; 
+    
     const newBusiness = new Business({
         owner: req.user.id, // check check
         firstName: req.body.firstName,
