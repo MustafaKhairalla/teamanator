@@ -17,8 +17,8 @@ function Header() {
                     </ul>
                 </div>
                 </nav> */}
-                <Navbar>
-                    <img src = {`${process.env.PUBLIC_URL}no-outline-01.png`} width ="100%" alt="Temp icon"></img>
+                <Navbar style ={{backgroundColor: "#003973"}}>
+                    <img src = {`${process.env.PUBLIC_URL}no-outline-01.png`} width ="12%" alt="Temp icon"></img>
                 </Navbar>
             </div>
         </HeaderStyle>

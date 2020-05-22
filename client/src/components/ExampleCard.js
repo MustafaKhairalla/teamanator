@@ -11,13 +11,7 @@ const ExampleCard = (props) => {
                 <Card.Body>
                     <Card.Title>
                         <span className="mr-2 ml-2">{props.title} Features
-                               <span
-                                className=" mr-2 ml-3 ui circular green icon button"
-                                style={{ fontSize: "0.7em", color: "black" }}
-                                onClick={props.handleShow}>
-                                {/* <i className="fas fa-check fa-lg"></i> */}
-                               Select
-                           </span></span>
+                          </span>
                     </Card.Title>
                         <Card.Text>
                             <ul>
