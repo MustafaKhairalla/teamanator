@@ -18,7 +18,7 @@ function Header() {
                 </div>
                 </nav> */}
                 <Navbar>
-                    <img src = {`${process.env.PUBLIC_URL}no-outline-01.png`} width ="100%"alt="Temp icon"></img>
+                    <img src = {`${process.env.PUBLIC_URL}no-outline-01.png`} width ="100%" alt="Temp icon"></img>
                 </Navbar>
             </div>
         </HeaderStyle>
