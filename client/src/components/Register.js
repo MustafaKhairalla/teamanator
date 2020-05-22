@@ -10,7 +10,7 @@ class Register extends Component {
 	            <div className="row">
 		            <div className="col-md-3 col3">
 			            <div className="contact-info">
-                        <img src="https://img.icons8.com/ios/50/000000/login-rounded-right.png"/>
+                        <img className="img-register" src="https://img.icons8.com/ios/50/000000/login-rounded-right.png"/>
 				            <h3 id="welcome-text">WELCOME, LET'S BEGIN!</h3>
 				            <h4>We need some basic info from you...</h4>
 			            </div>

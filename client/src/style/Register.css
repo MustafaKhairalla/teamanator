@@ -20,10 +20,10 @@ body{
 .contact-info{
     margin-top:10%;
 }
-.contact-info img{
+.contact-info, .img-register{
     margin-bottom: 15%;
 }
-.contact-info .h2-register{
+.contact-info, .h2-register{
     margin-bottom: 10%;
 }
 .col9{
@@ -32,11 +32,11 @@ body{
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
 }
-.contact-form label {
+.contact-form {
     font-weight:500;
 }
 
-.contact-form button{
+.contact-form, .button1 {
     background: #222629;
     color: #fff;
     font-weight: 600;
