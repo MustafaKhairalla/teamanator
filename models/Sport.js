@@ -7,46 +7,60 @@ const SportSchema = new Schema({
     owner: {
         type: String
     },
-    img: {
-        data: Buffer,
-        contentType: String
-    },
 
-    firstName: {
+    Name: {
         type: String,
-        required: true
-    },
-
-    lastName: {
-        type: String,
-        required: true
+        required: false
     },
 
     age: {
         type: String,
-        required: true
+        required: false
     },
 
     division: {
         type: String,
-        required: true
+        required: false
     },
 
     position: {
         type: String,
-        required: true
+        required: false
     },
 
     phoneNumber: {
         type: String,
-        required: true
+        required: false
     },
 
     email: {
         type: String,
-        required: true,
+        required: false,
         unique: true
     },
+
+    address: {
+        street: {
+            type: String,
+            required: false
+        },
+
+        city: {
+            type: String,
+            required: false
+        },
+
+        state: {
+            type: String,
+            required: false
+        },
+
+        zipCode: {
+            type: Number,
+            required: false
+        }
+
+    }
 });
 
 SportSchema.plugin(mongooseUniqueValidator);
