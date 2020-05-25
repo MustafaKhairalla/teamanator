@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 import {Container,Row, Jumbotron, Button, Form, Input, FormGroup, Label} from "reactstrap";
@@ -21,7 +21,7 @@ function LogIn () {
                                         <Label for="examplePassword">Password</Label>
                                         <Input type="password" name="password" id="examplePassword" placeholder="email" />
                                     </FormGroup>
-                                    <Button><Link to="/template">LogIn</Link></Button>
+                                    <Button  onClick><Link to="/template">LogIn</Link></Button>
                                 </Form>
                             </Row>
                         </Jumbotron>

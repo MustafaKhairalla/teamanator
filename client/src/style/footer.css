@@ -1,0 +1,17 @@
+#footer-main {
+    background-color: #005ab4;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Didact Gothic', sans-serif;
+}
+#thank-you {
+    padding-left: 295px;
+    padding-top: 5px;
+}
+#duck-bio {
+    font-size: small;
+    text-justify: auto;
+}

@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Header from "../components/Header"
 import Footer from "../components/footer";
+import Navbar from "../components/Navbar";
 import {Container,Row, Col, Jumbotron, Button, Card} from "reactstrap";
 import ReactCardFlip from 'react-card-flip';
 
@@ -24,15 +25,15 @@ function Homepage () {
     return(
         <div className= "App">
              <Header></Header>
-                    <Row>
+                   <Row>
                     <Col md={3}>
+                        <button></button>
                         <div style ={{backgroundColor: "#9C9C9C"}}>
                         <img bottom width = "100%" src = {`${process.env.PUBLIC_URL}Info 1.png`} alt="Temp icon" />
                         </div>
                     </Col>
                     <Col md={9}>
                             <Row>
-                            
                                 <Container fluid>
                                 <h1 className="display-3">Teamanator</h1>
                                 <h4 className="lead">Teamanator is THE solution for all your team management needs. 
@@ -41,7 +42,6 @@ function Homepage () {
                                                     </h4>
                                 <Button><Link to="/login">Create an Account</Link></Button>
                                 </Container>
-                            
                         </Row>
                         <Row>
                             <Col md={3}>

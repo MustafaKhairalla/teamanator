@@ -6,12 +6,15 @@ import Home from "./pages/Homepage.js";
 import LogIn from "./pages/LogIn"
 import Headerside from './components/Headerside';
 import Dashboard from './components/Dashboard';
+import 'materialize-css/dist/css/materialize.min.css';
 import M from  'materialize-css/dist/js/materialize.min.js';
-import Header from './components/Header';
+// import Header from './components/Header';
+import Register from './components/Register';
+// import Footer from './components/Footer';
 
 class App extends Component {
 
-  componentDidMount = () => {
+componentDidMount = () => {
     let sidenav = document.querySelector('#slide-out');
     M.Sidenav.init(sidenav, {});
   }
@@ -20,13 +23,14 @@ render() {
     <div>
     {/* <Header /> */}
     <Router>
-      <div >
-        <Route exact path="/" component={Home} />
+      <div>
+        <Route exact path="/" component={ Home }/>
+        <Route exact path="/template" component={ ChooseTemplate } />
+        <Route exact path="/member" component={ MemberBuild } />
+        <Route exact path="/register" component={ Register } />
         <Route exact path="/login" component={LogIn} />
         <Route exact path="/template" component={ChooseTemplate} />
-        <Route exact path="/member" component={MemberBuild} />
         <Route exact path="/mydashboard" render={ Dashboard } />
-
       </div>
     </Router>
     </div>

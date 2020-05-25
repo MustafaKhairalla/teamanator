@@ -25,21 +25,23 @@
     "concurrently": "^5.2.0",
     "express": "^4.17.1",
     "materialize-css": "^1.0.0-rc.2",
+    "moment": "^2.26.0",
     "mongoose": "^5.9.12",
     "mongoose-unique-validator": "^2.0.3",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "process": "^0.11.10",
+    "react-big-calendar": "^0.24.6",
     "react-bootstrap": "^1.0.1",
+    "react-calendar": "^3.1.0",
     "passport-local-mongoose": "^6.0.1",
     "react-card-flip": "^1.0.10",
+    "react-bootstrap": "^1.0.1",
     "react-flip-move": "^3.0.4",
     "react-materialize": "^3.9.1",
     "react-router-dom": "^5.2.0",
     "react-strap": "0.0.1",
     "reactstrap": "^8.4.1",
-    "simple-react-calendar": "^2.2.1",
-    "styled-components": "^5.1.0"
+    "simple-react-calendar": "^2.2.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
