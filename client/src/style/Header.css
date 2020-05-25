@@ -1,9 +1,9 @@
-.header {
+.header1 {
     background-color: #3f3f3f;
     padding-top: 0.5px;
     position: fixed;
 }
-img-profile {
+#profile-img {
     height: 50%;
     width: 80%;
     margin: 20px;

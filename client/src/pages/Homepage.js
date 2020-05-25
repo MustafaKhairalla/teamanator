@@ -4,7 +4,7 @@ import Footer from "../components/footer";
 import Navbar from "../components/Navbar";
 import {Container,Row, Col, Jumbotron, Button, Card} from "reactstrap";
 import ReactCardFlip from 'react-card-flip';
-
+import Header from '../components/Header';
 import ExampleCard from "../components/ExampleCard";
 import { Link, useLocation } from "react-router-dom";
 
@@ -24,44 +24,45 @@ function Homepage () {
 
     return(
         <div className= "App">
-             <Header>       
+             <Header> <Header />     
                  <Button style ={{backgroundColor: "#9C9C9C", float:"right",}}>Log-in</Button>
                  </Header>
                    <Row>
-                    <Col md={3} style ={{backgroundColor: "#9C9C9C"}}>
-                        <div>
-                            <ReactCardFlip isFlipped={flipping.isFlipped} flipDirection="horizontal">
-                                        <ExampleCard handleClick={handleClick} /> 
-                                        <ExampleCard handleClick={handleClick} />
-                                    </ReactCardFlip>
-                            </div>  
-                            <img bottom width = "80%" src = {`${process.env.PUBLIC_URL}/images/Info1.png`} alt="Temp icon" style ={{margin: "3em"}} />
-                            <img bottom width = "80%" src = {`${process.env.PUBLIC_URL}/images/Info2.png`} alt="Temp icon" style ={{margin: "3em"}} />
-                            <img bottom width = "80%" src = {`${process.env.PUBLIC_URL}/images/Info3.png`} alt="Temp icon" style ={{margin: "3em"}}/>       
-                    </Col>
-                    <Col md={9}>
-                            <Row>
-                                <Container fluid>
-                                <h1 className="display-3">Teamanator</h1>
-                         
-                                <h4 className="lead">Teamanator is THE solution for all your team management needs. 
-                                                    What! All my needs are met with this one app! 
-                                                    Good point, maybe not all your needs but it is a darn good app! 
-                                                    </h4>
-                                <Button><Link to="/login">Create an Account</Link></Button>
+                        <Col md={3} style ={{backgroundColor: "#9C9C9C"}}>
+                            <div>
+                                <ReactCardFlip isFlipped={flipping.isFlipped} flipDirection="horizontal">
+                                            <ExampleCard handleClick={handleClick} /> 
+                                            <ExampleCard handleClick={handleClick} />
+                                        </ReactCardFlip>
+                                </div>  
+                                <img bottom width = "80%" src = {`${process.env.PUBLIC_URL}/images/Info1.png`} alt="Temp icon" style ={{margin: "3em"}} />
+                                <img bottom width = "80%" src = {`${process.env.PUBLIC_URL}/images/Info2.png`} alt="Temp icon" style ={{margin: "3em"}} />
+                                <img bottom width = "80%" src = {`${process.env.PUBLIC_URL}/images/Info3.png`} alt="Temp icon" style ={{margin: "3em"}}/>       
+                        </Col>
+                    </Row>
+                     <Row>
+                        <Col md={9}>
+                            <Jumbotron fluid>
+                                    <Container fluid>
+                                    <h1 className="display-3">Teamanator</h1>
+                            
+                                    <h4 className="lead">Teamanator is THE solution for all your team management needs. 
+                                                        What! All my needs are met with this one app! 
+                                                        Good point, maybe not all your needs but it is a darn good app! 
+                                                        </h4>
+                                    <Button><Link to="/login">Create an Account</Link></Button>
                                 </Container>
+                            </Jumbotron>
+                            </Col>
                         </Row>
                         <Row>
-                    
-                                <Row>
-                                    <Col md= {8}>
-                                        <h5>Do you need to organize all the tiny monsters on your son's soccer team? 
-                                            Do you have multiple Clients that you need to track? 
-                                            What about all those pesky employees to keep track of?  
-                                            Well now you can choose the right template for your team.
-                                                Because each team is different right? </h5>
-                                            
-                                    </Col>
+                            <Col md= {8}>
+                                <h5>Do you need to organize all the tiny monsters on your son's soccer team? 
+                                    Do you have multiple Clients that you need to track? 
+                                    What about all those pesky employees to keep track of?  
+                                    Well now you can choose the right template for your team.
+                                        Because each team is different right? </h5>
+                                </Col>
                                     <Col md= {4}>
                                         <img bottom width = "65%" src = {`${process.env.PUBLIC_URL}/images/IconA.png`} alt="Temp icon" />
                                     </Col>
@@ -95,12 +96,8 @@ function Homepage () {
                                     Your browser does not support the video tag.
                                 </video> */}
                                 </Row>
-                            
-                            </Row>
-                        </Col>
-                     </Row>   
-                <Footer></Footer>    
-        </div>   
+                <Footer></Footer>     
+            </div>  
     )
 
 }
