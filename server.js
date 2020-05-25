@@ -38,13 +38,13 @@ app.use("/api/fitness", fitness);
 app.use("/api/sport", sport);
 
 // If no API routes are hit, send the React app
-app.use(function (req, res) {
-    res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
+// app.use(function (req, res) {
+//     // res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// });
 
 
 // setup server port
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3001;
 
 //setup server litener
 app.listen(port, () => console.log(`server is started on port ${port}`));
