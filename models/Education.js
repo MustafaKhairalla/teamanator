@@ -7,49 +7,40 @@ const EducationSchema = new Schema({
     owner: {
         type: String
     },
-    img: {
-        data: Buffer,
-        contentType: String
-    },
 
-    firstName: {
+    Name: {
         type: String,
-        required: true
-    },
-
-    lastName: {
-        type: String,
-        required: true
+        required: false
     },
 
     program: {
         type: String,
-        required: true
+        required: false
     },
 
     languages: [{
         type: String,
-        required: true
+        required: false
     }],
 
     educationLevel: {
         type: String,
-        required: true
+        required: false
     },
 
     GPA: {
         type: Number,
-        required: true
+        required: false
     },
 
     phoneNumber: {
         type: String,
-        required: true
+        required: false
     },
 
     email: {
         type: String,
-        required: true,
+        required: false,
         unique: true
     },
 });
