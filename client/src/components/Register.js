@@ -5,7 +5,7 @@ function Register() {
     return (
         <section>
             
-            <div id="card" className="container contact">
+            <div id="card-register" className="container contact">
 	            <div className="row">
 		            <div className="col-md-3">
 			            <div className="contact-info">

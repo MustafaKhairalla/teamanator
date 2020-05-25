@@ -53,7 +53,7 @@ class Todo extends Component {
                 <CardBody>
                     <CardTitle>To-Do List</CardTitle>
                         <div className="todoListMain">
-                            <div className="header">
+                            <div className="header-todo">
                                 <Form onSubmit={this.addItem}>
                                     <input ref={(a) => this._inputElement = a}
                                     placeholder="Add an Item">
@@ -61,6 +61,7 @@ class Todo extends Component {
                                     <Button color="secondary" type="submit">Submit</Button>
                                 </Form>
                             </div>
+                            <br />
                             <TodoItems entries={this.state.items}
                             delete={this.deleteItem} />
                         </div>

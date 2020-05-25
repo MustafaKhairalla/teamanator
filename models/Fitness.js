@@ -7,51 +7,43 @@ const FitnessSchema = new Schema({
     owner: {
         type: String
     },
-    img: {
-        data: Buffer,
-        contentType: String
-    },
 
-    firstName: {
+    Name: {
         type: String,
-        required: true
-    },
-
-    lastName: {
-        type: String,
-        required: true
+        required: false
     },
 
     age: {
         type: String,
-        required: true
+        required: false
     },
 
     weight: {
         type: String,
-        required: true
+        required: false
     },
 
     goal: {
         type: String,
-        required: true
+        required: false
+    },
+    notes: {
+        type: String,
+        required: false
     },
 
     phoneNumber: {
         type: String,
-        required: true
+        required: false
     },
 
     email: {
         type: String,
-        required: true,
+        required: false,
         unique: true
     },
 
-    notes: {
-        type: String,
-        required: true
-    },
+
 });
 
 FitnessSchema.plugin(mongooseUniqueValidator);

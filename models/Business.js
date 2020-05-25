@@ -8,66 +8,56 @@ const BusinessSchema = new Schema({
         type: String
     },
 
-    img: {
-        data: Buffer,
-        contentType: String
-    },
-
-    firstName: {
+    Name: {
         type: String,
-        required: true
-    },
-
-    lastName: {
-        type: String,
-        required: true
+        required: false
     },
 
     title: {
         type: String,
-        required: true
+        required: false
     },
 
     salary: {
         type: Number,
-        required: true
+        required: false
     },
 
     department: {
         type: String,
-        required: true
+        required: false
     },
 
     phoneNumber: {
         type: String,
-        required: true
+        required: false
     },
 
     email: {
         type: String,
-        required: true,
+        required: false,
         unique: true
     },
 
     address: {
         street: {
             type: String,
-            required: true
+            required: false
         },
 
         city: {
             type: String,
-            required: true
+            required: false
         },
 
         state: {
             type: String,
-            required: true
+            required: false
         },
 
         zipCode: {
             type: Number,
-            required: true
+            required: false
         }
 
     }

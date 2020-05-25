@@ -1,16 +1,44 @@
-import React from "react";
-import {Row, Container} from "reactstrap";
+import React from 'react';
+import '../style/footer.css';
+import { Container, Row, Col } from 'reactstrap';
 
-function Footer () {
-    return(
-        <div style={{ backgroundColor: '#58595B'}}>
-            <Container fluid>
-                <Row>
-                <p>footer</p>
-                </Row>
-            </Container>
+function Footer() {
+    return (
+        <div id="footer-main">
+            <Row  id="thank-you">
+                <Col className="text-left">
+                    <h6>More to Explore</h6>
+                    <ul className="text-left">
+                        <li>
+                            <a href="https://tripoint.herokuapp.com/">TriPoints</a>
+                        </li>
+                        <li>
+                            <a href="https://mustafakhairalla.github.io/duck-duck-code/">Foodecipe</a>
+                        </li>
+                    </ul>
+                </Col>
+                <Col className="text-left">
+                    <h6>Team Duck</h6>
+                <p id="duck-bio">Team Duck is a highly-talented group of young, coding professionals from the University of Denver's coding bootcamp.
+                    We specialize in making functional and beautiful web applications.
+                </p>
+
+                </Col>
+                <Col className="text-left">
+                    <h6>Meet the Team</h6>
+                    <ul id="duck-bio">
+                        <li>Amy Altman</li>
+                        <li>Cristian Robinson</li>
+                        <li>Elena Demidionok</li>
+                        <li>Mustafa Khairalla</li>
+                        <li>Jake Petersen</li>
+                    </ul>
+
+                </Col>
+
+            </Row>
         </div>
     )
-}
+};
 
-export default Footer
+export default Footer;

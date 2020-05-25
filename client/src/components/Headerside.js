@@ -1,29 +1,24 @@
 import React from 'react';
 import '../style/Header.css';
 import { Button } from 'reactstrap';
+import 'materialize-css/dist/css/materialize.min.css';
 
 function Headerside() {
     return (
         <div>
-        <nav>
-            <div className="container">
-                <a href="#" data-target="slide-out" className="sidenav-trigger show-on-medium"><i class="material-icons">menu</i></a>
-                {/* <ul id="nav-mobile" className="right hide-on-med-and-down">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                </ul> */}
-                <h1 className="center">Teamanator</h1>
-            </div>
+        <nav className="header">
+            <img src="./logo.png" alt="logo"/>
+                <a href="#" data-target="slide-out" className="sidenav-trigger show-on-medium"><i className="material-icons">menu</i></a>
         </nav>
         <ul id="slide-out" className="sidenav sidenav-fixed invisible-top">
             <div id="sidenav-container" className="container">
-                <h3>My Dashboard</h3>
-                <img src="https://getuikit.com/docs/images/avatar.jpg" alt="profile" />
+                <h5 id="dashboardTitle"className="text-center">My Dashboard</h5>
+                <img id="profile-img" src="https://getuikit.com/docs/images/avatar.jpg" alt="profile" />
                 <hr />
-                <h5>Welcome, -insert name here - </h5>
+                <h5>Welcome, </h5>
                 <br />
                 <Button color="secondary" size="sm" block>Add New Employee</Button>
-                <Button color="secondary" size="sm" block>Another Button</Button>
+                <Button color="secondary" size="sm" block>Remove Employee</Button>
                 <Button color="secondary" size="sm" block>Another Button</Button>
                 <Button color="danger" size="sm" block>Sign OUt</Button>
             </div>
