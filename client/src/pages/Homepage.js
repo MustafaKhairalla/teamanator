@@ -24,18 +24,26 @@ function Homepage () {
 
     return(
         <div className= "App">
-             <Header></Header>
+             <Header>       
+                 <Button style ={{backgroundColor: "#9C9C9C", float:"right",}}>Log-in</Button>
+                 </Header>
                    <Row>
-                    <Col md={3}>
-                        <button></button>
-                        <div style ={{backgroundColor: "#9C9C9C"}}>
-                        <img bottom width = "100%" src = {`${process.env.PUBLIC_URL}Info 1.png`} alt="Temp icon" />
-                        </div>
+                    <Col md={3} style ={{backgroundColor: "#9C9C9C"}}>
+                        <div>
+                            <ReactCardFlip isFlipped={flipping.isFlipped} flipDirection="horizontal">
+                                        <ExampleCard handleClick={handleClick} /> 
+                                        <ExampleCard handleClick={handleClick} />
+                                    </ReactCardFlip>
+                            </div>  
+                            <img bottom width = "80%" src = {`${process.env.PUBLIC_URL}/images/Info1.png`} alt="Temp icon" style ={{margin: "3em"}} />
+                            <img bottom width = "80%" src = {`${process.env.PUBLIC_URL}/images/Info2.png`} alt="Temp icon" style ={{margin: "3em"}} />
+                            <img bottom width = "80%" src = {`${process.env.PUBLIC_URL}/images/Info3.png`} alt="Temp icon" style ={{margin: "3em"}}/>       
                     </Col>
                     <Col md={9}>
                             <Row>
                                 <Container fluid>
                                 <h1 className="display-3">Teamanator</h1>
+                         
                                 <h4 className="lead">Teamanator is THE solution for all your team management needs. 
                                                     What! All my needs are met with this one app! 
                                                     Good point, maybe not all your needs but it is a darn good app! 
@@ -44,16 +52,7 @@ function Homepage () {
                                 </Container>
                         </Row>
                         <Row>
-                            <Col md={3}>
-                            <ReactCardFlip isFlipped={flipping.isFlipped} flipDirection="horizontal">
-                                        <ExampleCard handleClick={handleClick} /> 
-                                        <ExampleCard handleClick={handleClick} />
-                                    </ReactCardFlip>
-                                <div>
-                                    <img scr=""></img>
-                                </div>
-                            </Col>
-                            <Col md={9}>
+                    
                                 <Row>
                                     <Col md= {8}>
                                         <h5>Do you need to organize all the tiny monsters on your son's soccer team? 
@@ -64,12 +63,12 @@ function Homepage () {
                                             
                                     </Col>
                                     <Col md= {4}>
-                                        <img bottom width = "75%" src = {`${process.env.PUBLIC_URL}IconA.png`} alt="Temp icon" />
+                                        <img bottom width = "65%" src = {`${process.env.PUBLIC_URL}/images/IconA.png`} alt="Temp icon" />
                                     </Col>
                                 </Row>
                                 <Row>
                                 <Col md= {4}>
-                                        <img bottom width = "75%" src = {`${process.env.PUBLIC_URL}IconA.png`} alt="Temp icon" />
+                                        <img bottom width = "65%" src = {`${process.env.PUBLIC_URL}/images/IconB.png`} alt="Temp icon" />
                                     </Col>
                                 <Col md= {8}>
                                         <h5>Management extends beyond just knowing who is on your team. 
@@ -85,7 +84,7 @@ function Homepage () {
                                             Need a very specific template? Use our custom team member builder (coming soon). </h5>   
                                     </Col>
                                     <Col md= {4}>
-                                        <img bottom width = "75%" src = {`${process.env.PUBLIC_URL}IconA.png`} alt="Temp icon" />
+                                        <img bottom width = "65%" src = {`${process.env.PUBLIC_URL}/images/IconC.png`} alt="Temp icon" />
                                     </Col>
                                 </Row>
                                 <Row><Button color="secondary" size="lg" block><Link to="/login">Create an Account</Link></Button> </Row>
@@ -96,7 +95,7 @@ function Homepage () {
                                     Your browser does not support the video tag.
                                 </video> */}
                                 </Row>
-                                </Col>
+                            
                             </Row>
                         </Col>
                      </Row>   
