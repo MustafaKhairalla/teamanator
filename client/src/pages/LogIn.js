@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import Footer from "../components/footer";
+
 import {Container,Row, Jumbotron, Button, Form, Input, FormGroup, Label} from "reactstrap";
 import { Link } from "react-router-dom";
 
@@ -25,7 +25,7 @@ function LogIn () {
                             </Row>
                         </Jumbotron>
                     </Container>
-                <Footer></Footer>
+
             </div>
 
 )

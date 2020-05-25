@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../style/Register.css';
 
-function Register() {
+class Register extends Component {
+	render() {
     return (
         <section>
             
-            <div id="card-register" className="container contact">
+            <div id="card-register" className="container contact-register">
 	            <div className="row">
-		            <div className="col-md-3">
+		            <div className="col-md-3 col3">
 			            <div className="contact-info">
-                        <img src="https://img.icons8.com/ios/50/000000/login-rounded-right.png"/>
-				            <h2>WELCOME, LET'S BEGIN!</h2>
+                        <img className="img-register" src="https://img.icons8.com/ios/50/000000/login-rounded-right.png"/>
+				            <h3 id="welcome-text">WELCOME, LET'S BEGIN!</h3>
 				            <h4>We need some basic info from you...</h4>
 			            </div>
 		            </div>
-		            <div className="col-md-9">
+		            <div className="col-md-9 col9">
 			            <div className="contact-form">
 				            <div className="form-group">
 				            <label className="control-label col-sm-2" for="fname">First Name:</label>
@@ -47,5 +48,6 @@ function Register() {
 
     )
 };
+}
 
 export default Register;

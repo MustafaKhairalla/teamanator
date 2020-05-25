@@ -6,7 +6,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 function Headerside() {
     return (
         <div>
-        <nav className="header">
+        <nav className="header1">
             <img src="./logo.png" alt="logo"/>
                 <a href="#" data-target="slide-out" className="sidenav-trigger show-on-medium"><i className="material-icons">menu</i></a>
         </nav>

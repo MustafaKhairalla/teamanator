@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Navbar from "../components/Navbar";
 import {Container,Row, Col, Jumbotron, Button, Card} from "reactstrap";
 import ReactCardFlip from 'react-card-flip';
-
+import Header from '../components/Header';
 import ExampleCard from "../components/ExampleCard";
 import EducationCard from "../components/EducationCard";
 import BusinessCard from "../components/BusinessCard";
@@ -53,8 +53,9 @@ function Homepage () {
     }
 
     return(
+        <div>
+            <Header />
         <div className= "App">
-             <Navbar></Navbar>
                      <Row>
                         <Col md={9}>
                             <Jumbotron fluid>
@@ -196,6 +197,7 @@ function Homepage () {
                             </Row>
                         </Col>
                     </Row>  
+            </div>
         </div>   
     )
 
