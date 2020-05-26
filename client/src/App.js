@@ -4,7 +4,6 @@ import ChooseTemplate from "./pages/ChooseTemplate";
 import MemberBuild from "./pages/MemberBuild";
 import Home from "./pages/Homepage.js";
 import LogIn from "./pages/LogIn"
-import Headerside from './components/Headerside';
 import Dashboard from './components/Dashboard';
 import Header from './components/Header';
 import Register from './components/Register';

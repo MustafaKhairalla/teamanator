@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button } from 'reactstrap';
-import '../style/Header.css';
+import { HeaderStyle } from '../style/index.js';
 
 function Sidebar() {
     return (
+        <HeaderStyle>
         <section id="slide-out">
             <ul id="side-content">
                 <h5 id="dashboardTitle"className="text-center">My Dashboard</h5>
@@ -17,6 +18,7 @@ function Sidebar() {
                 <Button color="danger" size="sm" block>Sign Out</Button>
         </ul>
         </section>
+        </HeaderStyle>
     )
 };
 
