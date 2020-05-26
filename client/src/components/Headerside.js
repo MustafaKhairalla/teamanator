@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style/Header.css';
 import { Button } from 'reactstrap';
-import 'materialize-css/dist/css/materialize.min.css';
+// import 'materialize-css/dist/css/materialize.min.css';
 
 function Headerside() {
     return (

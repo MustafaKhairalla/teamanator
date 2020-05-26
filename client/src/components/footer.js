@@ -1,9 +1,10 @@
 import React from 'react';
-import '../style/footer.css';
 import { Container, Row, Col } from 'reactstrap';
+import { FooterStyle } from '../style/index';
 
 function Footer() {
     return (
+        <FooterStyle>
         <div id="footer-main">
             <Row  id="thank-you">
                 <Col className="text-left">
@@ -38,6 +39,7 @@ function Footer() {
 
             </Row>
         </div>
+        </FooterStyle>
     )
 };
 

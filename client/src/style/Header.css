@@ -1,7 +1,8 @@
-.header1 {
+.header-main {
     background-color: #3f3f3f;
-    padding-top: 0.5px;
     position: fixed;
+    width: 100%;
+    padding: 10px;
 }
 #profile-img {
     height: 50%;
@@ -9,26 +10,34 @@
     margin: 20px;
     border-radius: 50%;
 }
+#side-content {
+  margin-left: 0px;
+  margin-right: 35px;
+}
 
 #slide-out {
-  background-color:#3f3f3f;
-  font-family: 'Didact Gothic', sans-serif;
-  color: white;
+    height: 100%;
+    width: 260px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #3f3f3f;
+    overflow-x: hidden;
+    padding-top: 20px;
 }
 #dashboardTitle {
   padding-top: 30px;
   color: white;
 }
 
-
-/*Media Queries for Medium and Lower*/
   @media only screen and (min-width : 992px) {
     .invisible-top {
       top: 64px;
     }
   }
 
-/*Media Queries for Small*/
+
 @media only screen and (max-width : 992px) {
     .container-main {
         padding-left: 20px;
