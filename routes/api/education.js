@@ -16,21 +16,28 @@ router.get("/", (req, res) => {
 // @desc  Create education card
 
 router.post("/", (req, res) => {
-    const newEducation = new Education({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        email: req.body.email, // check order
-        program: req.body.program,
-        languages: req.body.languages, // check for array
-        educationLevel: req.body.educationLevel,
-        phoneNumber: req.body.phoneNumber,
-        GPA: req.body.gpa
-    });
 
-    newEducation.save()
-        .then(education => res.json(education))
-        .catch(err => res.status(404).json({ err }));
-});
+    let newCards = req.body;
+
+    newCards.forEach(o => {
+        const newEducation = new Education({
+            owner: req.user.id,
+            Name: o.field1 ? o.field1 : "unlisted",
+            program: o.field2 ? o.field2 : "unlisted",
+            languages: o.field3 ? o.field3 : "unlisted",
+            educationLevel: o.field4 ? o.field4 : "unlisted",
+            GPA: o.field5 ? o.field5 : "unlisted",
+            phoneNumber: o.field6 ? o.field6 : "unlisted",
+            email: o.field7 ? o.field7 : "unlisted"
+        }); // end constructor 
+
+        newEducation.save()
+            .catch(err => res.status(404).json({ err }));
+
+    }); // end loop
+
+    return res.json({ status: 'ok' })
+});// end post route
 
 
 // @route DELETE api/education/:id

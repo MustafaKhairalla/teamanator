@@ -17,45 +17,29 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
 
-    let newCards = req.body; 
-    
-    
-    console.log(req );
+    let newCards = req.body;
+
+
+    console.log(req);
 
     newCards.forEach(o => {
         const newFitness = new Fitness({
-            firstName: o.field1 ? o.field1:"unlisted",
-            lastName: o.field2 ? o.field2:"unlisted",
-            email: o.field3 ? o.field3:"unlisted", // check order
-            age: o.field4 ? o.field4:"unlisted",
-            weight: o.field5 ? o.field5:"unlisted",  // check for array
-            goal: o.field6 ? o.field6:"unlisted",
-            phoneNumber: o.field7 ? o.field7:"unlisted",
-            notes: o.field8 ? o.field8:"unlisted"
-        });
+            owner: req.user.id,
+            Name: o.field1 ? o.field1 : "unlisted",
+            email: o.field2 ? o.field2 : "unlisted", // check order
+            age: o.field3 ? o.field3 : "unlisted",
+            weight: o.field4 ? o.field4 : "unlisted",  // check for array
+            goal: o.field5 ? o.field5 : "unlisted",
+            phoneNumber: o.field6 ? o.field6 : "unlisted",
+            notes: o.field7 ? o.field7 : "unlisted"
+        }); // end of constructor
         console.log("saving new card")
-        newFitness.save().catch(err => res.status(404).json({err}) );
-       
-    })
-     return res.json({status: 'ok'})
-     
+        newFitness.save().catch(err => res.status(404).json({ err }));
 
-    
-    // const newFitness = new Fitness({
-    //     firstName: req.body.firstName,
-    //     lastName: req.body.lastName,
-    //     email: req.body.email, // check order
-    //     age: req.body.age,
-    //     weight: req.body.weight, // check for array
-    //     goal: req.body.goal,
-    //     phoneNumber: req.body.phoneNumber,
-    //     notes: req.body.notes
-    // });
+    }) // end loop
+    return res.json({ status: 'ok' })
 
-
-    // newFitness.save()
-    //     .then(fitness => res.json(fitness)).catch(err => res.status(404).json({err}));
-});
+}); // end post route -------
 
 
 // @route DELETE api/fitness/:id
