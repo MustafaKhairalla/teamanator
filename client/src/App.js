@@ -4,12 +4,15 @@ import ChooseTemplate from "./pages/ChooseTemplate";
 import MemberBuild from "./pages/MemberBuild";
 import Home from "./pages/Homepage.js";
 import LogIn from "./pages/LogIn"
-import Headerside from './components/Headerside';
 import Dashboard from './components/Dashboard';
+<<<<<<< HEAD
 // import 'materialize-css/dist/css/materialize.min.css';
 // import M from 'materialize-css/dist/js/materialize.min.js';
+=======
+>>>>>>> ec12e6a5756008117602b3b891d661a1277ec803
 import Header from './components/Header';
 import Register from './components/Register';
+
 
 
 class App extends Component {
@@ -18,6 +21,7 @@ class App extends Component {
     // Don't call this.setState() here!
     this.state = { userId: null };
 
+<<<<<<< HEAD
   }
 
   // componentDidMount = () => {
@@ -42,6 +46,21 @@ class App extends Component {
 
           </div>
         </Router>
+=======
+render() {
+  
+  return (
+    <div>
+    <Router>
+      <div>
+        <Route exact path="/" component={ Home }/>
+        <Route exact path="/template" component={ ChooseTemplate } />
+        <Route exact path="/member" component={ MemberBuild } />
+        <Route exact path="/register" component={ Register } />
+        <Route exact path="/login" component={LogIn} />
+        <Route exact path="/template" component={ChooseTemplate} />
+        <Route exact path="/mydashboard" render={ Dashboard } />
+>>>>>>> ec12e6a5756008117602b3b891d661a1277ec803
       </div>
 
     );

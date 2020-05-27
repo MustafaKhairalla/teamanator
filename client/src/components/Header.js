@@ -1,19 +1,14 @@
 import React from 'react';
-import '../style/Header.css';
+import { HeaderStyle } from '../style/index.js';
 
 function Header() {
     return (
-        <div>
-        <nav className="header1">
-            <div className="container">
-                <ul id="nav-mobile" className="right hide-on-med-and-down">
-                    
-
-                </ul>
-            </div>
+        <HeaderStyle>
+        <nav className="header-main">
+            <h1>Teamanator</h1>
+            <img src="./logo.png" alt="logo" />
         </nav>
-
-        </div>
+        </HeaderStyle>
         
     )
 };

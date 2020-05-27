@@ -39,7 +39,9 @@
     "react-router-dom": "^5.2.0",
     "react-strap": "0.0.1",
     "reactstrap": "^8.4.1",
-    "simple-react-calendar": "^2.2.1"
+    "rsuite": "^4.7.0",
+    "simple-react-calendar": "^2.2.1",
+    "styled-components": "^5.1.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"

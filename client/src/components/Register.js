@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import '../style/Register.css';
+import { RegisterStyle } from '../style/index.js';
 
 class Register extends Component {
 	render() {
     return (
-        <section>
+        <RegisterStyle>
             
             <div id="card-register" className="container contact-register">
 	            <div className="row">
@@ -44,7 +44,7 @@ class Register extends Component {
 		</div>
 	</div>
 </div>
-</section>
+</RegisterStyle>
 
     )
 };
