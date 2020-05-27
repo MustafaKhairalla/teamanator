@@ -16,18 +16,25 @@ router.get("/", (req, res) => {
 // @desc  Create sport card
 
 router.post("/", (req, res) => {
-    const newSport = new Sport({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        email: req.body.email, // check order
-        age: req.body.age,
-        division: req.body.division, // check for array
-        position: req.body.position,
-        phoneNumber: req.body.phoneNumber,
-    });
 
-    newSport.save()
-        .then(sport => res.json(sport));
+    let newCards = req.body;
+
+    newCards.forEach(o => {
+        const newSport = new Sport({
+            owner: req.user.id,
+            Name: o.field1 ? o.field1 : "unlisted",
+            age: o.field2 ? o.field2 : "unlisted",
+            division: o.field3 ? o.field3 : "unlisted",
+            position: o.field4 ? o.field4 : "unlisted",
+            phoneNumber: o.field5 ? o.field5 : "unlisted",
+            email: o.field6 ? o.field6 : "unlisted",
+            address: o.field7 ? o.field7 : "unlisted"
+        }); // end constructor 
+
+        newSport.save()
+            .then(sport => res.json(sport));
+    }); // end loop
+    return res.json({ status: 'ok' })
 });
 
 
