@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./page.css";
-
 import BusinessCard from "../components/BusinessCard";
 import SportCard from "../components/SportCard";
 import EducationCard from "../components/EducationCard";
 import FitnessCard from "../components/FitnessCard";
-
 import Modal from 'react-bootstrap/Modal';
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";

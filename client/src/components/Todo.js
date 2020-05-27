@@ -4,7 +4,7 @@ import {
     CardBody
 } from 'reactstrap';
 import TodoItems from "./TodoItems";
-import '../style/todo.css';
+import { TodoStyle } from '../style/index.js';
 
 
 class Todo extends Component {
@@ -49,6 +49,7 @@ class Todo extends Component {
 
     render() {
         return (
+            <TodoStyle>
             <Card className="scroll2">
                 <CardBody>
                     <CardTitle>To-Do List</CardTitle>
@@ -67,6 +68,7 @@ class Todo extends Component {
                         </div>
                 </CardBody>
             </Card>
+            </TodoStyle>
         )
     }
 };
