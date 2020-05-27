@@ -5,13 +5,7 @@ import MemberBuild from "./pages/MemberBuild";
 import Home from "./pages/Homepage.js";
 import LogIn from "./pages/LogIn"
 import Dashboard from './components/Dashboard';
-<<<<<<< HEAD
-import 'materialize-css/dist/css/materialize.min.css';
-import M from  'materialize-css/dist/js/materialize.min.js';
-// import Header from './components/Header';
-=======
 import Header from './components/Header';
->>>>>>> ec12e6a5756008117602b3b891d661a1277ec803
 import Register from './components/Register';
 // import Footer from './components/Footer';
 
@@ -24,13 +18,6 @@ class App extends Component {
   
   }
 
-<<<<<<< HEAD
-componentDidMount = () => {
-    let sidenav = document.querySelector('#slide-out');
-    M.Sidenav.init(sidenav, {});
-  }
-=======
->>>>>>> ec12e6a5756008117602b3b891d661a1277ec803
 render() {
   
   return (

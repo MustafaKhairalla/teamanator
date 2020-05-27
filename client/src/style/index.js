@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import styled from "styled-components";
- const lightYellow = "#003973";
- const DarkBlue = " #E5E5BE";
-
-
- export const HeaderStyle = styled.div `
- background-color: ${DarkBlue};
- color: ${DarkBlue}
- `
-=======
 import styled from 'styled-components';
 
 export const FooterStyle = styled.div `
@@ -203,4 +192,3 @@ export const TodoStyle = styled.div `
       cursor: pointer;
     }
 `
->>>>>>> ec12e6a5756008117602b3b891d661a1277ec803

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Header from "../components/Header"
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import {Container,Row, Col, Jumbotron, Button, Card} from "reactstrap";
 import ReactCardFlip from 'react-card-flip';
