@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'reactstrap';
 function Footer() {
     return (
         <div id="footer-main">
-            <Row  id="thank-you">
+            <Row id="thank-you">
                 <Col className="text-left">
                     <h6>More to Explore</h6>
                     <ul className="text-left">
@@ -19,7 +19,7 @@ function Footer() {
                 </Col>
                 <Col className="text-left">
                     <h6>Team Duck</h6>
-                <p id="duck-bio">Team Duck is a highly-talented group of young, coding professionals from the University of Denver's coding bootcamp.
+                    <p id="duck-bio">Team Duck is a highly-talented group of young, coding professionals from the University of Denver's coding bootcamp.
                     We specialize in making functional and beautiful web applications.
                 </p>
 
