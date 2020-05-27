@@ -1,32 +1,39 @@
 import React from 'react';
-import '../style/dashboard.css';
+import { DashboardStyle } from '../style/index';
 import Employeecard from './Employeecard';
 import Todo from './Todo';
 import DashCalendar from './DashCalendar';
-import Headerside from './Headerside';
+import Header from './Header';
 import Events from './Events';
 import { Container, Row, Col } from 'reactstrap';
+<<<<<<< HEAD
 //import Footer from './Footer';
+=======
+import Footer from './Footer';
+import Sidebar from './Sidebar';
+>>>>>>> ec12e6a5756008117602b3b891d661a1277ec803
 
 function Dashboard() {
     return (
-        <div>
-            <Headerside />
+        <DashboardStyle>
+            <Header />
+            <Sidebar />
             <div className="container-main">
-                <Row>
-                    <Col>
-                        <Events />
-                    </Col>
-                </Row>
+                
                 <Row>
                     <Col>
                         <Todo />
                     </Col>
                     <Col>
                     <DashCalendar />
+                    <Row>
+                        <Col>
+                            <Events />
+                        </Col>
+                    </Row>
                     </Col>
-                </Row>
-                <Row>
+                    
+                    
                     <Col>
                         <Employeecard />
                     </Col>
@@ -35,9 +42,16 @@ function Dashboard() {
                 
                 
                 
+                
+                
             </div>
+<<<<<<< HEAD
     
         </div>
+=======
+            <Footer />
+        </DashboardStyle>
+>>>>>>> ec12e6a5756008117602b3b891d661a1277ec803
 
     )
 };
