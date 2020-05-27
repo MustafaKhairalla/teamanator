@@ -18,6 +18,9 @@ export const FooterStyle = styled.div `
     font-size: small;
     text-justify: auto;
 }
+ul {
+    list-style: none;
+}
 `
 export const DashboardStyle = styled.div `
 .container-main {
