@@ -15,28 +15,36 @@ class App extends Component {
     super(props);
     // Don't call this.setState() here!
     this.state = { userId: null };
-  
+
   }
-
-render() {
-  
-  return (
-    <div>
-    <Router>
+  render() {
+    return (
       <div>
-        <Route exact path="/" component={ Home }/>
-        <Route exact path="/template" component={ ChooseTemplate } />
-        <Route exact path="/member" component={ MemberBuild } />
-        <Route exact path="/register" component={ Register } />
-        <Route exact path="/login" component={LogIn} />
-        <Route exact path="/template" component={ChooseTemplate} />
-        <Route exact path="/mydashboard" render={ Dashboard } />
+        <Router>
+          <div>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/template" component={ChooseTemplate} />
+            <Route exact path="/member" component={MemberBuild} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={LogIn} />
+            <Route exact path="/template" component={ChooseTemplate} />
+            <Route exact path="/mydashboard" render={Dashboard} />
+          </div>
+        </Router>
       </div>
-    </Router>
-    </div>
-
-  );
+    );
+  }
 }
-}
-
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+

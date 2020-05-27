@@ -239,13 +239,7 @@ const ChooseTemplate = () => {
                                         </Container>
                                     </Modal.Body>
                                     <Modal.Footer>
-                                        <Container>
-                                            {/* <div className="alert alert-danger mr-2 ml-2" role="alert"
-                                        // style={{ opacity: firedMatch ? 1 : 0 }}
-                                        >
-                                            This employee has been fired
-                        </div> */}
-                                        </Container>
+
                                         <Button className="ui inverted red button" onClick={handleClose}>
                                             Cancel
                                     </Button>
