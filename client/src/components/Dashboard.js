@@ -15,34 +15,34 @@ function Dashboard() {
             <Header />
             <Sidebar />
             <div className="container-main">
-                
+
                 <Row>
                     <Col>
                         <Todo />
                     </Col>
                     <Col>
-                    <DashCalendar />
-                    <Row>
-                        <Col>
-                            <Events />
-                        </Col>
-                    </Row>
+                        <DashCalendar />
+                        <Row>
+                            <Col>
+                                <Events />
+                            </Col>
+                        </Row>
                     </Col>
-                    
-                    
+
+
                     <Col>
                         <Employeecard />
                     </Col>
                 </Row>
-                
-                
-                
-                
-                
-                
+
+
+
+
+
+
             </div>
             <Footer />
-        </DashboardStyle>
+        </DashboardStyle >
 
     )
 };

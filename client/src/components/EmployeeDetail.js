@@ -7,12 +7,12 @@ class EmployeeDetail extends Component {
 
 
     render() {
-    return (
-        <div>
-            <p>Jacob Petersen</p>
-        </div>
-    );
-};
+        return (
+            <div>
+                <p>Jacob Petersen</p>
+            </div>
+        );
+    };
 
 }
 
