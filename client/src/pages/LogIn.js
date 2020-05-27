@@ -1,5 +1,6 @@
-import React from "react";
+ import React from "react";
 import Navbar from "../components/Navbar";
+import Header from "../components/Header";
 
 import { Container, Row, Jumbotron, Button, Form, Input, FormGroup, Label } from "reactstrap";
 import { Link } from "react-router-dom";
