@@ -8,7 +8,7 @@ const FitnessSchema = new Schema({
         type: String
     },
 
-    Name: {
+    name: {
         type: String,
         required: false
     },

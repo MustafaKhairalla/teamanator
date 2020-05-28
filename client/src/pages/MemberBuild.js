@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { Redirect } from "react-router-dom";
 import API from "../utils/API";
+import { Link } from "react-router-dom";
 
 const MemberBuild = (props) => {
 
@@ -223,8 +224,7 @@ const MemberBuild = (props) => {
             <row>
                 <button
                     onClick={() => saveToDatabase(template)} //change to API call
-                    className="ui right floated green button">
-                    Finish
+                    className="ui right floated green button"><Link to="/mydashboard">Finish</Link>
                  </button>
             </row>
         </Container>
