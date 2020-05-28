@@ -92,7 +92,7 @@ function Homepage () {
                                 </Row>
                                 </Col>
                                 </Row>
-                <Footer></Footer>     
+                <Footer />     
             </div>  
     )
 
