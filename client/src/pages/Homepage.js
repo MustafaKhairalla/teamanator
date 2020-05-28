@@ -33,14 +33,14 @@ function Homepage () {
                         </Col>
                         <Col md={9}>
                             <Jumbotron fluid>
-                                    <Container fluid>
-                                    <h1 className="display-3">Teamanator</h1>
-                                    <h4 className="lead">Teamanator is THE solution for all your team management needs. 
-                                                        What! All my needs are met with this one app! 
-                                                        Good point, maybe not all your needs but it is a darn good app! 
-                                                        </h4>
-                                    <Button><Link to="/login">Create an Account</Link></Button>
-                                    <Button style={{margin: "1em", color: "white"}}><Link to="/login">Log-in</Link></Button>
+                                <Container fluid>
+                                <h1 className="display-3">Teamanator</h1>
+                                <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                                                    nisi ut aliquip ex ea commodo consequat.</p>
+                                <Button><Link to="/register">Create an Account</Link></Button>
+                                <Button><Link to="/login">log-in</Link></Button>
                                 </Container>
                                     <div>
                                     <ReactCardFlip isFlipped={flipping.isFlipped} flipDirection="horizontal">
