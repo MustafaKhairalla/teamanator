@@ -40,26 +40,8 @@ const BusinessSchema = new Schema({
     },
 
     address: {
-        street: {
-            type: String,
-            required: false
-        },
-
-        city: {
-            type: String,
-            required: false
-        },
-
-        state: {
-            type: String,
-            required: false
-        },
-
-        zipCode: {
-            type: Number,
-            required: false
-        }
-
+        type: String,
+        required: false
     }
 });
 

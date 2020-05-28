@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
-import { RegisterStyle } from '../style/index.js';
+import { HeaderStyle, RegisterStyle } from '../style/index.js';
+import Header from './Header';
 
 class Register extends Component {
 	render() {
     return (
+		<>
+		<HeaderStyle>
+		<Header />
+		</HeaderStyle>
         <RegisterStyle>
             
             <div id="card-register" className="container contact-register">
 	            <div className="row">
-		            <div className="col-md-3 col3">
+		            <div className="col-md-10 col3">
 			            <div className="contact-info">
                         <img className="img-register" src="https://img.icons8.com/ios/50/000000/login-rounded-right.png"/>
 				            <h3 id="welcome-text">WELCOME, LET'S BEGIN!</h3>
-				            <h4>We need some basic info from you...</h4>
+				            <h4>We need some basic information from you...</h4>
 			            </div>
-		            </div>
-		            <div className="col-md-9 col9">
 			            <div className="contact-form">
 				            <div className="form-group">
 				            <label className="control-label col-sm-2" for="fname">First Name:</label>
@@ -24,19 +27,19 @@ class Register extends Component {
 				    </div>
 				</div>
 				<div className="form-group">
-				  <label className="control-label col-sm-2" for="lname">Last Name:</label>
+				  <label className="control-label col-sm-5" for="lname">Last Name:</label>
 				  <div className="col-sm-10">          
 					<input type="text" className="form-control" id="lname" placeholder="Enter Last Name" name="lname"></input>
 				  </div>
 				</div>
 				<div className="form-group">
-				  <label className="control-label col-sm-2" for="email">Email:</label>
+				  <label className="control-label col-sm-5" for="email">Email:</label>
 				  <div className="col-sm-10">
 					<input type="email" className="form-control" id="email" placeholder="Enter email" name="email"></input>
 				  </div>
 				</div>
 				<div className="form-group">
-				  <label className="control-label col-sm-2" for="password">Password:</label>
+				  <label className="control-label col-sm-5" for="password">Password:</label>
 				  <div className="col-sm-10">
 					<input type="password" className="form-control" id="password" placeholder="Enter password" name="password"></input>
 				  </div>
@@ -44,14 +47,16 @@ class Register extends Component {
 				
 			</div>
 			<div className="form-group">        
-				  <div className="col-sm-offset-2 col-sm-10">
-					<button type="submit" className="btn btn-default">Submit</button>
+				  <div className="col-sm-10">
+					<button type="submit" id="register-submit" className="btn btn-default">Submit</button>
 				  </div>
 				</div>
-		</div>
+		            </div>
+		            
 	</div>
 </div>
 </RegisterStyle>
+</>
 
     )
 };

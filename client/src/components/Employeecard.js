@@ -4,7 +4,7 @@ import {
 import React from 'react';
 import EmployeeDetail from './EmployeeDetail';
 
-function Employeecard() {
+function Employeecard(props) {
     return (
 
         <Card className="scroll">
@@ -21,18 +21,11 @@ function Employeecard() {
                     </Form>
                         <Button type="submit" id="eventAdd">Add</Button> */}
                     <ListGroup>
-                        <ListGroupItem> <EmployeeDetail/> </ListGroupItem>
-                        <ListGroupItem> <EmployeeDetail/> </ListGroupItem>
-                        <ListGroupItem> <EmployeeDetail/> </ListGroupItem>
-                        <ListGroupItem> <EmployeeDetail/> </ListGroupItem>
-                        <ListGroupItem> <EmployeeDetail/> </ListGroupItem>
-                        <ListGroupItem> <EmployeeDetail/> </ListGroupItem>
-                        <ListGroupItem> <EmployeeDetail/> </ListGroupItem>
-                        <ListGroupItem> <EmployeeDetail/> </ListGroupItem>
-                        <ListGroupItem> <EmployeeDetail/> </ListGroupItem>
-                        <ListGroupItem> <EmployeeDetail/> </ListGroupItem>
-                        <ListGroupItem> <EmployeeDetail/> </ListGroupItem>
-                        <ListGroupItem> <EmployeeDetail/> </ListGroupItem>
+                        {/* <ListGroupItem> <EmployeeDetail/> </ListGroupItem> */}
+                        {props.employees.map(emp => (
+                            <EmployeeDetail emp={emp} />
+                        ))}
+                        
                     </ListGroup>
                 </CardText>
             </CardBody>

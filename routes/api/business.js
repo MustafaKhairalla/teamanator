@@ -17,33 +17,27 @@ router.get("/", (req, res) => {
 // @desc  Create business card
 
 router.post("/", (req, res) => {
-    //req.body.users.forEach(user=> {
-    //
-    //})
 
-    newCards = []; 
-    
-    const newBusiness = new Business({
-        owner: req.user.id, // check check
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        email: req.body.email,
-        title: req.body.title,
-        salary: req.body.salary,
-        department: req.body.department,
-        phoneNumber: req.body.phoneNumber,
-        address: {
-            street: req.body.address.street,
-            city: req.body.address.city,
-            state: req.body.address.state,
-            zipCode: req.body.address.zipCode
-        }
-    });
+    let newCards = req.body;
 
-    newBusiness.save()
-        .then(business => res.json(business))
-        .catch(err => res.status(404).json({ err }));
-});
+    newCards.forEach(o => {
+        const newBusiness = new Business({
+            owner: req.user.id, // check check
+            Name: o.field1 ? o.field1 : "unlisted",
+            title: o.field2 ? o.field2 : "unlisted",
+            salary: o.field3 ? o.field3 : "unlisted",
+            department: o.field4 ? o.field4 : "unlisted",
+            phoneNumber: o.field5 ? o.field5 : "unlisted",
+            email: o.field6 ? o.field6 : "unlisted",
+            address: o.field7 ? o.field7 : "unlisted"
+
+        }); // end of constructor
+        newBusiness.save()
+            .catch(err => res.status(404).json({ err }));
+    }); // end loop
+    return res.json({ status: 'ok' })
+
+});// end post reouter
 
 // @route DELETE api/business/:id
 // @desc  delete business

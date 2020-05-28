@@ -56,6 +56,7 @@ export const HeaderStyle = styled.div `
     position: fixed;
     width: 100%;
     padding: 10px;
+    top: 0;
 }
 #profile-img {
     height: 50%;
@@ -104,34 +105,20 @@ body{
     background: -webkit-linear-gradient(to right, #E5E5BE, #003973);
     background: linear-gradient(to right, #E5E5BE, #003973);
 }
-#card-register {
-    margin-top: 80px;
-}
-.contact-register{
-    padding: 4%;
-    height: 400px;
-}
 .col3 {
     background: #2C2B30;
     padding: 4%;
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
     color: white;
 }
 .contact-info{
-    margin-top:10%;
+
 }
 .contact-info, .img-register{
-    margin-bottom: 15%;
+    margin-bottom: 15px;
+    color: white;
 }
 .contact-info, .h2-register{
     margin-bottom: 10%;
-}
-.col9{
-    background: #fff;
-    padding: 3%;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
 }
 .contact-form {
     font-weight:500;
@@ -141,10 +128,17 @@ body{
     background: #222629;
     color: #fff;
     font-weight: 600;
-    width: 25%;
+    width: 350px;
 }
 #welcome-text {
     padding: 5px;
+}
+#register-submit {
+  color: white;
+}
+.contact-register {
+  margin-top: 100px;
+  margin-bottom: 150px;
 }
 `
 
