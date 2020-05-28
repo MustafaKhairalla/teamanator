@@ -39,9 +39,9 @@ const MemberBuild = (props) => {
         console.log("users: ");
         console.log(template.users);
 
-        var routeSelect = template.title; 
+        var routeSelect = template.title;
         await API.createFitnessCard(template.users);
-        
+
         // setSaving(true)
         // const res = await axio.post ("api/save", data)
         // if ( res.data.sucess === true) history.psush
@@ -172,7 +172,7 @@ const MemberBuild = (props) => {
                                         <label>{template.config.field[3]}</label>
                                         <input
                                             name="field4"
-                                            value={user.field5}
+                                            value={user.field4}
                                             onChange={handleInputChange}
                                             placeholder={template.config.field[3]} type="text" />
                                     </div>

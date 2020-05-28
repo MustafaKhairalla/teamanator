@@ -4,14 +4,6 @@ const Schema = mongoose.Schema;
 const mongooseUniqueValidator = require("mongoose-unique-validator");
 
 //Create Schema
-const TeamSchema = new Schema({
-    nameOfTeam: {
-        type: String
-    },
-    typeOfTeam: {
-        type: String
-    }
-})
 
 
 const UserSchema = new Schema({
@@ -30,21 +22,18 @@ const UserSchema = new Schema({
         required: true,
         unique: true
     },
-    username:{
+    username: {
         type: String,
     },
 
     password: {
         type: String,
-       
+
     },
 
-    date: {
-        type: Date,
-        default: Date.now
-    },
-
-    team: [TeamSchema]
+    typeOfTeam: {
+        type: String
+    }
 });
 
 // UserSchema.methods.validPassword = function (password) {
@@ -54,7 +43,7 @@ const UserSchema = new Schema({
 // UserSchema.pre("save", function (user){
 //     user.password = bcrypt.hashSync(user.password, bcrypt.genSalt(10), null);
 // }); 
-UserSchema.plugin(passportLocalMongoose )
+UserSchema.plugin(passportLocalMongoose)
 //  UserSchema.plugin(mongooseUniqueValidator);
 
 module.exports = User = mongoose.model("user", UserSchema);

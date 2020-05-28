@@ -5,7 +5,7 @@ import Todo from './Todo';
 import DashCalendar from './DashCalendar';
 import Header from './Header';
 import Events from './Events';
-import { Container, Row, Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
 
@@ -34,12 +34,6 @@ function Dashboard() {
                         <Employeecard />
                     </Col>
                 </Row>
-
-
-
-
-
-
             </div>
             <Footer />
         </DashboardStyle >
