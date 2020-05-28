@@ -78,5 +78,13 @@ export default {
         return axios.delete("api/sport", + id)
     },
 
+    //update user typeOfteam: "business"
+    UpdateUserTeamType: function (id) {
+        return axios.put("api/type", + id, body)
+    }
+
 
 } // End of Export function 
+
+
+//API.UpdateuserTeamType: (`{$id}` , TypeOfTeam: `{$title}`)
