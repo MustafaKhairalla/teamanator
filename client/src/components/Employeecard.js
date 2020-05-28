@@ -22,8 +22,11 @@ function Employeecard(props) {
                         <Button type="submit" id="eventAdd">Add</Button> */}
                     <ListGroup>
                         {/* <ListGroupItem> <EmployeeDetail/> </ListGroupItem> */}
-                        {props.employees.map(emp => (
+                        {/* {props.employees.map(emp => (
                             <EmployeeDetail emp={emp} />
+                        ))} */}
+                        {props.employees.map(employees => (
+                            <EmployeeDetail employees={employees} />
                         ))}
                         
                     </ListGroup>

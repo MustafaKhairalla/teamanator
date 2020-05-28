@@ -59,7 +59,7 @@ class Todo extends Component {
                                     <input ref={(a) => this._inputElement = a}
                                     placeholder="Add an Item">
                                     </input>
-                                    <Button className="button1" color="secondary" type="submit">Submit</Button>
+                                    <Button size="sm" className="button1" color="secondary" type="submit">Submit</Button>
                                 </Form>
                             </div>
                             <br />
