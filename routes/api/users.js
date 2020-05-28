@@ -103,6 +103,13 @@ router.put("/type/:id", (req, res) => {
 })// note how to do 
 
 
+//get cards by id
+router.get("/id", (req, res) => {
+    User.findById(req.params.id)
+        .then(user => res.json(user))
+})
+
+
 
 
 
