@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { DashboardStyle } from '../style/index';
 import Employeecard from './Employeecard';
 import Todo from './Todo';
@@ -9,7 +9,36 @@ import { Row, Col } from 'reactstrap';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
 
+import CardHolder from "./CardHolder";
+import NewEmployeeCard from "./NewEmployeeCard";
+
+
 function Dashboard() {
+
+    const users = [
+        {
+            id: 1,
+            name: "SpongeBob",
+            title: "Fry Cook",
+            location: "A Pineapple Under the Sea"
+        },
+        {
+            id: 2,
+            name: "SpongeBob",
+            title: "Fry Cook",
+            location: "A Pineapple Under the Sea"
+        },
+        {
+            id: 3,
+            name: "SpongeBob",
+            title: "Fry Cook",
+            location: "A Pineapple Under the Sea"
+        }
+    ]
+
+    // const [users, setUsers] = useState([{
+
+    // }])
     return (
         <DashboardStyle>
             <Header />
@@ -30,8 +59,20 @@ function Dashboard() {
                     </Col>
 
 
-                    <Col>
-                        <Employeecard />
+                    <Col style={{ backgroundColor: "#3f3f3f", margin: "20px" }}>
+                        <CardHolder>
+                            {users.map(e => (
+                                <NewEmployeeCard
+                                    key={e.id}
+                                    name={e.name}
+                                    title={e.title}
+                                    location={e.location}
+
+                                />
+                            ))}
+                            {/* <Employeecard /> */}
+                        </CardHolder>
+
                     </Col>
                 </Row>
             </div>
