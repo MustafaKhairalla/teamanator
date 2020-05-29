@@ -16,25 +16,32 @@ router.get("/", (req, res) => {
 // @route POST api/business
 // @desc  Create business card
 
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
+    console.log(req.body)
+    const newCards = req.body.formData;
+    try {
 
-    let newCards = req.body;
+        await newCards.forEach(async o => {
+            const newBusiness = new Business({
+                owner: req.body.userId, // check check
+                Name: o.field1 ? o.field1 : "unlisted",
+                title: o.field2 ? o.field2 : "unlisted",
+                salary: o.field3 ? o.field3 : "unlisted",
+                department: o.field4 ? o.field4 : "unlisted",
+                phoneNumber: o.field5 ? o.field5 : "unlisted",
+                email: o.field6 ? o.field6 : "unlisted",
+                address: o.field7 ? o.field7 : "unlisted"
 
-    newCards.forEach(o => {
-        const newBusiness = new Business({
-            owner: req.user.id, // check check
-            Name: o.field1 ? o.field1 : "unlisted",
-            title: o.field2 ? o.field2 : "unlisted",
-            salary: o.field3 ? o.field3 : "unlisted",
-            department: o.field4 ? o.field4 : "unlisted",
-            phoneNumber: o.field5 ? o.field5 : "unlisted",
-            email: o.field6 ? o.field6 : "unlisted",
-            address: o.field7 ? o.field7 : "unlisted"
+            }); // end of constructor
+            return newBusiness.save()
 
-        }); // end of constructor
-        newBusiness.save()
-            .catch(err => res.status(404).json({ err }));
-    }); // end loop
+        }); // end loop
+
+        // get user by id them aupdateupdate that is bussines
+    } catch (err) {
+        console.log(err)
+        res.status(404).json({ err });
+    }
     return res.json({ status: 'ok' })
 
 });// end post reouter

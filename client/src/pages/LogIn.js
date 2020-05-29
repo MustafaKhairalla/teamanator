@@ -11,9 +11,9 @@ import LoginContext from "../utils/LoginContext";
 
 function LogIn(props) {
     const [user, setUser] = React.useState({
-            username: "",
-            password: "",
-            userId: false
+        username: "",
+        password: "",
+        userId: false
     });
 
     function handleInputChange(event) {
@@ -25,19 +25,19 @@ function LogIn(props) {
         e.preventDefault();
 
         Axios.post("api/users/login", user)
-        .then(res => {
-            
-            const token = res.data.sucess; 
-            console.log(token);
-            if (token === false){ 
-                console.log("Login Error!");
-            } else {
-                setUser({...user, userId: token});
-                console.log(user);
-                props.setUser({...user, userId: token})
-               
-            }
-        })
+            .then(res => {
+
+                const token = res.data.sucess;
+                console.log(token);
+                if (token === false) {
+                    console.log("Login Error!");
+                } else {
+                    setUser({ ...user, userId: token });
+                    console.log(user);
+                    props.setcurrentUser({ userId: token })
+
+                }
+            })
         // try {
         //     const token = await Axios.post("api/users/login", user);
         //     console.log(token.data)
@@ -49,8 +49,8 @@ function LogIn(props) {
         //     console.log(err);
         //     return err;
         // }
-        
-       
+
+
         // console.log(user);
         //    props.setState({ userId: token.data})
     }
@@ -58,7 +58,7 @@ function LogIn(props) {
 
     // })
     console.log(user);
-    if(user.userId    ) return (<Redirect to="/template"/>)
+    if (user.userId) return (<Redirect to="/template" />)
     return (
         <LoginContext.Provider value={user.token}>
             <div className="app">
@@ -84,7 +84,7 @@ function LogIn(props) {
                                 <Button
                                     onClick={handleFormSubmit}>
                                     {/* <Link to="/template">LogIn</Link> */}
-                                    Login 
+                                    Login
                                 </Button>
                             </Form>
                         </Row>

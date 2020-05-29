@@ -1,4 +1,4 @@
-import React, { useState , useContext} from "react";
+import React, { useState, useContext } from "react";
 
 
 import Container from "react-bootstrap/Container";
@@ -9,7 +9,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import CreateCard from "../utils/CreateCard";
 
-import LoginContext from "../utils/LoginContext"; 
+import LoginContext from "../utils/LoginContext";
 const MemberBuild = (props) => {
     const login = useContext(LoginContext);
     const { location = {} } = props; // ask Pablo !!!
@@ -42,10 +42,11 @@ const MemberBuild = (props) => {
         console.log(template.users);
 
         var routeSelect = template.title;
-        const fullData = template.users
-        fullData.userId = props.userId.token;
-        fullData.title = routeSelect
-        await API.createFitnessCard(fullData);
+        const fullData = { formData: template.users, userId: props.currentUser.userId }
+
+        console.log({ fullData })
+        // await API.CreateCard(fullData);
+        CreateCard(routeSelect, fullData)
 
 
         // setSaving(true)
