@@ -39,7 +39,7 @@ function Homepage () {
                                                         What! All my needs are met with this one app! 
                                                         Good point, maybe not all your needs but it is a darn good app! 
                                                         </h4>
-                                    <Button><Link to="/login">Create an Account</Link></Button>
+                                    <Button><Link to="/register">Create an Account</Link></Button>
                                     <Button style={{margin: "1em", color: "white"}}><Link to="/login">Log-in</Link></Button>
                                 </Container>
                                     <div>
