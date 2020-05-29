@@ -50,7 +50,7 @@ export const DashboardStyle = styled.div `
 
 export const HeaderStyle = styled.div `
 .header-main {
-    background-color: #3f3f3f;
+    background-color: #2c2b30;
     position: fixed;
     width: 100%;
     padding: 10px;
@@ -84,6 +84,11 @@ export const HeaderStyle = styled.div `
  
   color: white;
 }
+
+img{
+  float:left;
+}
+
 
   @media only screen and (min-width : 992px) {
     .invisible-top {
@@ -191,4 +196,139 @@ export const TodoStyle = styled.div `
       background-color: pink;
       cursor: pointer;
     }
+`
+export const LoginStyle = styled.div `
+.col3 {
+  background: #2C2B30;
+  padding: 4%;
+  color: white;
+}
+.contact-info{
+
+}
+.contact-info, .img-register{
+  margin-bottom: 15px;
+  color: white;
+}
+.contact-info, .h2-register{
+  margin-bottom: 10%;
+}
+.contact-form {
+  font-weight:500;
+}
+
+.contact-form, .button1 {
+  color: #fff;
+  font-weight: 600;
+  width: 350px;
+}
+#welcome-text {
+  padding: 5px;
+}
+#register-submit {
+color: #222629;
+background: #fff;
+left-margin;
+}
+.contact-register {
+margin-top: 100px;
+margin-bottom: 150px;
+}
+#card-register{
+  postition:fixed;
+  top:200px;
+}
+`
+
+export const HeaderStyleHome = styled.div `
+  .HeaderNav{ 
+  background-color: #2c2b30;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  padding: 10px;
+  top: 0;}
+
+  a{
+    color: white
+  }
+
+  .loginBtn{
+   float: right;
+   color: #ffffff
+ 
+  }
+`
+
+export const HomeStyle = styled.div `
+
+.homeleftColumn{
+  postition:absolute;
+  top:100px;
+  background-color: #2c2b30;
+}
+
+a{
+  color: white
+}
+
+.HeadlineAndCard{
+  postition: absolute;
+  top:160px;
+}
+.headerCard{
+  background-color: #2c2b30;
+  opacity: .7
+  color: #fff;
+  padding: 2em;
+  h4{
+    color: #fff;
+    size: 20pt 
+
+  } 
+  h1{
+    color: #fff;
+  }
+}
+.benfitIcons{
+ margin: 5em;
+ text-align: right
+ img{
+   width: 50%
+ }
+ h2{
+   color: white
+   text-align: right
+ }
+}
+.benfitIcons2{
+  margin: 5em;
+  text-align: left
+  img{
+    width: 50%
+    padding-left:25%
+    content-align:right
+  }
+  h2{
+    color: white
+    text-align: right
+  }
+ }
+registerbtn{
+  margin: 5px
+}
+@media only screen and (max-width : 992px) {
+  .homeleftColumn {
+      img{
+        width:30%
+      }
+  }
+  ReactCardFlip{
+    margin:50%
+  }
+  .benfitIcons{
+    text-size: 25%
+  }
+
+}
 `

@@ -2,30 +2,30 @@ import React from "react";
 import {Card} from "react-bootstrap";
 
 
-const ExampleCard = (props) => {
+const ExampleCardBack = (props) => {
 
     return (
         <>
             <Card onClick={props.handleClick} className="bg-dark text-white" style={{ width: '18rem' }}>
-                <Card.Img variant="top"src = {`${process.env.PUBLIC_URL}/images/EmployeeCardImage.jpg`}  />
                 <Card.Body>
                     <Card.Title>
-                        <span className="mr-2 ml-2">{props.title} Features
+                        <span className="mr-2 ml-2">{props.title} Benefits
                           </span>
                     </Card.Title>
                         <Card.Text>
                             <ul>
-                                    <li>Customize the data for your team </li>
-                                    <li>Track important events </li>
-                                    <li>Add or subtract team members </li>
+                                    <li>Stop forgetting important information </li>
+                                    <li>Reminders make you look smart</li>
+                                    <li>reduce stress </li>
                                     <li>And so much more…</li>
                                 </ul>
                         </Card.Text>
                 </Card.Body>
+                <Card.Img variant="top"src = {`${process.env.PUBLIC_URL}/images/FitnessCardImage_.jpg`}  />
             </Card>
 
         </>
     )
 };
 
-export default ExampleCard;
+export default ExampleCardBack;
