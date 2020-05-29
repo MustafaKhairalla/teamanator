@@ -1,21 +1,24 @@
 import API from "./API";
 
-const CreateCard = (select) => {
+
+const CreateCard = (select, data) => {
     switch (select) {
-        case bsuiness:
-            API.createBusinessCard(id);
+        case "Business":
+            API.createBusinessCard(data);
             break;
 
-        case education:
-            API.createEducationCard(id);
+        case "Education":
+            API.createEducationCard(data);
             break;
 
-        case fitness:
-            API.createFitnessCard(id);
+        case "Fitness":
+            API.createFitnessCard(data);
             break;
 
-        case sport:
-            API.createSportCard(id);
+        case "Sport":
+            API.createSportCard(data);
+
+
             break;
 
     }

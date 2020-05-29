@@ -46,22 +46,37 @@ function Dashboard() {
             <Header />
             <Sidebar />
             <div className="container-main">
-                    <Container>
-                        <Row>
-                            <Col>
-                                <Todo />
-                                <br />
-                                <Row>
-                            <Col>
-                                <Events />
-                            </Col>
-                        </Row>
-                            </Col>
-                            <Col>
-                                
-                            </Col>
-                        </Row>
-                    </Container>
+                <Container>
+                    <Row>
+                        <Col>
+                            <Todo />
+                            <br />
+                            <Row>
+                                <Col>
+                                    <Events />
+                                </Col>
+                            </Row>
+                        </Col>
+                        <Col className="mr-0" >
+                            <CardHolder>
+                                {users.map(e => (
+                                    <NewEmployeeCard
+                                        key={e.id}
+                                        name={e.name}
+                                        title={e.title}
+                                        location={e.location}
+
+                                    />
+                                ))}
+                                {/* <Employeecard /> */}
+                            </CardHolder>
+
+                        </Col>
+                    </Row>
+                </Container>
+
+                {/* <Container>
+
 
 
                     <Col style={{ backgroundColor: "#3f3f3f", margin: "20px" }}>
@@ -76,22 +91,13 @@ function Dashboard() {
                                 />
                             ))}
                             {/* <Employeecard /> */}
-                        </CardHolder>
+                {/* </CardHolder> */}
 
-                    </Col>
-                </Row>
+                {/* </Col> */}
 
-                    <Container>
-                        
-                    </Container>
-                    
-               
-                    
-               
-                    
-               
 
-            </div>
+
+            </div >
             <Footer />
         </DashboardStyle >
 

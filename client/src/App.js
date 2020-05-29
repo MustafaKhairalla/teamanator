@@ -23,6 +23,7 @@ class App extends Component {
         <Router>
           <div>
             <Route exact path="/" component={Home} />
+
             
 
             <Route exact path="/member"
@@ -45,6 +46,7 @@ class App extends Component {
             <Route exact path="/mydashboard"
               render={(props) => <Dashboard {...props} userId={this.state.userId} />}
             />
+
 
           </div>
         </Router>
