@@ -1,26 +1,27 @@
 import API from "./API";
 
-const GetCard = (select) => {
+
+const CreateCard = (select, data) => {
     switch (select) {
         case "Business":
-            API.getBusinessCardsByOwner(id);
+            API.createBusinessCard(data);
             break;
 
         case "Education":
-            API.getEducationCardsByOwner(id);
+            API.createEducationCard(data);
             break;
 
         case "Fitness":
-            API.getFitnessCardsByOwner(id);
+            API.createFitnessCard(data);
             break;
 
         case "Sport":
-            API.getSportCardsByOwner(id);
+            API.createSportCard(data);
+
+
             break;
 
     }
 };
 
-
-export default GetCard;
-
+export default CreateCard;

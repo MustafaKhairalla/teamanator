@@ -17,17 +17,37 @@ class App extends Component {
 
   }
   render() {
+    console.log(this.state)
     return (
       <div>
         <Router>
           <div>
             <Route exact path="/" component={Home} />
-            <Route exact path="/template" component={ChooseTemplate} />
-            <Route exact path="/member" component={MemberBuild} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={LogIn} />
-            <Route exact path="/template" component={ChooseTemplate} />
-            <Route exact path="/mydashboard" render={Dashboard} />
+
+            
+
+            <Route exact path="/member"
+              render={(props) => <MemberBuild {...props} userId={this.state.userId} />}
+            />
+            <Route
+              exact path="/register"
+              render={(props) => <Register {...props} userId={this.state.userId} />}
+            />
+
+            <Route
+              exact path="/login"
+              render={(props) => <LogIn {...props} userId={this.state.userId} setUser={(data) => this.setState({ userId: data })} />}
+            />
+
+            <Route exact path="/template"
+              render={(props) => <ChooseTemplate {...props} userId={this.state.userId} />}
+            />
+
+            <Route exact path="/mydashboard"
+              render={(props) => <Dashboard {...props} userId={this.state.userId} />}
+            />
+
+
           </div>
         </Router>
       </div>

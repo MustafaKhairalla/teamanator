@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useContext} from "react";
 import { Link } from "react-router-dom";
 import "./page.css";
 import BusinessCard from "../components/BusinessCard";
@@ -13,10 +13,10 @@ import Row from "react-bootstrap/Row";
 import { CardDeck } from "react-bootstrap";
 import ReactCardFlip from 'react-card-flip';
 
-
+import LoginContext from "../utils/LoginContext"; 
 
 const ChooseTemplate = () => {
-
+    const login = useContext(LoginContext);
     //HANDLE FLIPPING
     const [flipping, setFlipping] = useState({
         isFlipped: false
@@ -32,6 +32,7 @@ const ChooseTemplate = () => {
     });
 
     const [template, setTemplate] = useState({
+        userId: "",
         isSelected: false,
         title: "",
         image: "",
@@ -48,6 +49,7 @@ const ChooseTemplate = () => {
         console.log(e)
 
         setTemplate({
+            userId: login,
             isSelected: true,
             title: e.title,
             image: e.image,
@@ -77,6 +79,8 @@ const ChooseTemplate = () => {
 
 
     return (
+         
+
         <Container>
             <br></br>
             <Row>
