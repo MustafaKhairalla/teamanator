@@ -17,11 +17,12 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
 
-    let newCards = req.body;
+    console.log(req.body)
+    const newCards = req.body.formData;
 
     newCards.forEach(o => {
         const newEducation = new Education({
-            owner: req.user.id,
+            owner: req.body.userId,
             Name: o.field1 ? o.field1 : "unlisted",
             program: o.field2 ? o.field2 : "unlisted",
             languages: o.field3 ? o.field3 : "unlisted",

@@ -20,7 +20,7 @@ router.post("/", (req, res) => {
     let newCards = req.body;
 
 
-    console.log(req);
+    console.log(newCards);
 
     newCards.forEach(o => {
         const newFitness = new Fitness({

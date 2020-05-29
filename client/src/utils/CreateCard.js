@@ -2,6 +2,7 @@ import API from "./API";
 
 
 const CreateCard = (select, data) => {
+    console.log('Created Card action', select)
     switch (select) {
         case "Business":
             API.createBusinessCard(data);

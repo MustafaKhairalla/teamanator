@@ -1,6 +1,7 @@
 import API from "./API";
 
-const GetCard = (select) => {
+const GetCard = (select,
+) => {
     switch (select) {
         case "Business":
             API.getBusinessCardsByOwner(id);

@@ -13,7 +13,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     // Don't call this.setState() here!
-    this.state = { userId: null };
+    this.state = { currentUser: null };
 
   }
   render() {
@@ -24,27 +24,27 @@ class App extends Component {
           <div>
             <Route exact path="/" component={Home} />
 
-            
+
 
             <Route exact path="/member"
-              render={(props) => <MemberBuild {...props} userId={this.state.userId} />}
+              render={(props) => <MemberBuild {...props} currentUser={this.state.currentUser} />}
             />
             <Route
               exact path="/register"
-              render={(props) => <Register {...props} userId={this.state.userId} />}
+              render={(props) => <Register {...props} currentUser={this.state.currentUser} />}
             />
 
             <Route
               exact path="/login"
-              render={(props) => <LogIn {...props} userId={this.state.userId} setUser={(data) => this.setState({ userId: data })} />}
+              render={(props) => <LogIn {...props} currentUser={this.state.currentUser} setcurrentUser={(data) => this.setState({ currentUser: data })} />}
             />
 
             <Route exact path="/template"
-              render={(props) => <ChooseTemplate {...props} userId={this.state.userId} />}
+              render={(props) => <ChooseTemplate {...props} currentUser={this.state.currentUser} />}
             />
 
             <Route exact path="/mydashboard"
-              render={(props) => <Dashboard {...props} userId={this.state.userId} />}
+              render={(props) => <Dashboard {...props} currentUser={this.state.currentUser} />}
             />
 
 
