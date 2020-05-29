@@ -11,50 +11,32 @@ import Sidebar from './Sidebar';
 
 function Dashboard() {
 
-    // This is an example employee.
 
-        let employee = [
-            {
-                name: "Jake Petersen",
-                title: "Service Advisor",
-                salary: "$60,000",
-                department: "Service",
-                phone: "951-227-6991",
-                email: "j@yahoo.com",
-                address: "Denver, CO"
-            },
-            {
-                name: "John Doe",
-                title: "Sales Advisor",
-                salary: "$50,000",
-                department: "Sales",
-                phone: "951-227-6991",
-                email: "jd@yahoo.com",
-                address: "Littleton, CO"
-            }
-        ]
     return (
         <DashboardStyle>
             <Header />
             <Sidebar />
             <div className="container-main">
-                    <Row>
-                        <Col>
-                            <Todo />
-            
-                            <DashCalendar />
-                        </Col>
-                        <Col>
-                            <Employeecard employees = {employee}/>
-                        </Col>
-                    </Row>
-                    <div className="container">
+                    <Container>
                         <Row>
+                            <Col>
+                                <Todo />
+                                <br />
+                                <Row>
                             <Col>
                                 <Events />
                             </Col>
                         </Row>
-                    </div>
+                            </Col>
+                            <Col>
+                                
+                            </Col>
+                        </Row>
+                    </Container>
+
+                    <Container>
+                        
+                    </Container>
                     
                
                     

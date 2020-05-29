@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Modal, Form, Col } from 'react-bootstrap';
+import { Button as SemButton, Header, Image, Modal as SemModal } from 'semantic-ui-react'
 import { HeaderStyle } from '../style/index.js';
+import DashCalendar from './DashCalendar';
 
 
 function Sidebar() {
@@ -14,15 +16,21 @@ function Sidebar() {
         field6: "",
         field7: ""
     });
+
+    const [events, setEvents] = useState({
+        title: "",
+        date: "",
+        time: "",
+        location: ""
+    })
+
     const [show, setShow] = useState(false);
-    const [field, setField] = useState();
 
     const handleCloseEmployee = () => setShow(false);
     const handleShowEmployee = () => setShow(true);
     const handleInputChange = event => {
         const {name, value} = event.target;
         setUsers({...users, [name]: value})
-        setField({})
     }
     const handleFormSubmit = event => {
         event.preventDefault();
@@ -34,17 +42,32 @@ function Sidebar() {
     
     return (
         <HeaderStyle>
-        <section id="slide-out">
+        <section id="slide-out" className="invisible-top">
             <ul id="side-content">
                 <h5 id="dashboardTitle"className="text-center">My Dashboard</h5>
-                <img id="profile-img" src="https://getuikit.com/docs/images/avatar.jpg" alt="profile" />
+                <img id="profile-img" src="../images/EmployeeCardImage.jpg" alt="profile" />
                 <hr />
-                <h5>Welcome, </h5>
+                <h5 id="welcome-side">WELCOME, </h5>
                 <br />
-                <Button variant="secondary" size="sm" onClick={handleShowEmployee} block>Add New Employee</Button>
-                <Button variant="secondary" size="sm" block>Remove Employee</Button>
-                <Button variant="secondary" size="sm" block>Add Upcoming Event</Button>
-                <Button variant="danger" size="sm" block>Sign Out</Button>
+                <SemButton id="SemButton" fluid color="blue" compact onClick={handleShowEmployee} block>Add New Employee</SemButton>
+
+                <SemButton id="SemButton" fluid color="blue" compact block>Remove Employee</SemButton>
+
+                <SemModal trigger={<SemButton id="SemButton" fluid compact color="blue" class="ui button"block>Add Upcoming Event</SemButton>}>
+                    {/* <SemModal.Header>Add an Event</SemModal.Header> */}
+                    <SemModal.Description>
+                        <Header>Add an Event</Header>
+                        <Form.Group>
+
+                </Form.Group>
+                        
+                    </SemModal.Description>
+                </SemModal>
+
+                <SemButton id="SemButton" compact fluid color="red" block >Sign Out</SemButton>
+                <hr />
+                <br />
+                <DashCalendar />
             </ul>
 
         <Modal show={show} onHide={handleCloseEmployee}>
@@ -58,7 +81,7 @@ function Sidebar() {
                         Name
                         </Form.Label>
                         <Col>
-                        <input 
+                        <Form.Control 
                         name="field1"
                         value={users.field1}
                         onChange={handleInputChange}
@@ -168,6 +191,8 @@ function Sidebar() {
             </Button>
             </Modal.Footer>
       </Modal>
+
+      
 
      
 
