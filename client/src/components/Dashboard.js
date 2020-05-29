@@ -5,7 +5,7 @@ import Todo from './Todo';
 import DashCalendar from './DashCalendar';
 import Header from './Header';
 import Events from './Events';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Container } from 'reactstrap';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
 
@@ -14,6 +14,7 @@ import NewEmployeeCard from "./NewEmployeeCard";
 
 
 function Dashboard() {
+
 
     const users = [
         {
@@ -39,24 +40,28 @@ function Dashboard() {
     // const [users, setUsers] = useState([{
 
     // }])
+
     return (
         <DashboardStyle>
             <Header />
             <Sidebar />
             <div className="container-main">
-
-                <Row>
-                    <Col>
-                        <Todo />
-                    </Col>
-                    <Col>
-                        <DashCalendar />
+                    <Container>
                         <Row>
+                            <Col>
+                                <Todo />
+                                <br />
+                                <Row>
                             <Col>
                                 <Events />
                             </Col>
                         </Row>
-                    </Col>
+                            </Col>
+                            <Col>
+                                
+                            </Col>
+                        </Row>
+                    </Container>
 
 
                     <Col style={{ backgroundColor: "#3f3f3f", margin: "20px" }}>
@@ -75,6 +80,17 @@ function Dashboard() {
 
                     </Col>
                 </Row>
+
+                    <Container>
+                        
+                    </Container>
+                    
+               
+                    
+               
+                    
+               
+
             </div>
             <Footer />
         </DashboardStyle >

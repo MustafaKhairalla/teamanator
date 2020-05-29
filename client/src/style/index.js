@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const FooterStyle = styled.div `
 #footer-main {
     background-color: #005ab4;
-    position: relative;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -11,7 +11,7 @@ export const FooterStyle = styled.div `
     font-family: 'Didact Gothic', sans-serif;
 }
 #thank-you {
-    padding-left: 295px;
+    padding-left: 315px;
     padding-top: 5px;
 }
 #duck-bio {
@@ -24,30 +24,28 @@ ul {
 `
 export const DashboardStyle = styled.div `
 .container-main {
-    padding-left: 350px;
-    padding-top: 90px;
-    background: #003973;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #E5E5BE, #003973);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #E5E5BE, #003973); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding-left: 310px;
+    padding-top: 110px;
+    margin-right: 30px;
     font-family: 'Didact Gothic', sans-serif;
 }
 .scroll {
     max-height: 600px;
     overflow-y: auto;
 }
+.invisible-top {
+  margin-top: 80px;
+}
+#welcome-side {
+  color: white;
+}
 
-  @media only screen and (min-width : 992px) {
-    .invisible-top {
-      top: 64px;
-    }
-  }
 
-
-@media only screen and (max-width : 992px) {
-    .container-main {
-        padding-left: 20px;
-    }
-  }
+// @media only screen and (max-width : 992px) {
+//     .container-main {
+//         padding-left: 20px;
+//     }
+//   }
 `
 
 export const HeaderStyle = styled.div `
@@ -59,20 +57,22 @@ export const HeaderStyle = styled.div `
     top: 0;
 }
 #profile-img {
-    height: 50%;
+    height: 150px;
     width: 80%;
     margin: 20px;
-    border-radius: 50%;
 }
 #side-content {
   margin-left: 0px;
   margin-right: 35px;
 }
-
+#SemButton {
+  margin-top: 5px;
+}
 #slide-out {
     height: 100%;
-    width: 260px;
+    width: 300px;
     position: fixed;
+    padding-top: 350px;
     z-index: 1;
     top: 0;
     left: 0;
@@ -81,7 +81,7 @@ export const HeaderStyle = styled.div `
     padding-top: 20px;
 }
 #dashboardTitle {
-  padding-top: 30px;
+ 
   color: white;
 }
 
@@ -144,8 +144,11 @@ body{
 
 export const TodoStyle = styled.div `
 .scroll2 {
-    max-height: 300px;
+    max-height: 270px;
     overflow-y: auto;
+  }
+  .button1 {
+    margin: 10px;
   }
   .todoListMain .header1 {
       padding: 10px;
