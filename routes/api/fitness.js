@@ -24,7 +24,7 @@ router.post("/", (req, res) => {
 
     newCards.forEach(o => {
         const newFitness = new Fitness({
-            owner: req.user.id,
+            owner: req.body.userId,
             Name: o.field1 ? o.field1 : "unlisted",
             email: o.field2 ? o.field2 : "unlisted", // check order
             age: o.field3 ? o.field3 : "unlisted",

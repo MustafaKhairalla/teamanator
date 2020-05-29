@@ -26,7 +26,7 @@ class App extends Component {
             <Route exact path="/member" component={MemberBuild} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={LogIn} />
-            <Route exact path="/template" component={ChooseTemplate} />
+
             <Route exact path="/mydashboard" render={Dashboard} />
           </div>
         </Router>

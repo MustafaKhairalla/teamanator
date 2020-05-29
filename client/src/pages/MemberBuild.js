@@ -7,6 +7,7 @@ import Row from "react-bootstrap/Row";
 import { Redirect } from "react-router-dom";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
+import CreateCard from "../utils/CreateCard";
 
 const MemberBuild = (props) => {
 
@@ -40,7 +41,11 @@ const MemberBuild = (props) => {
         console.log(template.users);
 
         var routeSelect = template.title;
-        await API.createFitnessCard(template.users);
+        const fullData = template.users
+        fullData.userId = props.userId.token;
+        fullData.title = routeSelect
+        await API.createFitnessCard(fullData);
+
 
         // setSaving(true)
         // const res = await axio.post ("api/save", data)
@@ -225,7 +230,7 @@ const MemberBuild = (props) => {
                 <button
                     onClick={() => saveToDatabase(template)} //change to API call
                     className="ui right floated green button"><Link to="/mydashboard">Finish</Link>
-                 </button>
+                </button>
             </row>
         </Container>
     )

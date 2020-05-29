@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 import React from 'react';
 import EmployeeDetail from './EmployeeDetail';
-import { Card, Feed } from 'semantic-ui-react';
+import { Feed } from 'semantic-ui-react';
 
 function Employeecard(props) {
     return (
@@ -15,7 +15,7 @@ function Employeecard(props) {
                 <CardTitle>My Employees</CardTitle>
                 <CardText>
 
-                    
+
                     {/* <ListGroup>
                         
                         {props.employees.map(employees => (
@@ -24,13 +24,13 @@ function Employeecard(props) {
                         
                     </ListGroup> */}
                     <Card.Content>
-      <Feed>
-        {props.employees.map(employees => (
-            <EmployeeDetail employees={employees} />
-        ))}
+                        <Feed>
+                            {props.employees.map(employees => (
+                                <EmployeeDetail employees={employees} />
+                            ))}
 
-      </Feed>
-    </Card.Content>
+                        </Feed>
+                    </Card.Content>
 
                 </CardText>
             </CardBody>
