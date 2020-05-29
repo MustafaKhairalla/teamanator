@@ -1,5 +1,7 @@
 import {
-   Form, Button, ListGroup, FormGroup, Input, ListGroupItem, CardTitle, CardText, CardBody
+
+    Card, Form, Button, ListGroup, FormGroup, Input, ListGroupItem, CardTitle, CardText, CardBody
+
 } from 'reactstrap';
 import React from 'react';
 import EmployeeDetail from './EmployeeDetail';
@@ -12,6 +14,7 @@ function Employeecard(props) {
             <CardBody>
                 <CardTitle>My Employees</CardTitle>
                 <CardText>
+
                     
                     {/* <ListGroup>
                         
@@ -28,11 +31,12 @@ function Employeecard(props) {
 
       </Feed>
     </Card.Content>
+
                 </CardText>
             </CardBody>
         </Card>
     )
-                
+
 };
 
 export default Employeecard;

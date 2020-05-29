@@ -22,5 +22,4 @@ class DashCalendar extends Component {
     );
   }
 };
-
 export default DashCalendar;

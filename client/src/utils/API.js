@@ -79,9 +79,9 @@ export default {
     },
 
     //update user typeOfteam: "business"
-    UpdateUserTeamType: function (id) {
-        return axios.put("api/type", + id, body)
-    }
+    // UpdateUserTeamType: function (id) {
+    //     return axios.put("api/type", + id, body)
+    // }
 
 
 } // End of Export function 
