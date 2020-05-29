@@ -5,7 +5,6 @@ import MemberBuild from "./pages/MemberBuild";
 import Home from "./pages/Homepage.js";
 import LogIn from "./pages/LogIn"
 import Dashboard from './components/Dashboard';
-import Header from './components/Header';
 import Register from './components/Register';
 // import Footer from './components/Footer';
 
