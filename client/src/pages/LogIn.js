@@ -3,13 +3,8 @@ import Navbar from "../components/Navbar";
 import {HeaderStyle, LoginStyle} from '../style/index.js';
 import Header from "../components/Header";
 
-<<<<<<< HEAD
 import { Col} from "reactstrap";
 import { Link } from "react-router-dom";
-=======
-import { Container, Row, Jumbotron, Button, Form, Input, FormGroup, Label } from "reactstrap";
-import { Link, Redirect } from "react-router-dom";
->>>>>>> cc8561ff3eee0946775c1e13602c2b3d32c18b98
 import Axios from "axios";
 
 import LoginContext from "../utils/LoginContext";
@@ -66,7 +61,6 @@ function LogIn(props) {
     console.log(user);
     if(user.userId    ) return (<Redirect to="/template"/>)
     return (
-<<<<<<< HEAD
         <div className="app">
             	<HeaderStyle>
                     <Header />
@@ -109,42 +103,6 @@ function LogIn(props) {
     </div>
 
     )
-=======
-        <LoginContext.Provider value={user.token}>
-            <div className="app">
-                <Navbar></Navbar>
-                <Container>
-                    <Jumbotron fluid>
-                        <Row>
-                            <Form className="text-center">
-                                <FormGroup>
-                                    <Label for="exampleEmail">Email</Label>
-                                    <Input type="email" name="username"
-                                        value={user.email}
-                                        onChange={handleInputChange}
-                                        id="exampleEmail" placeholder="email" />
-                                </FormGroup>
-                                <FormGroup>
-                                    <Label for="examplePassword">Password</Label>
-                                    <Input type="password" name="password"
-                                        value={user.password}
-                                        onChange={handleInputChange}
-                                        id="examplePassword" placeholder="email" />
-                                </FormGroup>
-                                <Button
-                                    onClick={handleFormSubmit}>
-                                    {/* <Link to="/template">LogIn</Link> */}
-                                    Login 
-                                </Button>
-                            </Form>
-                        </Row>
-                    </Jumbotron>
-                </Container>
-
-            </div>
-        </LoginContext.Provider>
-    );
->>>>>>> cc8561ff3eee0946775c1e13602c2b3d32c18b98
 }
 
 export default LogIn

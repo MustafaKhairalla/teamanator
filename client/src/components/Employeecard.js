@@ -14,22 +14,6 @@ function Employeecard(props) {
             <CardBody>
                 <CardTitle>My Employees</CardTitle>
                 <CardText>
-<<<<<<< HEAD
-                    {/* <Form>
-                        <FormGroup>
-                            <Input type="title" id="eventTitle" name="title" placeholder="Event Title"></Input>
-                        </FormGroup>
-                        <FormGroup>
-                            <Input type="body" name="body" id="eventDescription" placeholder="Event Description"></Input>
-                        </FormGroup>
-                    </Form>
-                        <Button type="submit" id="eventAdd">Add</Button> */}
-                    <ListGroup>
-                        {/* <ListGroupItem> <EmployeeDetail/> </ListGroupItem>
-                        {props.employees.map(emp => (
-                            <EmployeeDetail emp={emp} />
-                        ))} */}
-=======
 
 
                     {/* <ListGroup>
@@ -37,7 +21,6 @@ function Employeecard(props) {
                         {props.employees.map(employees => (
                             <EmployeeDetail employees={employees} />
                         ))}
->>>>>>> cc8561ff3eee0946775c1e13602c2b3d32c18b98
                         
                     </ListGroup> */}
                     <Card.Content>
