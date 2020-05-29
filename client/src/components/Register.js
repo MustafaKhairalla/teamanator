@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { HeaderStyle, RegisterStyle } from '../style/index.js';
 import Header from './Header';
+import Axios from "axios";
 
 function Register (props) {
 	
@@ -60,18 +61,16 @@ function Register (props) {
 				  <div className="col-sm-10">
 					<input type="password" className="form-control" id="password" placeholder="Enter password" name="password"></input>
 				  </div>
-				</div>
-				
+				</div>	
 			</div>
 			<div className="form-group">        
 				  <div className="col-sm-10">
 					<button type="submit" id="register-submit" className="btn btn-default">Submit</button>
 				  </div>
 				</div>
-		            </div>
-		            
-	</div>
-</div>
+		            </div>	            
+			</div>
+		</div>
 </RegisterStyle>
 </>
 

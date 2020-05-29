@@ -21,10 +21,10 @@ function Employeecard(props) {
                     </Form>
                         <Button type="submit" id="eventAdd">Add</Button> */}
                     <ListGroup>
-                        {/* <ListGroupItem> <EmployeeDetail/> </ListGroupItem> */}
+                        {/* <ListGroupItem> <EmployeeDetail/> </ListGroupItem>
                         {props.employees.map(emp => (
                             <EmployeeDetail emp={emp} />
-                        ))}
+                        ))} */}
                         
                     </ListGroup>
                 </CardText>
