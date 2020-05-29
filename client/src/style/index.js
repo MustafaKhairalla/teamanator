@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const FooterStyle = styled.div `
 #footer-main {
     background-color: #005ab4;
-    position: relative;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -11,40 +11,41 @@ export const FooterStyle = styled.div `
     font-family: 'Didact Gothic', sans-serif;
 }
 #thank-you {
-    padding-left: 295px;
+    padding-left: 315px;
     padding-top: 5px;
 }
 #duck-bio {
     font-size: small;
     text-justify: auto;
 }
+ul {
+    list-style: none;
+}
 `
 export const DashboardStyle = styled.div `
 .container-main {
-    padding-left: 350px;
-    padding-top: 90px;
-    background: #003973;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #E5E5BE, #003973);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #E5E5BE, #003973); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding-left: 310px;
+    padding-top: 110px;
+    margin-right: 30px;
     font-family: 'Didact Gothic', sans-serif;
 }
 .scroll {
     max-height: 600px;
     overflow-y: auto;
 }
+.invisible-top {
+  margin-top: 80px;
+}
+#welcome-side {
+  color: white;
+}
 
-  @media only screen and (min-width : 992px) {
-    .invisible-top {
-      top: 64px;
-    }
-  }
 
-
-@media only screen and (max-width : 992px) {
-    .container-main {
-        padding-left: 20px;
-    }
-  }
+// @media only screen and (max-width : 992px) {
+//     .container-main {
+//         padding-left: 20px;
+//     }
+//   }
 `
 
 export const HeaderStyle = styled.div `
@@ -53,22 +54,25 @@ export const HeaderStyle = styled.div `
     position: fixed;
     width: 100%;
     padding: 10px;
+    top: 0;
 }
 #profile-img {
-    height: 50%;
+    height: 150px;
     width: 80%;
     margin: 20px;
-    border-radius: 50%;
 }
 #side-content {
   margin-left: 0px;
   margin-right: 35px;
 }
-
+#SemButton {
+  margin-top: 5px;
+}
 #slide-out {
     height: 100%;
-    width: 260px;
+    width: 300px;
     position: fixed;
+    padding-top: 350px;
     z-index: 1;
     top: 0;
     left: 0;
@@ -77,7 +81,7 @@ export const HeaderStyle = styled.div `
     padding-top: 20px;
 }
 #dashboardTitle {
-  padding-top: 30px;
+ 
   color: white;
 }
 
@@ -101,34 +105,20 @@ body{
     background: -webkit-linear-gradient(to right, #E5E5BE, #003973);
     background: linear-gradient(to right, #E5E5BE, #003973);
 }
-#card-register {
-    margin-top: 80px;
-}
-.contact-register{
-    padding: 4%;
-    height: 400px;
-}
 .col3 {
     background: #2C2B30;
     padding: 4%;
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
     color: white;
 }
 .contact-info{
-    margin-top:10%;
+
 }
 .contact-info, .img-register{
-    margin-bottom: 15%;
+    margin-bottom: 15px;
+    color: white;
 }
 .contact-info, .h2-register{
     margin-bottom: 10%;
-}
-.col9{
-    background: #fff;
-    padding: 3%;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
 }
 .contact-form {
     font-weight:500;
@@ -138,17 +128,27 @@ body{
     background: #222629;
     color: #fff;
     font-weight: 600;
-    width: 25%;
+    width: 350px;
 }
 #welcome-text {
     padding: 5px;
+}
+#register-submit {
+  color: white;
+}
+.contact-register {
+  margin-top: 100px;
+  margin-bottom: 150px;
 }
 `
 
 export const TodoStyle = styled.div `
 .scroll2 {
-    max-height: 300px;
+    max-height: 270px;
     overflow-y: auto;
+  }
+  .button1 {
+    margin: 10px;
   }
   .todoListMain .header1 {
       padding: 10px;

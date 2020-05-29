@@ -12,7 +12,7 @@ export default {
     },
 
     getBusinessCardsByOwner: function (id) {
-
+        return axios.get("api/business", + id)
     },
 
     createBusinessCard: function (businessData) {
@@ -30,8 +30,8 @@ export default {
         return axios.get("api/education")
     },
 
-    getEducationCardsByOwner: function () {
-
+    getEducationCardsByOwner: function (id) {
+        return axios.get("api/education", + id)
     },
 
     createEducationCard: function (educationData) {
@@ -48,8 +48,8 @@ export default {
         return axios.get("api/fitness")
     },
 
-    getFitnessCardsByOwner: function () {
-
+    getFitnessCardsByOwner: function (id) {
+        return axios.get("api/fitness", + id)
     },
 
     createFitnessCard: function (fitnessData) {
@@ -66,8 +66,8 @@ export default {
         return axios.get("api/sport")
     },
 
-    getSportCardsByOwner: function () {
-
+    getSportCardsByOwner: function (id) {
+        return axios.get("api/sport", + id)
     },
 
     createSportCard: function (sportData) {
@@ -78,5 +78,13 @@ export default {
         return axios.delete("api/sport", + id)
     },
 
+    //update user typeOfteam: "business"
+    // UpdateUserTeamType: function (id) {
+    //     return axios.put("api/type", + id, body)
+    // }
+
 
 } // End of Export function 
+
+
+//API.UpdateuserTeamType: (`{$id}` , TypeOfTeam: `{$title}`)

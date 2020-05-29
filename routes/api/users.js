@@ -96,6 +96,19 @@ router.delete("/:id", (req, res) => {
         .catch(err => res.status(404).json({ success: false }));
 })
 
+router.put("/type/:id", (req, res) => {
+    User.findById(req.params.id)
+        .then(user => user.update(req.body))
+        .catch(err => res.status(404).json({ success: false }));
+})// note how to do 
+
+
+//get cards by id
+router.get("/id", (req, res) => {
+    User.findById(req.params.id)
+        .then(user => res.json(user))
+})
+
 
 
 
