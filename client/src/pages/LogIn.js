@@ -107,18 +107,9 @@ function LogIn(props) {
                             </Row>
                         </div>
                     </Container>
-<<<<<<< HEAD
-
-
+                </LoginStyle>
             </div>
-        </LoginContext.Provider  >
-
-
-=======
-         </LoginStyle>
-       </div>
-     </LoginContext.Provider>
->>>>>>> 24400bd2da57464702c42ead8c9e2b3c633a7857
+        </LoginContext.Provider>
     )
 }
 
