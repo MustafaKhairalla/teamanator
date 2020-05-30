@@ -27,6 +27,7 @@ function Dashboard(props) {
     const login = useContext(LoginContext);
     //console.log("userId:" + props.currentUser.userId);
     console.log(props.currentUser)
+   
     const [show, setShow] = useState(false);
     const [data, setData] = useState({});
 
@@ -83,7 +84,7 @@ function Dashboard(props) {
     return (
         <DashboardStyle>
             <Header />
-            <Sidebar />
+            <Sidebar name={props.currentUser.user} />
             <div className="container-main">
                 <Container>
                     <Row>
