@@ -15,7 +15,7 @@ import DashCalendar from './DashCalendar';
 import Header from './Header';
 import Events from './Events';
 import { Row, Col, Container, Button } from 'reactstrap';
-import Footer from './Footer';
+import Footer from './footer';
 import Sidebar from './Sidebar';
 
 import CardHolder from "./CardHolder";
@@ -28,7 +28,7 @@ function Dashboard(props) {
     const login = useContext(LoginContext);
     //console.log("userId:" + props.currentUser.userId);
     console.log(props.currentUser)
-   
+
     const [show, setShow] = useState(false);
     const [dataBaseData, setDataBaseData] = useState([]);
 
