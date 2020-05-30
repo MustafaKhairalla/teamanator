@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import Navbar from "../components/Navbar";
+
 import {HeaderStyle, LoginStyle} from '../style/index.js';
 import Header from "../components/Header";
 
-import { Col} from "reactstrap";
-import { Link } from "react-router-dom";
+import { Col, Row, Input, Form, FormGroup, Container, Jumbotron, Label, Button} from "reactstrap";
+import { Link, Redirect } from "react-router-dom";
 import Axios from "axios";
 
 import LoginContext from "../utils/LoginContext";
@@ -65,33 +65,39 @@ function LogIn(props) {
         <LoginContext.Provider value={user.token}>
             <div className="app">
                 <LoginStyle>
-                <Navbar></Navbar>
+                <Header></Header>
                 <Container>
-                    <Jumbotron fluid>
+                    <div class="card" id= "loginCard">
                         <Row>
-                            <Form className="text-center">
-                                <FormGroup>
-                                    <Label for="exampleEmail">Email</Label>
-                                    <Input type="email" name="username"
-                                        value={user.email}
-                                        onChange={handleInputChange}
-                                        id="exampleEmail" placeholder="email" />
-                                </FormGroup>
-                                <FormGroup>
-                                    <Label for="examplePassword">Password</Label>
-                                    <Input type="password" name="password"
-                                        value={user.password}
-                                        onChange={handleInputChange}
-                                        id="examplePassword" placeholder="email" />
-                                </FormGroup>
-                                <Button
-                                    onClick={handleFormSubmit}>
-                                    {/* <Link to="/template">LogIn</Link> */}
-                                    Login
-                                </Button>
-                            </Form>
+                            <Col md={4}>
+                                <Form className="text-center">
+                                    <img className="img-register" src="https://img.icons8.com/ios/50/000000/login-rounded-right.png"/>
+                                        <h3 id="welcome-text">WELCOME BACK!</h3>
+                                        <h4></h4>
+                                    <FormGroup>
+                                        <Label for="exampleEmail">Email</Label>
+                                        <Input type="email" name="username"
+                                            value={user.email}
+                                            onChange={handleInputChange}
+                                            id="exampleEmail" placeholder="email" />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label for="examplePassword">Password</Label>
+                                        <Input type="password" name="password"
+                                            value={user.password}
+                                            onChange={handleInputChange}
+                                            id="examplePassword" placeholder="password" />
+                                    </FormGroup>
+                                    <Button
+                                        onClick={handleFormSubmit}>
+                                        {/* <Link to="/template">LogIn</Link> */}
+                                        Login
+                                    </Button>
+                                </Form>
+                            </Col>
+                            <Col md= {5}></Col>
                         </Row>
-                    </Jumbotron>
+                    </div>
                 </Container>
          </LoginStyle>
        </div>
