@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
+import {HeaderStyle, LoginStyle} from '../style/index.js';
 import Header from "../components/Header";
 
-import { Container, Row, Jumbotron, Button, Form, Input, FormGroup, Label } from "reactstrap";
-import { Link, Redirect } from "react-router-dom";
+import { Col} from "reactstrap";
+import { Link } from "react-router-dom";
 import Axios from "axios";
 
 import LoginContext from "../utils/LoginContext";
@@ -60,6 +61,7 @@ function LogIn(props) {
     console.log(user);
     if (user.userId) return (<Redirect to="/template" />)
     return (
+
         <LoginContext.Provider value={user.token}>
             <div className="app">
                 <Navbar></Navbar>
@@ -91,9 +93,12 @@ function LogIn(props) {
                     </Jumbotron>
                 </Container>
 
+
             </div>
-        </LoginContext.Provider>
-    );
+         </LoginStyle>
+    </div>
+
+    )
 }
 
 export default LogIn
