@@ -50,7 +50,7 @@ function LogIn(props) {
     if (loginUser && loginUser.typeOfTeam) return (<Redirect to="/mydashboard" />)
     if (user.userId && loginUser._id) return (<Redirect to="/template" />)
     return (
-        <LoginStyle>
+    
         <LoginContext.Provider value={user.token}>
             <div className="app">
 
