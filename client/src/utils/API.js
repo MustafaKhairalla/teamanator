@@ -8,11 +8,12 @@ export default {
 
     // Handle business cards
     getAllBusinessCards: function () {
-        return axios.get("api/business")
+        return axios.get("api/business/")
     },
 
+    //this business:
     getBusinessCardsByOwner: function (id) {
-        return axios.get("api/business", + id)
+        return axios.get("api/business/" + id)
     },
 
     createBusinessCard: function (businessData) {
@@ -29,9 +30,9 @@ export default {
     getAllEducationCards: function () {
         return axios.get("api/education")
     },
-
+    // this education
     getEducationCardsByOwner: function (id) {
-        return axios.get("api/education", + id)
+        return axios.get("api/education/", + id)
     },
 
     createEducationCard: function (educationData) {
@@ -47,9 +48,9 @@ export default {
     getAllFitnessCards: function () {
         return axios.get("api/fitness")
     },
-
+    // this fitness 
     getFitnessCardsByOwner: function (id) {
-        return axios.get("api/fitness", + id)
+        return axios.get("api/fitness/", + id)
     },
 
     createFitnessCard: function (fitnessData) {
@@ -65,9 +66,9 @@ export default {
     getAllSportCards: function () {
         return axios.get("api/sport")
     },
-
+    //get sport
     getSportCardsByOwner: function (id) {
-        return axios.get("api/sport", + id)
+        return axios.get("api/sport/", + id)
     },
 
     createSportCard: function (sportData) {
