@@ -15,7 +15,7 @@ const sport = require("./routes/api/sport");
 const app = express();
 
 // DB config
-const db = require("./config/keys").mongoURI;
+const db = require("./config/keys").mongoURI || MONGO_LOGIN;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
