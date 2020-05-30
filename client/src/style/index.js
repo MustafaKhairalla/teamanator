@@ -2,13 +2,15 @@ import styled from 'styled-components';
 
 export const FooterStyle = styled.div `
 #footer-main {
-    background-color: #005ab4;
+    background-color: #2d2b31;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    text-align: center;
+    margin-left: 300px;
     font-family: 'Didact Gothic', sans-serif;
+    color: white;
+    padding: 4px 4px 2px 8px;
 }
 #thank-you {
     padding-left: 315px;
@@ -20,12 +22,20 @@ export const FooterStyle = styled.div `
 }
 ul {
     list-style: none;
+    columns: 2;
+}
+#team-duck {
+  font-weight: bold;
+  
+}
+#meet-team {
+  font-weight: bold;
 }
 `
 export const DashboardStyle = styled.div `
 .container-main {
     padding-left: 310px;
-    padding-top: 110px;
+    padding-top: 140px;
     margin-right: 30px;
     font-family: 'Didact Gothic', sans-serif;
 }
@@ -34,7 +44,7 @@ export const DashboardStyle = styled.div `
     overflow-y: auto;
 }
 .invisible-top {
-  margin-top: 80px;
+  margin-top: 128px;
 }
 #welcome-side {
   color: white;
@@ -69,6 +79,7 @@ export const HeaderStyle = styled.div `
   margin-top: 5px;
 }
 #slide-out {
+    position: absolute;
     height: 100%;
     width: 300px;
     position: fixed;
@@ -85,7 +96,7 @@ export const HeaderStyle = styled.div `
   color: white;
 }
 
-img{
+img {
   float:left;
 }
 
