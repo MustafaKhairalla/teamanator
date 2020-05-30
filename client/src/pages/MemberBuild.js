@@ -125,8 +125,9 @@ const MemberBuild = (props) => {
                             <img style={{ width: '15rem' }} src={`${template.config.image}`} alt="newimg" />
 
                         </div>
+                        <br />
                         <div>
-                            <ul>
+                            <ul style={{ listStyle: "none" }}>
 
                                 {userCount.map(u => (
 

@@ -7,6 +7,9 @@ const CreateCard = (select, data) => {
         case "Business":
             API.createBusinessCard(data);
             break;
+        case "Bussines":
+            API.createBusinessCard(data);
+            break;
 
         case "Education":
             API.createEducationCard(data);

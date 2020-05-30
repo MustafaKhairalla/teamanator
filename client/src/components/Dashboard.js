@@ -91,7 +91,7 @@ function Dashboard(props) {
     return (
         <DashboardStyle>
             <Header />
-            <Sidebar />
+            <Sidebar mainName={props.currentUser.user.firstName} />
 
             <div className="container-main">
                 <Container>
@@ -109,8 +109,6 @@ function Dashboard(props) {
                             <CardHolder>
 
                                 {dataBaseData.map(e => {
-
-
                                     const { Name, phoneNumber, email } = e
 
                                     return (<NewEmployeeCard
