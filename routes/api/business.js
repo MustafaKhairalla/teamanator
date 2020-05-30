@@ -8,6 +8,7 @@ const Business = require("../../models/Business");
 // @desc Get ALL business cards
 
 router.get("/", (req, res) => {
+    console.log("RUNSSS somewhere..")
     Business.find()
         .then(business => res.json(business))
 });
@@ -58,10 +59,21 @@ router.delete("/:id", (req, res) => {
 // @route GET api/business/:id
 // @ desc findbyID business cards
 
+// router.get("/:id", (req, res) => {
+//     Business.findById(req.params.id)
+//         .then(business => res.json(business))
+// });
+
+
+
+//NEW ROUTE 
 router.get("/:id", (req, res) => {
-    Business.findById(req.params.id)
+    console.log('Req.user: ', req.user)
+
+    Business.find({ owner: req.params.id })
         .then(business => res.json(business))
 });
+
 
 module.exports = router;
 

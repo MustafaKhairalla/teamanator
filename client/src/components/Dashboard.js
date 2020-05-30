@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import Modal from 'react-bootstrap/Modal';
+import faker from "faker";
+import API from "../utils/API";
+import LoginContext from "../utils/LoginContext";
+import GetCard from "../utils/getCard";
+
+
+
 import { DashboardStyle } from '../style/index';
 import Employeecard from './Employeecard';
 import Todo from './Todo';
 import DashCalendar from './DashCalendar';
 import Header from './Header';
 import Events from './Events';
-import { Row, Col, Container } from 'reactstrap';
+import { Row, Col, Container, Button } from 'reactstrap';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
 
@@ -13,7 +21,11 @@ import CardHolder from "./CardHolder";
 import NewEmployeeCard from "./NewEmployeeCard";
 
 
-function Dashboard() {
+function Dashboard(props) {
+    const login = useContext(LoginContext);
+    //console.log("userId:" + props.currentUser.userId);
+
+    const [show, setShow] = useState(false);
 
 
     const users = [
@@ -41,6 +53,27 @@ function Dashboard() {
 
     // }])
 
+    const handleClose = () => {
+        // setFiredMatch(false);
+        setShow(false);
+    };
+    const handleShow = () => setShow(true);
+
+
+    useEffect(() => {
+        // console.log("use effect runs")
+        //  gettinData = await GetCard("Business", props.currentUser.userId);
+        // console.log(gettinData)
+        // console.log(gettinData[0])
+
+        API.getBusinessCardsByOwner(props.currentUser.userId)
+            .then(data => {
+
+                console.log(props.currentUser.userId);
+                console.log(data)
+            });
+    })
+
     return (
         <DashboardStyle>
             <Header />
@@ -66,9 +99,62 @@ function Dashboard() {
                                         title={e.title}
                                         location={e.location}
 
+                                        handleShow={handleShow}
+
                                     />
                                 ))}
-                                {/* <Employeecard /> */}
+
+                                <Modal aria-labelledby="contained-modal-title-vcenter"
+                                    centered show={show} onHide={handleClose}>
+                                    <Modal.Header closeButton>
+                                        <Modal.Title className="ui yellow">{users.name}</Modal.Title>
+                                    </Modal.Header>
+                                    <Modal.Body>
+                                        <Container>
+                                            <Row >
+                                                <Col md={4}>
+                                                    <span >
+                                                        <img src={faker.image.avatar()} alt={users.name} />
+
+                                                    </span>
+                                                </Col>
+                                                <Col md={8}>
+                                                    <h6 > Location: {users.location}</h6>
+                                                    {/* <h6 > Email: {employee.email}</h6> */}
+                                                    <h6 > Mobile: </h6>
+                                                    <h6 > Department: </h6>
+                                                    <h6 > Salary:  $ }</h6>
+                                                    <h6 > Title:  {users.title}</h6>
+                                                </Col>
+                                            </Row>
+                                        </Container>
+                                    </Modal.Body>
+                                    <Modal.Footer>
+                                        <Container>
+                                            {/* <div className="alert alert-danger mr-2 ml-2" role="alert" style={{ opacity: firedMatch ? 1 : 0 }}>
+                                                This employee has been fired
+                                            </div> */}
+                                        </Container>
+                                        <Button className="ui inverted green button" onClick={handleClose}>
+                                            Close
+                        </Button>
+                                        <Button className="ui inverted red button" variant="danger" onClick={() => {
+                                            // handleFire(employee.email)
+                                            // console.log(employee.email)
+                                        }
+                                        }>
+                                            Fire Employee
+                        </Button>
+
+                                    </Modal.Footer>
+                                </Modal>
+
+
+
+
+
+
+
                             </CardHolder>
 
                         </Col>

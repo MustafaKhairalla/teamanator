@@ -47,8 +47,8 @@ const NewEmployeeCard = (props) => {
             </div>
             </div>
 
-            <div className="ui secondary inverted segment">
-                <button className="ui inverted red button" onClick={() => {
+            <div className="ui blue inverted segment">
+                <button className="ui inverted white button" onClick={() => {
                     // props.setEmployee({
                     //     name: props.name,
                     //     title:props.title,
@@ -56,7 +56,7 @@ const NewEmployeeCard = (props) => {
                     //     image: faker.image.avatar()
 
                     // })
-                    // props.handleShow()
+                    props.handleShow()
 
                 }}>Show more info</button>
 
