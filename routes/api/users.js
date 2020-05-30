@@ -50,7 +50,7 @@ router.post("/login", (req, res, next) => {
             }
 
             //return user ID to store into cards 
-            return res.json({ sucess: user._id });
+            return res.json({ sucess: user._id, user });
 
 
         })(req, res, next);
@@ -97,8 +97,8 @@ router.delete("/:id", (req, res) => {
 })
 
 router.put("/type/:id", (req, res) => {
-    User.findById(req.params.id)
-        .then(user => user.update(req.body))
+    User.findById(req.body.userId)
+        .then(user => user.update({ typeOfTeam: req.body.team }))
         .catch(err => res.status(404).json({ success: false }));
 })// note how to do 
 

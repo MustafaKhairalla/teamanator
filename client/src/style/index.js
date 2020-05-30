@@ -209,45 +209,13 @@ export const TodoStyle = styled.div `
     }
 `
 export const LoginStyle = styled.div `
-.col3 {
-  background: #2C2B30;
-  padding: 4%;
-  color: white;
-}
-.contact-info{
-
-}
-.contact-info, .img-register{
-  margin-bottom: 15px;
-  color: white;
-}
-.contact-info, .h2-register{
-  margin-bottom: 10%;
-}
-.contact-form {
-  font-weight:500;
-}
-
-.contact-form, .button1 {
-  color: #fff;
-  font-weight: 600;
-  width: 350px;
-}
-#welcome-text {
-  padding: 5px;
-}
-#register-submit {
-color: #222629;
-background: #fff;
-left-margin;
-}
-.contact-register {
-margin-top: 100px;
-margin-bottom: 150px;
-}
-#card-register{
+#loginCard{
   postition:fixed;
-  top:200px;
+  top:30px;
+  margin: 6em;
+  background-color: #2c2b30;
+  padding: 3em;
+  color: #fff;
 }
 `
 

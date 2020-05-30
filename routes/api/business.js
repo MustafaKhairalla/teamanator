@@ -3,11 +3,13 @@ const router = express.Router();
 
 //User model
 const Business = require("../../models/Business");
+const User = require("../../models/User");
 
 // @route GET api/business inside AXIOS
 // @desc Get ALL business cards
 
 router.get("/", (req, res) => {
+    console.log("RUNSSS somewhere..")
     Business.find()
         .then(business => res.json(business))
 });
@@ -36,7 +38,8 @@ router.post("/", async (req, res) => {
             return newBusiness.save()
 
         }); // end loop
-
+        console.log({ id: req.body.userId })
+        await User.findById(req.body.userId).then(user => user.update({ typeOfTeam: "Bussines" }))
         // get user by id them aupdateupdate that is bussines
     } catch (err) {
         console.log(err)
@@ -58,10 +61,21 @@ router.delete("/:id", (req, res) => {
 // @route GET api/business/:id
 // @ desc findbyID business cards
 
+// router.get("/:id", (req, res) => {
+//     Business.findById(req.params.id)
+//         .then(business => res.json(business))
+// });
+
+
+
+//NEW ROUTE 
 router.get("/:id", (req, res) => {
-    Business.findById(req.params.id)
+    console.log('Req.user: ', req.user)
+
+    Business.find({ owner: req.params.id })
         .then(business => res.json(business))
 });
+
 
 module.exports = router;
 

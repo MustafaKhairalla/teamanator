@@ -3,6 +3,7 @@ const router = express.Router();
 
 //User model
 const Education = require("../../models/Education");
+const User = require("../../models/User");
 
 // @route GET api/education
 // @desc Get ALL education cards
@@ -37,6 +38,7 @@ router.post("/", async (req, res) => {
                 .catch(err => res.status(404).json({ err }));
 
         }); // end loop
+        await User.findById(req.body.userId).then(user => user.update({ typeOfTeam: "Education" }))
 
     } catch (err) {
         console.log(err)

@@ -1,22 +1,23 @@
 import API from "./API";
 
-const GetCard = (select,
+const GetCard = async (select, id
 ) => {
     switch (select) {
-        case "Business":
-            API.getBusinessCardsByOwner(id);
+        case "Bussines":
+            return await API.getBusinessCardsByOwner(id)
+
             break;
 
         case "Education":
-            API.getEducationCardsByOwner(id);
+            return await API.getEducationCardsByOwner(id);
             break;
 
         case "Fitness":
-            API.getFitnessCardsByOwner(id);
+            return await API.getFitnessCardsByOwner(id);
             break;
 
         case "Sport":
-            API.getSportCardsByOwner(id);
+            return await API.getSportCardsByOwner(id);
             break;
 
     }
