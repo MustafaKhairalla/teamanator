@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
 
+import React, { useEffect } from "react";
 import { HeaderStyle, LoginStyle } from '../style/index.js';
 import Header from "../components/Header";
-
 import { Col, Row, Input, Form, FormGroup, Container, Jumbotron, Label, Button } from "reactstrap";
 import { Link, Redirect } from "react-router-dom";
 import Axios from "axios";
@@ -51,9 +50,10 @@ function LogIn(props) {
     if (loginUser && loginUser.typeOfTeam) return (<Redirect to="/mydashboard" />)
     if (user.userId && loginUser._id) return (<Redirect to="/template" />)
     return (
-
+        <LoginStyle>
         <LoginContext.Provider value={user.token}>
             <div className="app">
+
                 <LoginStyle>
                     <Header></Header>
                     <Container>
