@@ -200,10 +200,11 @@ export const TodoStyle = styled.div `
 export const LoginStyle = styled.div `
 #loginCard{
   postition:fixed;
-  top:200px;
+  top:30px;
   margin: 6em;
   background-color: #2c2b30;
   padding: 3em;
+  color: #fff;
 }
 `
 

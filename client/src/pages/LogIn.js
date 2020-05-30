@@ -70,7 +70,7 @@ function LogIn(props) {
                     <div class="card" id= "loginCard">
                         <Row>
                             <Col md={4}>
-                                <Form className="text-center">
+                                <Form >
                                     <img className="img-register" src="https://img.icons8.com/ios/50/000000/login-rounded-right.png"/>
                                         <h3 id="welcome-text">WELCOME BACK!</h3>
                                         <h4></h4>
