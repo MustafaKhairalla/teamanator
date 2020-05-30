@@ -15,27 +15,33 @@ router.get("/", (req, res) => {
 // @route POST api/education
 // @desc  Create education card
 
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
 
     console.log(req.body)
     const newCards = req.body.formData;
+    try {
 
-    newCards.forEach(o => {
-        const newEducation = new Education({
-            owner: req.body.userId,
-            Name: o.field1 ? o.field1 : "unlisted",
-            program: o.field2 ? o.field2 : "unlisted",
-            languages: o.field3 ? o.field3 : "unlisted",
-            educationLevel: o.field4 ? o.field4 : "unlisted",
-            GPA: o.field5 ? o.field5 : "unlisted",
-            phoneNumber: o.field6 ? o.field6 : "unlisted",
-            email: o.field7 ? o.field7 : "unlisted"
-        }); // end constructor 
+        await newCards.forEach(o => {
+            const newEducation = new Education({
+                owner: req.body.userId,
+                Name: o.field1 ? o.field1 : "unlisted",
+                program: o.field2 ? o.field2 : "unlisted",
+                languages: o.field3 ? o.field3 : "unlisted",
+                educationLevel: o.field4 ? o.field4 : "unlisted",
+                GPA: o.field5 ? o.field5 : "unlisted",
+                phoneNumber: o.field6 ? o.field6 : "unlisted",
+                email: o.field7 ? o.field7 : "unlisted"
+            }); // end constructor 
 
-        newEducation.save()
-            .catch(err => res.status(404).json({ err }));
+            newEducation.save()
+                .catch(err => res.status(404).json({ err }));
 
-    }); // end loop
+        }); // end loop
+
+    } catch (err) {
+        console.log(err)
+        res.status(404).json({ err });
+    }
 
     return res.json({ status: 'ok' })
 });// end post route
