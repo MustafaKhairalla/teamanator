@@ -1,10 +1,15 @@
 import API from "./API";
 
-const GetCard = (select,
+const GetCard = (select, id
 ) => {
     switch (select) {
         case "Business":
-            API.getBusinessCardsByOwner(id);
+            API.getBusinessCardsByOwner(id)
+                .then(data => {
+                    // console.log(props.currentUser.userId);
+                    // console.log(data)
+                    return data;
+                });;
             break;
 
         case "Education":
