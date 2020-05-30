@@ -32,15 +32,13 @@ function LogIn(props) {
             .then(res => {
 
                 const token = res.data.sucess;
+                console.log("token , userId:")
                 console.log(token);
                 if (token === false) {
                     console.log("Login Error!");
                 } else {
-
+                    setUser({ ...user, userId: token });
                     console.log(user);
-
-
-
                     props.setcurrentUser({ userId: token, user: res.data.user })
                     setLoginUser(res.data.user)
 
