@@ -15,28 +15,33 @@ router.get("/", (req, res) => {
 // @route POST api/fitness
 // @desc  Create fitness card
 
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
 
-    let newCards = req.body;
+    const newCards = req.body.formdata;
+    try {
 
 
-    console.log(newCards);
+        await newCards.forEach(async o => {
+            const newFitness = new Fitness({
+                owner: req.body.userId,
+                Name: o.field1 ? o.field1 : "unlisted",
+                email: o.field2 ? o.field2 : "unlisted", // check order
+                age: o.field3 ? o.field3 : "unlisted",
+                weight: o.field4 ? o.field4 : "unlisted",  // check for array
+                goal: o.field5 ? o.field5 : "unlisted",
+                phoneNumber: o.field6 ? o.field6 : "unlisted",
+                notes: o.field7 ? o.field7 : "unlisted"
+            }); // end of constructor
+            console.log("saving new card")
+            return newFitness.save();
 
-    newCards.forEach(o => {
-        const newFitness = new Fitness({
-            owner: req.body.userId,
-            Name: o.field1 ? o.field1 : "unlisted",
-            email: o.field2 ? o.field2 : "unlisted", // check order
-            age: o.field3 ? o.field3 : "unlisted",
-            weight: o.field4 ? o.field4 : "unlisted",  // check for array
-            goal: o.field5 ? o.field5 : "unlisted",
-            phoneNumber: o.field6 ? o.field6 : "unlisted",
-            notes: o.field7 ? o.field7 : "unlisted"
-        }); // end of constructor
-        console.log("saving new card")
-        newFitness.save().catch(err => res.status(404).json({ err }));
+        }); // end loop
 
-    }) // end loop
+    } catch (err) {
+        console.log(err)
+        res.status(404).json({ err });
+    }
+
     return res.json({ status: 'ok' })
 
 }); // end post route -------
