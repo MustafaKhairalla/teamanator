@@ -3,48 +3,22 @@ import faker from "faker";
 
 const NewEmployeeCard = (props) => {
 
-    // const users=[
-    //     {
-    //       id: 1,
-    //       name: "SpongeBob",
-    //       title: "Fry Cook",
-    //      location: "A Pineapple Under the Sea"
-    //     },
-    //     {
-    //         id: 2,
-    //         name: "SpongeBob",
-    //         title: "Fry Cook",
-    //        location: "A Pineapple Under the Sea"
-    //     },
-    //     {
-    //         id: 3,
-    //         name: "SpongeBob",
-    //         title: "Fry Cook",
-    //        location: "A Pineapple Under the Sea"
-    //     }
-    //   ]
-
     return (
         <div className="teal card">
             <div className="content">
-                <img alt="avatar" className="right floated mini ui image" src={faker.image.avatar()} />
-                <div className="header">Name</div>
-                {/* <div className="meta">
-                    {/* <span>{props.department}</span><br></br> */}
-                {/* <span>title</span> */}
-
-                {/* </div>  */}
+                <img alt="avatar" className="right floated mini ui image" src={props.image} />
+                <div className="header">{props.name}</div>
 
                 <div className="description">
 
                     <i className="icon-envelope"></i>
-                    {props.name}
+                    {props.phoneNumber}
 
 
                     <i className="phone icon"></i>
-                phone 555
+                    {props.email}
 
-            </div>
+                </div>
             </div>
 
             <div className="ui blue inverted segment">

@@ -13,7 +13,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     // Don't call this.setState() here!
-    this.state = { currentUser: null };
+    this.state = { currentUser: { user: {} } };
 
   }
   render() {
@@ -27,7 +27,7 @@ class App extends Component {
 
 
             <Route exact path="/member"
-              render={(props) => <MemberBuild {...props} currentUser={this.state.currentUser} />}
+              render={(props) => <MemberBuild {...props} currentUser={this.state.currentUser} setcurrentUser={(data) => this.setState({ currentUser: data })} />}
             />
             <Route
               exact path="/register"

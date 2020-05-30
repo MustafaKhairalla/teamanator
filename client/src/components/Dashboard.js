@@ -7,6 +7,7 @@ import GetCard from "../utils/getCard";
 
 
 
+
 import { DashboardStyle } from '../style/index';
 import Employeecard from './Employeecard';
 import Todo from './Todo';
@@ -29,7 +30,7 @@ function Dashboard(props) {
     console.log(props.currentUser)
    
     const [show, setShow] = useState(false);
-    const [data, setData] = useState({});
+    const [dataBaseData, setDataBaseData] = useState([]);
 
 
     const users = [
@@ -63,15 +64,18 @@ function Dashboard(props) {
     };
     const handleShow = () => setShow(true);
 
-    const { user } = props.currentUser;
+    const { user = {} } = props.currentUser;
+    const { typeOfTeam = '' } = user
+    console.log("---------")
+    console.log({ typeOfTeam, user })
     useEffect(async () => {
         // console.log("use effect runs")
         if (!props.currentUser || !props.currentUser.userId) return
 
-        const { typeOfTeam = '' } = user
+
         console.log(typeOfTeam)
         const gettingData = await GetCard(typeOfTeam, props.currentUser.userId);
-        if (gettingData && gettingData.data) setData(gettingData.data);
+        if (gettingData && gettingData.data) setDataBaseData(gettingData.data);
 
         //   const data = await API.getBusinessCardsByOwner(props.currentUser.userId)
 
@@ -79,12 +83,19 @@ function Dashboard(props) {
 
         console.log(gettingData)
 
-    }, [user])
+
+    }, [typeOfTeam])
+
+
+    console.log(dataBaseData)
     if (!props.currentUser || !props.currentUser.userId) return <Redirect to="/login" />
     return (
         <DashboardStyle>
             <Header />
+
+
             <Sidebar name={props.currentUser.user} />
+
             <div className="container-main">
                 <Container>
                     <Row>
@@ -99,17 +110,24 @@ function Dashboard(props) {
                         </Col>
                         <Col className="mr-0" >
                             <CardHolder>
-                                {users.map(e => (
-                                    <NewEmployeeCard
-                                        key={e.id}
-                                        name={e.name}
-                                        title={e.title}
-                                        location={e.location}
+
+                                {dataBaseData.map(e => {
+
+
+                                    const { Name, phoneNumber, email } = e
+
+                                    return (<NewEmployeeCard
+                                        key={e._id}
+                                        name={Name}
+                                        phoneNumber={phoneNumber}
+                                        email={email}
+                                        image={faker.image.avatar()}
+                                        // location={e.location}
 
                                         handleShow={handleShow}
 
-                                    />
-                                ))}
+                                    />)
+                                })}
 
                                 <Modal aria-labelledby="contained-modal-title-vcenter"
                                     centered show={show} onHide={handleClose}>
