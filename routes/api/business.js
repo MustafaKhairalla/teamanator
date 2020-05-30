@@ -3,6 +3,7 @@ const router = express.Router();
 
 //User model
 const Business = require("../../models/Business");
+const User = require("../../models/User");
 
 // @route GET api/business inside AXIOS
 // @desc Get ALL business cards
@@ -37,7 +38,8 @@ router.post("/", async (req, res) => {
             return newBusiness.save()
 
         }); // end loop
-
+        console.log({ id: req.body.userId })
+        await User.findById(req.body.userId).then(user => user.update({ typeOfTeam: "Bussines" }))
         // get user by id them aupdateupdate that is bussines
     } catch (err) {
         console.log(err)

@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
-import {HeaderStyle, LoginStyle} from '../style/index.js';
+import { Col, Row, Input, Form, FormGroup, Container, Jumbotron, Label, Button } from "reactstrap";
+import { HeaderStyle, LoginStyle } from '../style/index.js';
 import Header from "../components/Header";
 
-import { Col} from "reactstrap";
-import { Link } from "react-router-dom";
+// import { Col } from "reactstrap";
+import { Redirect } from "react-router-dom";
 import Axios from "axios";
 
 import LoginContext from "../utils/LoginContext";
@@ -17,6 +18,9 @@ function LogIn(props) {
         userId: false
     });
 
+    const [loginUser, setLoginUser] = React.useState({
+
+    });
     function handleInputChange(event) {
         const { name, value } = event.target;
 
@@ -33,9 +37,13 @@ function LogIn(props) {
                 if (token === false) {
                     console.log("Login Error!");
                 } else {
-                    setUser({ ...user, userId: token });
+
                     console.log(user);
-                    props.setcurrentUser({ userId: token })
+
+
+
+                    props.setcurrentUser({ userId: token, user: res.data.user })
+                    setLoginUser(res.data.user)
 
                 }
             })
@@ -58,8 +66,9 @@ function LogIn(props) {
     // useEffect(()=>{
 
     // })
-    console.log(user);
-    if (user.userId) return (<Redirect to="/template" />)
+    console.log({ user, loginUser });
+    if (loginUser && loginUser.typeOfTeam) return (<Redirect to="/mydashboard" />)
+    if (loginUser && loginUser.userId) return (<Redirect to="/template" />)
     return (
 
         <LoginContext.Provider value={user.token}>
@@ -95,8 +104,8 @@ function LogIn(props) {
 
 
             </div>
-         </LoginStyle>
-    </div>
+        </LoginContext.Provider  >
+
 
     )
 }

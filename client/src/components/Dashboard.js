@@ -19,13 +19,16 @@ import Sidebar from './Sidebar';
 
 import CardHolder from "./CardHolder";
 import NewEmployeeCard from "./NewEmployeeCard";
+import { Redirect } from 'react-router-dom';
 
 
 function Dashboard(props) {
+
     const login = useContext(LoginContext);
     //console.log("userId:" + props.currentUser.userId);
-
+    console.log(props.currentUser)
     const [show, setShow] = useState(false);
+    const [data, setData] = useState({});
 
 
     const users = [
@@ -59,21 +62,24 @@ function Dashboard(props) {
     };
     const handleShow = () => setShow(true);
 
-
-    useEffect(() => {
+    const { user } = props.currentUser;
+    useEffect(async () => {
         // console.log("use effect runs")
-        //  gettinData = await GetCard("Business", props.currentUser.userId);
-        // console.log(gettinData)
-        // console.log(gettinData[0])
+        if (!props.currentUser || !props.currentUser.userId) return
 
-        API.getBusinessCardsByOwner(props.currentUser.userId)
-            .then(data => {
+        const { typeOfTeam = '' } = user
+        console.log(typeOfTeam)
+        const gettingData = await GetCard(typeOfTeam, props.currentUser.userId);
+        if (gettingData && gettingData.data) setData(gettingData.data);
 
-                console.log(props.currentUser.userId);
-                console.log(data)
-            });
-    })
+        //   const data = await API.getBusinessCardsByOwner(props.currentUser.userId)
 
+
+
+        console.log(gettingData)
+
+    }, [user])
+    if (!props.currentUser || !props.currentUser.userId) return <Redirect to="/login" />
     return (
         <DashboardStyle>
             <Header />

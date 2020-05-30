@@ -3,6 +3,7 @@ const router = express.Router();
 
 //User model
 const Sport = require("../../models/Sport");
+const User = require("../../models/User");
 
 // @route GET api/sport
 // @desc Get ALL sport cards
@@ -34,6 +35,7 @@ router.post("/", async (req, res) => {
             return newSport.save()
 
         }); // end loop
+        await User.findById(req.body.userId).then(user => user.update({ typeOfTeam: "Sport" }))
 
     } catch (err) {
         console.log(err)
