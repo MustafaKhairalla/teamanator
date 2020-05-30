@@ -64,6 +64,7 @@ function LogIn(props) {
 
         <LoginContext.Provider value={user.token}>
             <div className="app">
+                <LoginStyle>
                 <Navbar></Navbar>
                 <Container>
                     <Jumbotron fluid>
@@ -92,12 +93,9 @@ function LogIn(props) {
                         </Row>
                     </Jumbotron>
                 </Container>
-
-
-            </div>
          </LoginStyle>
-    </div>
-
+       </div>
+     </LoginContext.Provider>
     )
 }
 
