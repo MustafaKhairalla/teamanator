@@ -25,7 +25,7 @@ auth.doRegister = function (req, res) {
         email: req.body.email,
     }), req.body.password, function (err, user) {
         if (err) {
-            return res.status(404).json({ err });
+            return res.status(200).json({ err });
         }
 
         return res.json({ sucess: true });
