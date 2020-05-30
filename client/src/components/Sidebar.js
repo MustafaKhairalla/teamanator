@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext} from 'react';
 import { Button, Modal, Form, Col } from 'react-bootstrap';
 import { Button as SemButton, Header, Image, Modal as SemModal } from 'semantic-ui-react'
 import { HeaderStyle } from '../style/index.js';
 import DashCalendar from './DashCalendar';
-import { PromiseProvider } from 'mongoose';
+import LoginContext from "../utils/LoginContext";
 
 
 function Sidebar(props) {
+    const login = useContext(LoginContext);
+    console.log(props.name.firstName); 
+    const getInfo = props.currentUser;
     const [users, setUsers] = useState({
         user_id: "",
         field1: "",
@@ -43,6 +46,7 @@ function Sidebar(props) {
 
     return (
         <HeaderStyle>
+<<<<<<< HEAD
             <section id="slide-out" className="invisible-top">
                 <ul id="side-content">
                     <h5 id="dashboardTitle" className="text-center">My Dashboard</h5>
@@ -51,6 +55,24 @@ function Sidebar(props) {
                     <h5 id="welcome-side">WELCOME, {props.mainName} </h5>
                     <br />
                     <SemButton id="SemButton" fluid color="blue" compact onClick={handleShowEmployee} block>Add New Employee</SemButton>
+=======
+        <section id="slide-out" className="invisible-top">
+            <ul id="side-content">
+                <h5 id="dashboardTitle"className="text-center">My Dashboard</h5>
+                <img id="profile-img" src="../images/EmployeeCardImage.jpg" alt="profile" />
+                <hr />
+                <h5 id="welcome-side">Welcome, {props.name.firstName} {props.name.lastName}</h5>
+                <br />
+                <SemButton id="SemButton" fluid color="blue" compact onClick={handleShowEmployee} block>Add New Employee</SemButton>
+
+                <SemButton id="SemButton" fluid color="blue" compact block>Remove Employee</SemButton>
+
+                <SemModal trigger={<SemButton id="SemButton" fluid compact color="blue" class="ui button"block>Add Upcoming Event</SemButton>}>
+                    {/* <SemModal.Header>Add an Event</SemModal.Header> */}
+                    <SemModal.Description>
+                        <Header>Add an Event</Header>
+                        <Form.Group>
+>>>>>>> f85047e292c66051721e7eedbfe165666bfe91c7
 
                     <SemButton id="SemButton" fluid color="blue" compact block>Remove Employee</SemButton>
 
