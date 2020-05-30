@@ -20,9 +20,6 @@ const db = require("./config/keys").mongoURI || process.env.MONGO_LOGIN;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
-};
 
 // connect to mongoDB
 mongoose
@@ -36,6 +33,14 @@ app.use("/api/business", business);
 app.use("/api/education", education);
 app.use("/api/fitness", fitness);
 app.use("/api/sport", sport);
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    })
+};
 
 // If no API routes are hit, send the React app
 // app.use(function (req, res) {
