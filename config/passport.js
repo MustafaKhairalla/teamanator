@@ -1,7 +1,7 @@
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 
-var db = require("../models/User");
+var db = require("../models/User.js");
 
 // OLD: DEFAULT CODE
 passport.use(new LocalStrategy(
@@ -12,18 +12,18 @@ passport.use(new LocalStrategy(
     },
     function (email, password, done) {
         // When a user tries to sign in this code runs
-        
-        db.findOne({        
-                email: email
-          
+
+        db.findOne({
+            email: email
+
         }).then(function (dbUser) {
-            console.log({dbUser})
+            console.log({ dbUser })
             if (!dbUser) {
                 return done(null, false, {
                     message: "Incorrect email."
                 });
             }
-           
+
             // If none of the above, return the user
             return done(null, dbUser);
         });
