@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext} from 'react';
 import { Button, Modal, Form, Col } from 'react-bootstrap';
 import { Button as SemButton, Header, Image, Modal as SemModal } from 'semantic-ui-react'
 import { HeaderStyle } from '../style/index.js';
 import DashCalendar from './DashCalendar';
+import LoginContext from "../utils/LoginContext";
 
 
-function Sidebar() {
+function Sidebar(props) {
+    const login = useContext(LoginContext);
+    console.log(props.name.firstName); 
+    const getInfo = props.currentUser;
     const [users, setUsers] = useState({
         user_id: "",
         field1: "",
@@ -47,7 +51,7 @@ function Sidebar() {
                 <h5 id="dashboardTitle"className="text-center">My Dashboard</h5>
                 <img id="profile-img" src="../images/EmployeeCardImage.jpg" alt="profile" />
                 <hr />
-                <h5 id="welcome-side">WELCOME, </h5>
+                <h5 id="welcome-side">Welcome, {props.name.firstName} {props.name.lastName}</h5>
                 <br />
                 <SemButton id="SemButton" fluid color="blue" compact onClick={handleShowEmployee} block>Add New Employee</SemButton>
 

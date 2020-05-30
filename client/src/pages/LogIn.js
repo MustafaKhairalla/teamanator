@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
 
+import React, { useEffect } from "react";
 import { HeaderStyle, LoginStyle } from '../style/index.js';
 import Header from "../components/Header";
-
 import { Col, Row, Input, Form, FormGroup, Container, Jumbotron, Label, Button } from "reactstrap";
 import { Link, Redirect } from "react-router-dom";
 import Axios from "axios";
@@ -44,32 +43,19 @@ function LogIn(props) {
 
                 }
             })
-        // try {
-        //     const token = await Axios.post("api/users/login", user);
-        //     console.log(token.data)
-        //     // setUser({ ...user, loginId: token.sucess });
-        //     // return (<Redirect to={{pathname: "/template"}}/>);
-        //     return (<Link to="/template"/>)
-        // }   
-        // catch (err) {
-        //     console.log(err);
-        //     return err;
-        // }
-
-
-        // console.log(user);
-        //    props.setState({ userId: token.data})
+      
     }
-    // useEffect(()=>{
-
-    // })
+ 
     console.log({ user, loginUser });
     if (loginUser && loginUser.typeOfTeam) return (<Redirect to="/mydashboard" />)
-    if (loginUser && loginUser._id) return (<Redirect to="/template" />)
-    return (
 
+    if (loginUser && loginUser._id) return (<Redirect to="/template" />)
+
+    return (
+    
         <LoginContext.Provider value={user.token}>
             <div className="app">
+
                 <LoginStyle>
                     <Header></Header>
                     <Container>
