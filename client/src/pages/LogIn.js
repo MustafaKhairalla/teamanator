@@ -43,30 +43,14 @@ function LogIn(props) {
 
                 }
             })
-        // try {
-        //     const token = await Axios.post("api/users/login", user);
-        //     console.log(token.data)
-        //     // setUser({ ...user, loginId: token.sucess });
-        //     // return (<Redirect to={{pathname: "/template"}}/>);
-        //     return (<Link to="/template"/>)
-        // }   
-        // catch (err) {
-        //     console.log(err);
-        //     return err;
-        // }
-
-
-        // console.log(user);
-        //    props.setState({ userId: token.data})
+      
     }
-    // useEffect(()=>{
-
-    // })
+ 
     console.log({ user, loginUser });
     if (loginUser && loginUser.typeOfTeam) return (<Redirect to="/mydashboard" />)
-    if (loginUser && loginUser.userId) return (<Redirect to="/template" />)
+    if (user.userId && loginUser._id) return (<Redirect to="/template" />)
     return (
-        <LoginStyle>
+    
         <LoginContext.Provider value={user.token}>
             <div className="app">
 
