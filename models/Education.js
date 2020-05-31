@@ -8,37 +8,37 @@ const EducationSchema = new Schema({
         type: String
     },
 
-    Name: {
+    field1: {
         type: String,
         required: false
     },
 
-    program: {
+    field2: {
         type: String,
         required: false
     },
 
-    languages: [{
+    field3: [{
         type: String,
         required: false
     }],
 
-    educationLevel: {
+    field4: {
         type: String,
         required: false
     },
 
-    GPA: {
+    field5: {
         type: Number,
         required: false
     },
 
-    phoneNumber: {
+    field6: {
         type: String,
         required: false
     },
 
-    email: {
+    field7: {
         type: String,
         required: false,
         unique: true

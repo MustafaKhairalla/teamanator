@@ -8,36 +8,36 @@ const FitnessSchema = new Schema({
         type: String
     },
 
-    name: {
+    field1: {
         type: String,
         required: false
     },
 
-    age: {
+    field2: {
         type: String,
         required: false
     },
 
-    weight: {
+    field3: {
         type: String,
         required: false
     },
 
-    goal: {
+    field4: {
         type: String,
         required: false
     },
-    notes: {
-        type: String,
-        required: false
-    },
-
-    phoneNumber: {
+    field5: {
         type: String,
         required: false
     },
 
-    email: {
+    field6: {
+        type: String,
+        required: false
+    },
+
+    field7: {
         type: String,
         required: false,
         unique: true
