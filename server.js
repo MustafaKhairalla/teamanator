@@ -9,6 +9,7 @@ const business = require("./routes/api/business");
 const education = require("./routes/api/education");
 const fitness = require("./routes/api/fitness");
 const sport = require("./routes/api/sport");
+const events = require("./routes/api/event");
 // const passport = require("./config/passport");
 
 //initilize app
@@ -33,6 +34,7 @@ app.use("/api/business", business);
 app.use("/api/education", education);
 app.use("/api/fitness", fitness);
 app.use("/api/sport", sport);
+app.use("/api/event", events); 
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));

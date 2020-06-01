@@ -15,7 +15,7 @@ import DashCalendar from './DashCalendar';
 import Header from './Header';
 import Events from './Events';
 import { Row, Col, Container, Button } from 'reactstrap';
-import Footer from './footer';
+import Footer from './Footer';
 import Sidebar from './Sidebar';
 
 import CardHolder from "./CardHolder";
@@ -31,6 +31,7 @@ function Dashboard(props) {
 
     const [show, setShow] = useState(false);
     const [dataBaseData, setDataBaseData] = useState([]);
+    
 
 
     const users = [
@@ -104,7 +105,7 @@ function Dashboard(props) {
                             <br />
                             <Row>
                                 <Col>
-                                    <Events />
+                                    <Events props={props.currentUser}/>
                                 </Col>
                             </Row>
                         </Col>
