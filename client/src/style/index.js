@@ -31,6 +31,12 @@ ul {
 #meet-team {
   font-weight: bold;
 }
+a {
+  color: #f8f8ff;
+}
+li {
+  list-style: none;
+}
 `
 export const DashboardStyle = styled.div `
 .container-main {
