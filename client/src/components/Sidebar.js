@@ -1,14 +1,12 @@
-import React, { useState, useContext} from 'react';
+import React, { useState, useContext } from 'react';
 import { Button, Modal, Form, Col } from 'react-bootstrap';
 import { Button as SemButton, Header, Image, Modal as SemModal } from 'semantic-ui-react'
 import { HeaderStyle } from '../style/index.js';
 import DashCalendar from './DashCalendar';
 import LoginContext from "../utils/LoginContext";
-
-
 function Sidebar(props) {
     const login = useContext(LoginContext);
-    console.log(props.name.firstName); 
+    console.log(props.name.firstName);
     const getInfo = props.currentUser;
     const [users, setUsers] = useState({
         user_id: "",
@@ -20,16 +18,13 @@ function Sidebar(props) {
         field6: "",
         field7: ""
     });
-
     const [events, setEvents] = useState({
         title: "",
         date: "",
         time: "",
         location: ""
     })
-
     const [show, setShow] = useState(false);
-
     const handleCloseEmployee = () => setShow(false);
     const handleShowEmployee = () => setShow(true);
     const handleInputChange = event => {
@@ -40,59 +35,33 @@ function Sidebar(props) {
         event.preventDefault();
         // to pass template from MemberBuild.js
         // update template and save to database
-
-
     }
 
     return (
         <HeaderStyle>
-<<<<<<< HEAD
             <section id="slide-out" className="invisible-top">
                 <ul id="side-content">
                     <h5 id="dashboardTitle" className="text-center">My Dashboard</h5>
                     <img id="profile-img" src="../images/EmployeeCardImage.jpg" alt="profile" />
                     <hr />
-                    <h5 id="welcome-side">WELCOME, {props.mainName} </h5>
+                    <h5 id="welcome-side">Welcome, {props.name.firstName} {props.name.lastName}</h5>
                     <br />
                     <SemButton id="SemButton" fluid color="blue" compact onClick={handleShowEmployee} block>Add New Employee</SemButton>
-=======
-        <section id="slide-out" className="invisible-top">
-            <ul id="side-content">
-                <h5 id="dashboardTitle"className="text-center">My Dashboard</h5>
-                <img id="profile-img" src="../images/EmployeeCardImage.jpg" alt="profile" />
-                <hr />
-                <h5 id="welcome-side">Welcome, {props.name.firstName} {props.name.lastName}</h5>
-                <br />
-                <SemButton id="SemButton" fluid color="blue" compact onClick={handleShowEmployee} block>Add New Employee</SemButton>
-
-                <SemButton id="SemButton" fluid color="blue" compact block>Remove Employee</SemButton>
-
-                <SemModal trigger={<SemButton id="SemButton" fluid compact color="blue" class="ui button"block>Add Upcoming Event</SemButton>}>
-                    {/* <SemModal.Header>Add an Event</SemModal.Header> */}
-                    <SemModal.Description>
-                        <Header>Add an Event</Header>
-                        <Form.Group>
->>>>>>> f85047e292c66051721e7eedbfe165666bfe91c7
-
                     <SemButton id="SemButton" fluid color="blue" compact block>Remove Employee</SemButton>
-
                     <SemModal trigger={<SemButton id="SemButton" fluid compact color="blue" class="ui button" block>Add Upcoming Event</SemButton>}>
                         {/* <SemModal.Header>Add an Event</SemModal.Header> */}
                         <SemModal.Description>
                             <Header>Add an Event</Header>
                             <Form.Group>
-
                             </Form.Group>
 
                         </SemModal.Description>
                     </SemModal>
-
                     <SemButton id="SemButton" compact fluid color="red" block >Sign Out</SemButton>
                     <hr />
                     <br />
                     <DashCalendar />
                 </ul>
-
                 <Modal show={show} onHide={handleCloseEmployee}>
                     <Modal.Header closeButton>
                         <Modal.Title>Add New Employee</Modal.Title>
@@ -204,7 +173,6 @@ function Sidebar(props) {
                             </Form.Row>
                         </Form.Group>
                     </Modal.Body>
-
                     <Modal.Footer>
                         <Button variant="danger" onClick={handleCloseEmployee}>
                             Close
@@ -216,12 +184,8 @@ function Sidebar(props) {
                 </Modal>
 
 
-
-
-
             </section>
         </HeaderStyle>
     )
 };
-
 export default Sidebar;

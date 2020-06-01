@@ -112,13 +112,13 @@ function Dashboard(props) {
                             <CardHolder>
 
                                 {dataBaseData.map(e => {
-                                    const { Name, phoneNumber, email } = e
+                                    const { field1, field2, field3 } = e
 
                                     return (<NewEmployeeCard
                                         key={e._id}
-                                        name={Name}
-                                        phoneNumber={phoneNumber}
-                                        email={email}
+                                        name={field1}
+                                        phoneNumber={field2}
+                                        email={field3}
                                         image={faker.image.avatar()}
                                         // location={e.location}
 
@@ -171,13 +171,6 @@ function Dashboard(props) {
 
                                     </Modal.Footer>
                                 </Modal>
-
-
-
-
-
-
-
                             </CardHolder>
 
                         </Col>

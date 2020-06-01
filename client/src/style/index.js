@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FooterStyle = styled.div `
+export const FooterStyle = styled.div`
 #footer-main {
     background-color: #2d2b31;
     position: fixed;
@@ -32,7 +32,7 @@ ul {
   font-weight: bold;
 }
 `
-export const DashboardStyle = styled.div `
+export const DashboardStyle = styled.div`
 .container-main {
     padding-left: 310px;
     padding-top: 140px;
@@ -58,7 +58,7 @@ export const DashboardStyle = styled.div `
 //   }
 `
 
-export const HeaderStyle = styled.div `
+export const HeaderStyle = styled.div`
 .header-main {
     background-color: #2c2b30;
     position: fixed;
@@ -115,7 +115,7 @@ img {
   }
 `
 
-export const RegisterStyle = styled.div `
+export const RegisterStyle = styled.div`
 body{
     background: #003973;
     background: -webkit-linear-gradient(to right, #E5E5BE, #003973);
@@ -158,7 +158,7 @@ body{
 }
 `
 
-export const TodoStyle = styled.div `
+export const TodoStyle = styled.div`
 .scroll2 {
     max-height: 270px;
     overflow-y: auto;
@@ -208,7 +208,7 @@ export const TodoStyle = styled.div `
       cursor: pointer;
     }
 `
-export const LoginStyle = styled.div `
+export const LoginStyle = styled.div`
 #loginCard{
   postition:fixed;
   top:30px;
@@ -219,7 +219,7 @@ export const LoginStyle = styled.div `
 }
 `
 
-export const HeaderStyleHome = styled.div `
+export const HeaderStyleHome = styled.div`
   .HeaderNav{ 
   background-color: #2c2b30;
   position: fixed;
@@ -239,7 +239,7 @@ export const HeaderStyleHome = styled.div `
   }
 `
 
-export const HomeStyle = styled.div `
+export const HomeStyle = styled.div`
 
 .homeleftColumn{
   postition:absolute;
