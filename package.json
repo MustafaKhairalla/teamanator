@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "this is a team managing web application",
   "main": "server.js",
+  "engin": {
+    "node": "12.13.1",
+    "npm": "6.14.2"
+  },
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",

@@ -12,7 +12,9 @@ import CreateCard from "../utils/CreateCard";
 import LoginContext from "../utils/LoginContext";
 const MemberBuild = (props) => {
     const login = useContext(LoginContext);
-    const { location = {} } = props; // ask Pablo !!!
+    const { location = {}, currentUser, setcurrentUser } = props; // ask Pablo !!!
+    const { user: loginUser = {} } = currentUser;
+    console.log({ loginUser, currentUser })
     const { template, setTemplate } = location // ask
     const [saving, setSaving] = useState(false);
     const [user, setUser] = useState({
@@ -35,7 +37,7 @@ const MemberBuild = (props) => {
         count: 0,
         isVisible: false
     }]);
-
+    console.log({ currentUser })
     async function saveToDatabase(data) {
         console.log("Title: " + template.title);
         console.log("users: ");
@@ -46,10 +48,18 @@ const MemberBuild = (props) => {
 
         console.log({ fullData })
         // await API.CreateCard(fullData);
-        CreateCard(routeSelect, fullData)
+        loginUser.typeOfTeam = routeSelect
+        console.log({ loginUser, currentUser })
+        currentUser.user = loginUser
+        setcurrentUser(currentUser)
+        await CreateCard(routeSelect, fullData)
+        // typeOfTeam = ""
 
 
-        // setSaving(true)
+        setTimeout(() => setSaving(true), 1000)
+
+
+
         // const res = await axio.post ("api/save", data)
         // if ( res.data.sucess === true) history.psush
         // else show a message with an error
@@ -70,10 +80,7 @@ const MemberBuild = (props) => {
             isVisible: true
 
         }])
-        console.log("button works")
         user.user_id = template.users.length;
-        // setUser({ ...user, user_id: template.users.length })
-        // setTemplate({ ...template, users: [...template.users, user] })
         console.log('Template: ', template)
         template.users.push(user)
         setUser({
@@ -92,7 +99,7 @@ const MemberBuild = (props) => {
 
 
     }
-
+    if (saving) return <Redirect to="/mydashboard" />
     return (
         <Container>
             <br></br>
@@ -230,8 +237,8 @@ const MemberBuild = (props) => {
             <br></br>
             <row>
                 <button
-                    onClick={() => saveToDatabase(template)} //change to API call
-                    className="ui right floated green button"><Link to="/mydashboard">Finish</Link>
+                    onClick={() => saveToDatabase(template)}
+                    className="ui right floated green button"> Finish
                 </button>
             </row>
         </Container>

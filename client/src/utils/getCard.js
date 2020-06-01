@@ -3,11 +3,11 @@ import API from "./API";
 const GetCard = async (select, id
 ) => {
     switch (select) {
-        case "Bussines":
+
+        case "Business":
             return await API.getBusinessCardsByOwner(id)
 
             break;
-
         case "Education":
             return await API.getEducationCardsByOwner(id);
             break;

@@ -8,38 +8,38 @@ const BusinessSchema = new Schema({
         type: String
     },
 
-    Name: {
+    field1: {
         type: String,
         required: false
     },
 
-    title: {
+    field2: {
         type: String,
         required: false
     },
 
-    salary: {
+    field3: {
         type: Number,
         required: false
     },
 
-    department: {
+    field4: {
         type: String,
         required: false
     },
 
-    phoneNumber: {
+    field5: {
         type: String,
         required: false
     },
 
-    email: {
+    field6: {
         type: String,
         required: false,
         unique: true
     },
 
-    address: {
+    field7: {
         type: String,
         required: false
     }

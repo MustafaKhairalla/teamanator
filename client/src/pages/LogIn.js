@@ -48,7 +48,9 @@ function LogIn(props) {
  
     console.log({ user, loginUser });
     if (loginUser && loginUser.typeOfTeam) return (<Redirect to="/mydashboard" />)
-    if (user.userId && loginUser._id) return (<Redirect to="/template" />)
+
+    if (loginUser && loginUser._id) return (<Redirect to="/template" />)
+
     return (
     
         <LoginContext.Provider value={user.token}>
