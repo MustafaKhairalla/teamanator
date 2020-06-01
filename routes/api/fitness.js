@@ -25,13 +25,13 @@ router.post("/", async (req, res) => {
         await newCards.forEach(async o => {
             const newFitness = new Fitness({
                 owner: req.body.userId,
-                Name: o.field1 ? o.field1 : "unlisted",
-                email: o.field2 ? o.field2 : "unlisted", // check order
-                age: o.field3 ? o.field3 : "unlisted",
-                weight: o.field4 ? o.field4 : "unlisted",  // check for array
-                goal: o.field5 ? o.field5 : "unlisted",
-                phoneNumber: o.field6 ? o.field6 : "unlisted",
-                notes: o.field7 ? o.field7 : "unlisted"
+                field1: o.field1 ? o.field1 : "unlisted",
+                field2: o.field2 ? o.field2 : "unlisted", // check order
+                field3: o.field3 ? o.field3 : "unlisted",
+                field4: o.field4 ? o.field4 : "unlisted",  // check for array
+                field5: o.field5 ? o.field5 : "unlisted",
+                field6: o.field6 ? o.field6 : "unlisted",
+                field7: o.field7 ? o.field7 : "unlisted"
             }); // end of constructor
             console.log("saving new card")
             return newFitness.save();

@@ -15,7 +15,7 @@ import DashCalendar from './DashCalendar';
 import Header from './Header';
 import Events from './Events';
 import { Row, Col, Container, Button } from 'reactstrap';
-import Footer from './Footer';
+import Footer from './footer';
 import Sidebar from './Sidebar';
 
 import CardHolder from "./CardHolder";

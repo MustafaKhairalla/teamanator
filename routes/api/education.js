@@ -25,13 +25,13 @@ router.post("/", async (req, res) => {
         await newCards.forEach(o => {
             const newEducation = new Education({
                 owner: req.body.userId,
-                Name: o.field1 ? o.field1 : "unlisted",
-                program: o.field2 ? o.field2 : "unlisted",
-                languages: o.field3 ? o.field3 : "unlisted",
-                educationLevel: o.field4 ? o.field4 : "unlisted",
-                GPA: o.field5 ? o.field5 : "unlisted",
-                phoneNumber: o.field6 ? o.field6 : "unlisted",
-                email: o.field7 ? o.field7 : "unlisted"
+                field1: o.field1 ? o.field1 : "unlisted",
+                field2: o.field2 ? o.field2 : "unlisted",
+                field3: o.field3 ? o.field3 : "unlisted",
+                field4: o.field4 ? o.field4 : "unlisted",
+                field5: o.field5 ? o.field5 : "unlisted",
+                field6: o.field6 ? o.field6 : "unlisted",
+                field7: o.field7 ? o.field7 : "unlisted"
             }); // end constructor 
 
             newEducation.save()
