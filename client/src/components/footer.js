@@ -35,14 +35,24 @@ function Footer() {
                 </Col>
 
                 <Col>
+                <br />
+                        <li>React.js</li>
+                        <li>Express</li>
+                        <li>Reactstrap</li>
                 
                 </Col>
                 <Col>
-                
-                
+                <h6 id="created-with" className="text-center">Created With</h6>
+                        <li>Semantic-UI</li>
+                        <li>Node.js</li>
+                        <li>Adobe XD</li>
+                    
                 </Col>
                 <Col>
-                
+                       <br />
+                        <li>Github</li>
+                        <li>Javascript</li>
+                        <li>CSS</li> 
                 
                 </Col>
                 <Col>

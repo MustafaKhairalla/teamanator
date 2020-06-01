@@ -26,10 +26,17 @@ ul {
 }
 #team-duck {
   font-weight: bold;
+  text-decoration: underline;
   
 }
 #meet-team {
   font-weight: bold;
+  text-decoration: underline;
+}
+#created-with {
+  font-weight: bold;
+  padding-right: 155px;
+  text-decoration: underline;
 }
 a {
   color: #f8f8ff;
@@ -159,8 +166,11 @@ body{
   color: white;
 }
 .contact-register {
-  margin-top: 100px;
+  margin-top: 200px;
   margin-bottom: 150px;
+}
+#loginContainer {
+  margin-top: 250px;
 }
 `
 

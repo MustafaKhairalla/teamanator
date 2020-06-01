@@ -4,10 +4,6 @@ import faker from "faker";
 import API from "../utils/API";
 import LoginContext from "../utils/LoginContext";
 import GetCard from "../utils/getCard";
-
-
-
-
 import { DashboardStyle } from '../style/index';
 import Employeecard from './Employeecard';
 import Todo from './Todo';
@@ -15,7 +11,7 @@ import DashCalendar from './DashCalendar';
 import Header from './Header';
 import Events from './Events';
 import { Row, Col, Container, Button } from 'reactstrap';
-import Footer from './footer';
+import Footer from './Footer';
 import Sidebar from './Sidebar';
 
 import CardHolder from "./CardHolder";
@@ -148,7 +144,7 @@ function Dashboard(props) {
                                                     {/* <h6 > Email: {employee.email}</h6> */}
                                                     <h6 > Mobile: </h6>
                                                     <h6 > Department: </h6>
-                                                    <h6 > Salary:  $ }</h6>
+                                                    <h6 > Salary:  $</h6>
                                                     <h6 > Title:  {users.title}</h6>
                                                 </Col>
                                             </Row>
