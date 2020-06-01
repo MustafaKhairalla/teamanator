@@ -62,7 +62,7 @@ router.delete("/:id", (req, res) => {
 // @ desc findbyID education cards
 
 router.get("/:id", (req, res) => {
-    Education.findById(req.params.id)
+    Education.find({ owner: req.params.id })
         .then(education => res.json(education))
 });
 

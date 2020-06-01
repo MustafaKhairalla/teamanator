@@ -62,7 +62,7 @@ router.delete("/:id", (req, res) => {
 // @ desc findbyID fitness cards
 
 router.get("/:id", (req, res) => {
-    Fitness.findById(req.params.id)
+    Fitness.find({ owner: req.params.id })
         .then(fitness => res.json(fitness))
 });
 

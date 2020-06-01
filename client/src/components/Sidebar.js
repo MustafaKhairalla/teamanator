@@ -42,7 +42,7 @@ function Sidebar(props) {
             <section id="slide-out" className="invisible-top">
                 <ul id="side-content">
                     <h5 id="dashboardTitle" className="text-center">My Dashboard</h5>
-                    <img id="profile-img" src="../images/EmployeeCardImage.jpg" alt="profile" />
+                    <img id="profile-img" src="https://res.cloudinary.com/dddtjci2s/image/upload/v1589488079/three-white-ceramic-pots-with-green-leaf-plants-near-open-796602_u470d7.jpg" alt="profile" />
                     <hr />
                     <h5 id="welcome-side">Welcome, {props.name.firstName} {props.name.lastName}</h5>
                     <br />

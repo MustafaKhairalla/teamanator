@@ -32,9 +32,9 @@ const FitnessCard = (props) => {
                             </div>
 
                         </div> : <div>
-                                This is perfect for tracking all those clients you
-                                have in your personal training business. Because you kick-ass in
-                        the gym and just need a spotter on the paperwork </div>}
+                                Never Again will you “drop the kettle ball” when you track all your
+                                clients here. Just enter in all the info and goals so you know who is trying to loose 10 and who is trying to gain 10.
+                        So don’t break a sweat and click here to get started. </div>}
 
                     </Card.Body>
                 </Card.Body>

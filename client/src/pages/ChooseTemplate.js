@@ -1,4 +1,4 @@
-import React, { useState , useContext} from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./page.css";
 import BusinessCard from "../components/BusinessCard";
@@ -13,7 +13,7 @@ import Row from "react-bootstrap/Row";
 import { CardDeck } from "react-bootstrap";
 import ReactCardFlip from 'react-card-flip';
 
-import LoginContext from "../utils/LoginContext"; 
+import LoginContext from "../utils/LoginContext";
 
 const ChooseTemplate = () => {
     const login = useContext(LoginContext);
@@ -79,7 +79,7 @@ const ChooseTemplate = () => {
 
 
     return (
-         
+
 
         <Container>
             <br></br>
@@ -109,9 +109,10 @@ const ChooseTemplate = () => {
                                                 "Title",
                                                 "Salary",
                                                 "Department",
+                                                "Address/Location",
                                                 "Phone Number",
                                                 "Email",
-                                                "Address/Location"
+
                                             ]
                                         }}
 
@@ -122,9 +123,24 @@ const ChooseTemplate = () => {
 
                                 <BusinessCard
                                     flipping={flipping.isFlipped}
+
                                     title="Business"
                                     handleShow={handleShow}
                                     handleClick={handleClick}
+                                    config={
+                                        {
+                                            title: "Business",
+                                            image: "../images/EmployeeCardImage.jpg",
+                                            field: ["Name",
+                                                "Title",
+                                                "Salary",
+                                                "Department",
+                                                "Address/Location",
+                                                "Phone Number",
+                                                "Email",
+
+                                            ]
+                                        }}
                                 />
 
                             </ReactCardFlip>
@@ -142,9 +158,10 @@ const ChooseTemplate = () => {
                                                 "Age",
                                                 "Division",
                                                 "Position",
+                                                "Address",
                                                 "Phone Number",
                                                 "Email",
-                                                "Address"
+
                                             ]
                                         }
                                     }
@@ -153,6 +170,22 @@ const ChooseTemplate = () => {
                                 />
                                 <SportCard
                                     title="Sport"
+                                    config={
+                                        {
+                                            title: "Sport",
+                                            image: "../images/SportsCardImage.jpg",
+                                            field: [
+                                                "Name",
+                                                "Age",
+                                                "Division",
+                                                "Position",
+                                                "Address",
+                                                "Phone Number",
+                                                "Email",
+
+                                            ]
+                                        }
+                                    }
                                     flipping={flipping2.isFlipped}
                                     handleClick={handleClick2}
                                     handleShow={handleShow}
@@ -182,6 +215,20 @@ const ChooseTemplate = () => {
                                 />
                                 <EducationCard
                                     title="Education"
+                                    config={
+                                        {
+                                            title: "Education",
+                                            image: "../images/SchoolCardImage_.jpg",
+                                            field: [
+                                                "Name",
+                                                "Program",
+                                                "Tools/ Languages",
+                                                "Education Level",
+                                                "GPA",
+                                                "Phone Number",
+                                                "Email"
+                                            ]
+                                        }}
                                     flipping={flipping3.isFlipped}
                                     handleClick={handleClick3}
                                     handleShow={handleShow}
@@ -212,6 +259,21 @@ const ChooseTemplate = () => {
                                 />
                                 <FitnessCard
                                     title="Fitness"
+                                    config={
+                                        {
+                                            title: "Fitness",
+                                            image: "../images/FitnessCardImage_.jpg",
+                                            field: [
+                                                "Name",
+                                                "Age",
+                                                "Weight",
+                                                "Goal",
+                                                "Notes",
+                                                "Phone Number",
+                                                "Email"
+                                            ]
+                                        }
+                                    }
                                     flipping={flipping4.isFlipped}
                                     handleClick={handleClick4}
                                     handleShow={handleShow}
@@ -225,7 +287,7 @@ const ChooseTemplate = () => {
                                         <Modal.Title className="ui yellow">You chosse a {template.title} Team template!</Modal.Title>
                                     </Modal.Header>
                                     <Modal.Body>
-                                        <Container>
+                                        <Container className="ui inverted segment">
                                             <Row >
                                                 <Col md={7}>
                                                     <span >
@@ -234,8 +296,11 @@ const ChooseTemplate = () => {
                                                     </span>
                                                 </Col>
                                                 <Col md={5}>
+
                                                     {template.config.field.map(x => (
-                                                        <h6 >{x}</h6>
+
+                                                        <h6 style={{ fontWeight: "bold" }}>{x}</h6>
+
                                                     )
                                                     )}
                                                 </Col>
@@ -249,6 +314,10 @@ const ChooseTemplate = () => {
                                     </Button>
                                         <Button className="ui inverted green button" variant="danger">
                                             <Link to={{ pathname: "/member", template: template, setTemplate: setTemplate }}
+                                                style={{
+                                                    color: "green", textDecoration: "none"
+
+                                                }}
 
                                             >
                                                 Continue to Step 2
