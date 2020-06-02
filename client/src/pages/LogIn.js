@@ -58,12 +58,17 @@ function LogIn(props) {
 
                 <LoginStyle>
                     <Header></Header>
-                    <Container>
+                    <br />
+                    <br />
+                    <br />
+                    <Container id="loginContainer">
                         <div class="card" id="loginCard">
                             <Row>
                                 <Col md={4}>
                                     <Form >
                                         <img className="img-register" src="https://img.icons8.com/ios/50/000000/login-rounded-right.png" />
+                                        <br />
+                                        <br />
                                         <h3 id="welcome-text">WELCOME BACK!</h3>
                                         <h4></h4>
                                         <FormGroup>

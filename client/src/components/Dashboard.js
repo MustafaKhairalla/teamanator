@@ -4,10 +4,6 @@ import faker from "faker";
 import API from "../utils/API";
 import LoginContext from "../utils/LoginContext";
 import GetCard from "../utils/getCard";
-
-
-
-
 import { DashboardStyle } from '../style/index';
 import Employeecard from './Employeecard';
 import Todo from './Todo';
@@ -149,6 +145,7 @@ function Dashboard(props) {
 
                                                     </span>
                                                 </Col>
+
                                                 <Col md={8} >
                                                     <h6 > Name: {member.field1}</h6>
                                                     {
@@ -200,6 +197,7 @@ function Dashboard(props) {
                                                         </> :
                                                             null
                                                     }
+
 
                                                 </Col>
                                             </Row>
