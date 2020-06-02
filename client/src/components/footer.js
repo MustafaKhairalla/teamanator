@@ -6,81 +6,60 @@ import { Button, Popup, Icon } from 'semantic-ui-react'
 function Footer() {
     return (
         <FooterStyle>
-            <div id="footer-main">
-                {/* <Row id="thank-you">
-                <Col className="text-left">
-                    <h6>More to Explore</h6>
-                    <ul className="text-left">
-                        <li>
-                            <a href="https://tripoint.herokuapp.com/">TriPoints</a>
-                        </li>
-                        <li>
-                            <a href="https://mustafakhairalla.github.io/duck-duck-code/">Foodecipe</a>
-                        </li>
-                    </ul>
-                </Col>
-                <Col className="text-left">
-                    <h6>Team Duck</h6>
-                    <p id="duck-bio">Team Duck is a highly-talented group of young, coding professionals from the University of Denver's coding bootcamp.
-                    We specialize in making functional and beautiful web applications.
-                </p>
+        <div id="footer-main">
+            <Row>
 
-                </Col>
-                <Col className="text-left">
-                    <h6>Meet the Team</h6>
-                    <ul id="duck-bio">
-                        <li>Amy Altman</li>
-                        <li>Cristian Robinson</li>
-                        <li>Elena Demidionok</li>
-                        <li>Mustafa Khairalla</li>
-                        <li>Jake Petersen</li>
-                    </ul>
-
+                <Col>
+                <h6 className="text-right" id="meet-team">Meet the Team</h6>
+                    
+                        <li><a href="https://github.com/ameliadavis" target="_blank">Amy Altman</a></li> 
+                        <li><a href="https://github.com/MustafaKhairalla" target="_blank">Mustafa Khairalla</a></li>
+                        <li><a href="https://github.com/cristian634" target="_blank">Cristian Robinson</a></li> 
+                        
                 </Col>
 
-            </Row> */}
-                <Row>
+                <Col >
+                <br />
+                    <li className="text-left"><a href="https://github.com/jcbpetersen1995" target="_blank">Jake Petersen</a></li>
+                    <li className="text-left"><a href="https://github.com/Ellen0404" target="_blank">Elena Demidionok</a></li>
+                
+                </Col>
 
-                    <Col>
-                        <h6 className="text-right" id="meet-team">Meet the Team</h6>
+                <Col id="bio-container">
+                    <h6 id="team-duck" className="text-left">More to Explore</h6>
+                   
+                            <li><a href="https://tripoint.herokuapp.com/">TriPoints</a></li>
+                        
+                            <li><a href="https://mustafakhairalla.github.io/duck-duck-code/">Foodecipe</a></li>
+                        
+                </Col>
 
-                        <li>Amy Altman</li> <li>Mustafa Khairalla</li>
-                        <li>Cristian Robinson</li>
-
-                    </Col>
-
-                    <Col >
-                        <br />
-                        <li className="text-left">Jake Petersen</li>
-                        <li className="text-left">Elena Demidionok</li>
-
-                    </Col>
-
-                    <Col id="bio-container">
-                        <h6 id="team-duck" className="text-left">More to Explore</h6>
-
-                        <li><a href="https://tripoint.herokuapp.com/">TriPoints</a></li>
-
-                        <li><a href="https://mustafakhairalla.github.io/duck-duck-code/">Foodecipe</a></li>
-
-                    </Col>
-
-                    <Col>
-
-                    </Col>
-                    <Col>
-
-
-                    </Col>
-                    <Col>
-
-
-                    </Col>
-                    <Col>
-
-                    </Col>
-                </Row>
-            </div>
+                <Col>
+                <br />
+                        <li>React.js</li>
+                        <li>Express</li>
+                        <li>Reactstrap</li>
+                
+                </Col>
+                <Col>
+                <h6 id="created-with" className="text-center">Created With</h6>
+                        <li>Semantic-UI</li>
+                        <li>Node.js</li>
+                        <li>Adobe XD</li>
+                    
+                </Col>
+                <Col>
+                       <br />
+                        <li>Github</li>
+                        <li>Javascript</li>
+                        <li>CSS</li> 
+                
+                </Col>
+                <Col>
+                
+                </Col>
+            </Row>
+        </div>
         </FooterStyle>
     )
 };

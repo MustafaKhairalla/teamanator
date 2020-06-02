@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Header from "../components/Header"
-import Footer from "../components/Footer";
 import { Row, Col } from "reactstrap";
 import ReactCardFlip from 'react-card-flip';
 import ExampleCard from "../components/ExampleCard";
@@ -118,7 +117,6 @@ function Homepage() {
             <br></br>
             <br></br>
             <br></br>
-            <Footer />
         </div>
     )
 
