@@ -25,7 +25,7 @@ function Footer() {
                         <h6 id="created-with" className="text-center">Created With</h6>
                         <li>Semantic-UI</li>
                         <li>Node.js</li>
-                        <li>Adobe XD</li>
+                        <li>React </li>
 
                     </Col>
                     <Col>

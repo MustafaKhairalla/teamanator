@@ -15,8 +15,8 @@ const sport = require("./routes/api/sport");
 const app = express();
 
 // DB config
-const db = process.env.MONGO_LOGIN || require("./config/keys").mongoURI;
-//const db = process.env.MONGODB_URI || 'mongodb://localhost/teams'
+// const db = process.env.MONGO_LOGIN || require("./config/keys").mongoURI;
+// const db = process.env.MONGODB_URI || 'mongodb://localhost/teams'
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -24,7 +24,8 @@ app.use(express.json());
 
 // connect to mongoDB
 mongoose
-    .connect(db, { useNewUrlParser: true, useFindAndModify: false })
+    .connect(process.env.MONGODB_URI || 'mongodb://localhost/teams')
+    // .connect(db, { useNewUrlParser: true, useFindAndModify: false })
     .then(() => console.log("MongoDB is connected..."))
     .catch(err => console.log(err));
 
