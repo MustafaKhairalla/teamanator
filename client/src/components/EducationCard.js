@@ -32,9 +32,9 @@ const EducationCard = (props) => {
                             </div>
 
                         </div> : <div>
-                                This card is great for gathering and storing information about
-                                students! We know it is hard enough getting everyone to stay in their seats and pay attention, this will at least
-                                make planning for the chaos that much easier.
+                                This form is great for gathering and storing information about your
+                                students! We know it is hard enough getting everyone to stay in their seats and pay attention,
+                                this will at least make planning for the chaos that much easier.
                             </div>}
 
                     </Card.Body>

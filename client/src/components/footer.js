@@ -6,8 +6,8 @@ import { Button, Popup, Icon } from 'semantic-ui-react'
 function Footer() {
     return (
         <FooterStyle>
-        <div id="footer-main">
-            {/* <Row id="thank-you">
+            <div id="footer-main">
+                {/* <Row id="thank-you">
                 <Col className="text-left">
                     <h6>More to Explore</h6>
                     <ul className="text-left">
@@ -39,48 +39,48 @@ function Footer() {
                 </Col>
 
             </Row> */}
-            <Row>
+                <Row>
 
-                <Col>
-                <h6 className="text-right" id="meet-team">Meet the Team</h6>
-                    
+                    <Col>
+                        <h6 className="text-right" id="meet-team">Meet the Team</h6>
+
                         <li>Amy Altman</li> <li>Mustafa Khairalla</li>
-                        <li>Cristian Robinson</li> 
-                        
-                </Col>
+                        <li>Cristian Robinson</li>
 
-                <Col >
-                <br />
-                    <li className="text-left">Jake Petersen</li>
-                    <li className="text-left">Elena Demidionok</li>
-                
-                </Col>
+                    </Col>
 
-                <Col id="bio-container">
-                    <h6 id="team-duck" className="text-left">More to Explore</h6>
-                   
-                            <li><a href="https://tripoint.herokuapp.com/">TriPoints</a></li>
-                        
-                            <li><a href="https://mustafakhairalla.github.io/duck-duck-code/">Foodecipe</a></li>
-                        
-                </Col>
+                    <Col >
+                        <br />
+                        <li className="text-left">Jake Petersen</li>
+                        <li className="text-left">Elena Demidionok</li>
 
-                <Col>
-                
-                </Col>
-                <Col>
-                
-                
-                </Col>
-                <Col>
-                
-                
-                </Col>
-                <Col>
-                
-                </Col>
-            </Row>
-        </div>
+                    </Col>
+
+                    <Col id="bio-container">
+                        <h6 id="team-duck" className="text-left">More to Explore</h6>
+
+                        <li><a href="https://tripoint.herokuapp.com/">TriPoints</a></li>
+
+                        <li><a href="https://mustafakhairalla.github.io/duck-duck-code/">Foodecipe</a></li>
+
+                    </Col>
+
+                    <Col>
+
+                    </Col>
+                    <Col>
+
+
+                    </Col>
+                    <Col>
+
+
+                    </Col>
+                    <Col>
+
+                    </Col>
+                </Row>
+            </div>
         </FooterStyle>
     )
 };

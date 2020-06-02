@@ -16,6 +16,7 @@ const app = express();
 
 // DB config
 const db = process.env.MONGO_LOGIN || require("./config/keys").mongoURI;
+//const db = process.env.MONGODB_URI || 'mongodb://localhost/teams'
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

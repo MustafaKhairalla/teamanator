@@ -30,9 +30,9 @@ const SportCard = (props) => {
                                 ))}
                             </div>
                         </div> : <div>
-                                So you decided to manage your daughters soccer team for this years
-                                competitive league (good for you). We know you have lots of distracted kids and over-involved parents coming your way, check this out to make it easier to track
-                                everyone’s names and the snack schedule too.
+                                So you decided to manage your daughters/ sons soccer league (good for you).
+                                We know you have lots of distracted kids and over-involved parents coming your way.
+                                Click here track everyone’s names and the snack schedule too.
                             </div>}
 
                     </Card.Body>

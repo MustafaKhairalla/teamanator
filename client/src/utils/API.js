@@ -21,7 +21,7 @@ export default {
     },
 
     DeleteBusinessCardsById: function (id) {
-        return axios.delete("api/business", + id)
+        return axios.delete("api/business" + id)
     },
 
 
@@ -32,7 +32,7 @@ export default {
     },
     // this education
     getEducationCardsByOwner: function (id) {
-        return axios.get("api/education/", + id)
+        return axios.get("api/education/" + id)
     },
 
     createEducationCard: function (educationData) {
@@ -40,7 +40,7 @@ export default {
     },
 
     DeleteEducationCardsById: function (id) {
-        return axios.delete("api/education", + id)
+        return axios.delete("api/education" + id)
     },
 
     // Handle fintess cards --------------------------------
@@ -50,7 +50,7 @@ export default {
     },
     // this fitness 
     getFitnessCardsByOwner: function (id) {
-        return axios.get("api/fitness/", + id)
+        return axios.get("api/fitness/" + id)
     },
 
     createFitnessCard: function (fitnessData) {
@@ -58,7 +58,7 @@ export default {
     },
 
     DeleteFitnessCardsById: function (id) {
-        return axios.delete("api/fitness", + id)
+        return axios.delete("api/fitness" + id)
     },
 
     //handle sports cards---------------------------------
@@ -68,7 +68,7 @@ export default {
     },
     //get sport
     getSportCardsByOwner: function (id) {
-        return axios.get("api/sport/", + id)
+        return axios.get("api/sport/" + id)
     },
 
     createSportCard: function (sportData) {
