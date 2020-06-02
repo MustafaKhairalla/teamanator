@@ -154,9 +154,9 @@ function Dashboard(props) {
                                                             <strong><h6 > Title: {member.field2}</h6></strong>
                                                             <h6 > Salary: {member.field3} </h6>
                                                             <h6 > Department:  {member.field4}</h6>
-                                                            <h6 > Phone Number:  {member.field5}</h6>
-                                                            <h6 > Email:  {member.field6}</h6>
-                                                            <h6 > Address/ Location:  {member.field7}</h6>
+                                                            <h6 > Address/ Location:  {member.field5}</h6>
+                                                            <h6 > Phone Number:  {member.field6}</h6>
+                                                            <h6 > Email:  {member.field7}</h6>
                                                         </> :
                                                             null
 
@@ -167,9 +167,9 @@ function Dashboard(props) {
                                                             <h6 > Age: {member.field2}</h6>
                                                             <h6 > Devision: {member.field3} </h6>
                                                             <h6 > Position: {member.field4}</h6>
-                                                            <h6 > Phone Number: {member.field5}</h6>
-                                                            <h6 > Email:  {member.field6}</h6>
-                                                            <h6 > Address:  {member.field7}</h6>
+                                                            <h6 > Address: {member.field5}</h6>
+                                                            <h6 > Phone Number:  {member.field6}</h6>
+                                                            <h6 > Email:  {member.field7}</h6>
                                                         </> :
                                                             null
                                                     }
@@ -192,7 +192,7 @@ function Dashboard(props) {
                                                             <h6 > Weight :{member.field3} </h6>
                                                             <h6 > Goal: {member.field4}</h6>
                                                             <h6 > Notes: {member.field5}</h6>
-                                                            <h6 > Phone Number:  {member.field6}</h6>
+                                                            <h6 > Phone Number:{member.field6}</h6>
                                                             <h6 > Email:  {member.field7}</h6>
                                                         </> :
                                                             null
