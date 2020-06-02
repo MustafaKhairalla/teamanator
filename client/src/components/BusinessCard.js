@@ -33,9 +33,9 @@ const BusinessCard = (props) => {
 
                             </div>
                         </div> : <div> Manage all your employees important data from one place.
-                        So the next time you need the email address of that guy in accounting – who
-                        you can’t remember his name but he has a funny go-tee and kinda looks
-                            like Tony Stark – you can </div>}
+                        So the next time you need the email address of that guy in
+                        accounting – who you can’t remember his name but he has a
+                            funny go-tee and kinda looks like Tony Stark –  you will have it .</div>}
                     </Card.Body>
                 </Card.Body>
                 <Card.Footer>

@@ -17,13 +17,13 @@ router.get("/", (req, res) => {
 // @desc  Create sport card
 
 router.post("/", async (req, res) => {
-
+    console.log(req.body)
     const newCards = req.body.formData;
     try {
 
-        await newCards.forEach(o => {
+        await newCards.forEach(async o => {
             const newSport = new Sport({
-                owner: req.userId,
+                owner: req.body.userId,
                 field1: o.field1 ? o.field1 : "unlisted",
                 field2: o.field2 ? o.field2 : "unlisted",
                 field3: o.field3 ? o.field3 : "unlisted",
@@ -58,7 +58,7 @@ router.delete("/:id", (req, res) => {
 // @ desc findbyID sport cards
 
 router.get("/:id", (req, res) => {
-    Sport.findById(req.params.id)
+    Sport.find({ owner: req.params.id })
         .then(sport => res.json(sport))
 });
 

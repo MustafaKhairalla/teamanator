@@ -27,38 +27,38 @@ function Dashboard(props) {
 
     const [show, setShow] = useState(false);
     const [dataBaseData, setDataBaseData] = useState([]);
+    const [deleteMember, setDeleteMember] = useState(false)
+    const [member, setMember] = useState({
+        field1: "",
+        field2: "",
+        field3: "",
+        field4: "",
+        field5: "",
+        field6: "",
+        field7: "",
+        image: "",
+        typeOfTeam: ""
+    })
 
 
-    const users = [
-        {
-            id: 1,
-            name: "SpongeBob",
-            title: "Fry Cook",
-            location: "A Pineapple Under the Sea"
-        },
-        {
-            id: 2,
-            name: "SpongeBob",
-            title: "Fry Cook",
-            location: "A Pineapple Under the Sea"
-        },
-        {
-            id: 3,
-            name: "SpongeBob",
-            title: "Fry Cook",
-            location: "A Pineapple Under the Sea"
-        }
-    ]
-
-    // const [users, setUsers] = useState([{
-
-    // }])
 
     const handleClose = () => {
-        // setFiredMatch(false);
+        setDeleteMember(false);
         setShow(false);
     };
     const handleShow = () => setShow(true);
+
+
+    const handleDelete = (name) => {
+        const filteredArray = dataBaseData.filter(member => member.field1 != name);
+        console.log(filteredArray);
+        setDataBaseData(filteredArray);
+        setDeleteMember(true);
+        setTimeout(() => {
+            setShow(false)
+            setDeleteMember(false);
+        }, 1000)
+    }
 
     const { user = {} } = props.currentUser;
     const { typeOfTeam = '' } = user
@@ -78,6 +78,7 @@ function Dashboard(props) {
 
 
         console.log(gettingData)
+        console.log(typeOfTeam)
 
 
     }, [typeOfTeam])
@@ -108,18 +109,21 @@ function Dashboard(props) {
                             <CardHolder>
 
                                 {dataBaseData.map(e => {
-
-
-                                    const { Name, phoneNumber, email } = e
+                                    const { field1, field2, field3, field4, field5, field6, field7 } = e
 
                                     return (<NewEmployeeCard
                                         key={e._id}
-                                        name={Name}
-                                        phoneNumber={phoneNumber}
-                                        email={email}
+                                        field1={field1}
+                                        field2={field2}
+                                        field3={field3}
+                                        field4={field4}
+                                        field5={field5}
+                                        field6={field6}
+                                        field7={field7}
+                                        typeOfTeam={typeOfTeam}
                                         image={faker.image.avatar()}
-                                        // location={e.location}
 
+                                        setMember={setMember}
                                         handleShow={handleShow}
 
                                     />)
@@ -128,54 +132,97 @@ function Dashboard(props) {
                                 <Modal aria-labelledby="contained-modal-title-vcenter"
                                     centered show={show} onHide={handleClose}>
                                     <Modal.Header closeButton>
-                                        <Modal.Title className="ui yellow">{users.name}</Modal.Title>
+                                        <Modal.Title>
+                                            {member.field1}
+                                        </Modal.Title>
                                     </Modal.Header>
-                                    <Modal.Body>
-                                        <Container>
+                                    <Modal.Body >
+                                        <Container className="ui inverted segment">
                                             <Row >
                                                 <Col md={4}>
                                                     <span >
-                                                        <img src={faker.image.avatar()} alt={users.name} />
+                                                        <img src={member.image} alt={member.field1} />
 
                                                     </span>
                                                 </Col>
-                                                <Col md={8}>
-                                                    <h6 > Location: {users.location}</h6>
-                                                    {/* <h6 > Email: {employee.email}</h6> */}
-                                                    <h6 > Mobile: </h6>
-                                                    <h6 > Department: </h6>
-                                                    <h6 > Salary:  $</h6>
-                                                    <h6 > Title:  {users.title}</h6>
+
+                                                <Col md={8} >
+                                                    <h6 > Name: {member.field1}</h6>
+                                                    {
+                                                        typeOfTeam === "Business" ? <>
+
+                                                            <strong><h6 > Title: {member.field2}</h6></strong>
+                                                            <h6 > Salary: {member.field3} </h6>
+                                                            <h6 > Department:  {member.field4}</h6>
+                                                            <h6 > Phone Number:  {member.field5}</h6>
+                                                            <h6 > Email:  {member.field6}</h6>
+                                                            <h6 > Address/ Location:  {member.field7}</h6>
+                                                        </> :
+                                                            null
+
+                                                    }
+                                                    {
+                                                        typeOfTeam === "Sport" ? <>
+
+                                                            <h6 > Age: {member.field2}</h6>
+                                                            <h6 > Devision: {member.field3} </h6>
+                                                            <h6 > Position: {member.field4}</h6>
+                                                            <h6 > Phone Number: {member.field5}</h6>
+                                                            <h6 > Email:  {member.field6}</h6>
+                                                            <h6 > Address:  {member.field7}</h6>
+                                                        </> :
+                                                            null
+                                                    }
+                                                    {
+                                                        typeOfTeam === "Education" ? <>
+
+                                                            <h6 > Program: {member.field2}</h6>
+                                                            <h6 > Tools/ Languages :{member.field3} </h6>
+                                                            <h6 > Education Level: {member.field4}</h6>
+                                                            <h6 > GPA: {member.field5}</h6>
+                                                            <h6 > Phone Number:  {member.field6}</h6>
+                                                            <h6 > Email:  {member.field7}</h6>
+                                                        </> :
+                                                            null
+                                                    }
+                                                    {
+                                                        typeOfTeam === "Fitness" ? <>
+
+                                                            <h6 > Age: {member.field2}</h6>
+                                                            <h6 > Weight :{member.field3} </h6>
+                                                            <h6 > Goal: {member.field4}</h6>
+                                                            <h6 > Notes: {member.field5}</h6>
+                                                            <h6 > Phone Number:  {member.field6}</h6>
+                                                            <h6 > Email:  {member.field7}</h6>
+                                                        </> :
+                                                            null
+                                                    }
+
+
                                                 </Col>
                                             </Row>
                                         </Container>
                                     </Modal.Body>
                                     <Modal.Footer>
                                         <Container>
-                                            {/* <div className="alert alert-danger mr-2 ml-2" role="alert" style={{ opacity: firedMatch ? 1 : 0 }}>
-                                                This employee has been fired
-                                            </div> */}
+                                            <div className="alert alert-danger mr-2 ml-2" role="alert" style={{ opacity: deleteMember ? 1 : 0 }}>
+                                                This member has been deleted
+                                            </div>
                                         </Container>
                                         <Button className="ui inverted green button" onClick={handleClose}>
                                             Close
                         </Button>
                                         <Button className="ui inverted red button" variant="danger" onClick={() => {
                                             // handleFire(employee.email)
-                                            // console.log(employee.email)
+                                            handleDelete(member.field1)
+
                                         }
                                         }>
-                                            Fire Employee
+                                            Delete Member
                         </Button>
 
                                     </Modal.Footer>
                                 </Modal>
-
-
-
-
-
-
-
                             </CardHolder>
 
                         </Col>

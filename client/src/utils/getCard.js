@@ -8,6 +8,10 @@ const GetCard = async (select, id
             return await API.getBusinessCardsByOwner(id)
 
             break;
+        case "Bussines":
+            return await API.getBusinessCardsByOwner(id)
+
+            break;
         case "Education":
             return await API.getEducationCardsByOwner(id);
             break;
