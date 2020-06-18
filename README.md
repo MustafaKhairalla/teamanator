@@ -1,6 +1,6 @@
 <img src="https://github.com/MustafaKhairalla/teamanator/blob/master/client/public/images/no-outline-01.png?raw=true" alt="logo">
 <br>
-<img href="https://github.com/MustafaKhairalla/teamanator/blob/master/client/public/images/pic.png">
+<img src="https://github.com/MustafaKhairalla/teamanator/blob/master/client/public/images/pic.png"/>
 <h4>A solution for all your team-management needs.</h4>
 <hr>
 
